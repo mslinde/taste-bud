@@ -1,0 +1,20 @@
+.vibes input[type=checkbox] {
+  display:none;
+}
+
+.clickable {
+  background: #b7b7b7;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 30%;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+  color: white;
+  opacity: 1;
+  }
+}
