@@ -1,0 +1,11 @@
+<%= simple_form_for(@event) do |f| %>
+  <div class="form-group">
+    <%= f.association :vibe, as: :radio_buttons %>
+    <%= f.input :title%>
+    <%= f.input :start_time %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :capacity %>
+
+    <%= f.submit %>
+<% end %>
