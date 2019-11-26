@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  has_one :vibe
+  belongs_to :vibe
   has_many :spots
-  belongs_to :users
+  belongs_to :user
 end
