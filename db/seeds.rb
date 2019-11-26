@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# require "faker"
+
+# 20.times do
+#   Vibe.create(name: Faker::FunnyName.name,
+#   :icon 'https://source.unsplash.com/random')
+# end
+
+# puts 'Creating 20 vibes'
+# 20.times do
+#   language = Language.new(
+#     language:    Faker::ProgrammingLanguage.name,
+#     icon:   'https://source.unsplash.com/random'
+#   )
+#   language.save!
+# end
+# puts 'Finished!'
