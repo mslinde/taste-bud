@@ -1,0 +1,17 @@
+
+
+<h3>Select your vibe:</h3>
+<div class="container">
+    <div class="row justify-content-center">
+     <!--  <div class="col-sm-8 text-center"> -->
+          <% @vibes.each do |vibe| %>
+            <div class="d-flex justify-content-center pt-4 mx-3 my1">
+              <div class="clickable">
+                <img src=<%= vibe.icon %> alt="" height="50px">
+                <p><%= vibe.name %></p>
+              </div>
+            </div>
+          <% end %>
+      <!-- </div> -->
+    </div>
+  </div>

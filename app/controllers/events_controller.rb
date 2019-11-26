@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   def index
+    @events = Event.all
+    @vibes = Vibe.all
   end
 
   def new
