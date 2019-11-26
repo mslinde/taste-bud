@@ -1,3 +1,4 @@
+
 # require "faker"
 
 # 20.times do
@@ -14,3 +15,4 @@
 #   language.save!
 # end
 # puts 'Finished!'
+
