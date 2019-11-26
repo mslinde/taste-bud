@@ -37,15 +37,15 @@ end
 
 puts "Creating 5 vibes..."
 
-v1 = Vibe.create!(name: Faker::FunnyName.name,
+v1 = Vibe.create!(name: "Chill",
      :icon => 'https://source.unsplash.com/random')
-v2 = Vibe.create!(name: Faker::FunnyName.name,
+v2 = Vibe.create!(name: "Sophisticated",
      :icon => 'https://source.unsplash.com/random')
-v3 = Vibe.create!(name: Faker::FunnyName.name,
+v3 = Vibe.create!(name: "Party",
      :icon => 'https://source.unsplash.com/random')
-v4 = Vibe.create!(name: Faker::FunnyName.name,
+v4 = Vibe.create!(name: "Saucy",
      :icon => 'https://source.unsplash.com/random')
-v5 = Vibe.create!(name: Faker::FunnyName.name,
+v5 = Vibe.create!(name: "Adventurous",
      :icon => 'https://source.unsplash.com/random')
 
 puts 'Creating 20 languages'

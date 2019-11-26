@@ -4,6 +4,7 @@
 
 
 .clickable {
+  line-height: 1.5em;
   background: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -12,6 +13,7 @@
   text-align: center;
   font-size: 14px;
   border: 1px solid #ccc;
+  color: #393e46;
   &:hover {
     opacity: 1;
     cursor: pointer;
