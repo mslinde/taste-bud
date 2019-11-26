@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'Creating 20 languages'
+20.times do
+  language = Language.new(
+    language:    Faker::ProgrammingLanguage.name,
+    icon:   'https://image.flaticon.com/icons/svg/197/197593.svg'
+  )
+  language.save!
+end
+puts 'Finished!'
