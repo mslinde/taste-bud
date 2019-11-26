@@ -8,11 +8,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts "Creating 20 fake users..."
 
+puts "Clearing Database of events.."
+Event.destroy_all
 User.destroy_all
+Vibe.destroy_all
+Language.destroy_all
 
 
+puts "Creating 20 fake users..."
 
 user = []
 20.times do
@@ -27,18 +31,9 @@ user = []
   gender: Faker::Gender.type,
   profile_photo: "https://www.pinclipart.com/picdir/middle/133-1331433_free-user-avatar-icons-happy-flat-design-png.png")
 
-
 new_user.save!
 user << new_user
 end
-
-
-
-puts "Clearing Database of events.."
-Event.destroy_all
-User.destroy_all
-Vibe.destroy_all
-Language.destroy_all
 
 puts "Creating 5 vibes..."
 
@@ -65,18 +60,29 @@ end
 
 puts 'Creating 20 Events'
 
+events = []
 20.times do
   event = Event.new(
     title:  Faker::Restaurant.type ,
     address: Faker::Address.city,
     description: Faker::Restaurant.description,
     start_time: "#{Date.today}-#{["19:00","20:00"].sample}",
-    user: user.sample, # User.find(rand(1..20))
+    user: user.sample,
     vibe: [v1, v2, v3, v4, v5].sample,
     capacity: 6,
   )
   event.save!
-
+  events << event
 end
 
+puts "creating 20 spots..."
+
+20.times do
+  my_event = events.sample
+  spot = Spot.new(
+    user: my_event.user,
+    event: my_event
+  )
+  spot.save!
+end
 puts 'Finished!'

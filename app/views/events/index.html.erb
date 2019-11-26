@@ -1,14 +1,19 @@
 
-
-<h3>Select your vibe:</h3>
 <div class="container">
+  <h3>Select your vibe:</h3>
+
+
+
+
+
+
     <div class="row justify-content-center">
      <!--  <div class="col-sm-8 text-center"> -->
           <% @vibes.each do |vibe| %>
             <div class="d-flex justify-content-center pt-4 mx-3 my1">
               <div class="clickable">
-                <img src=<%= vibe.icon %> alt="" height="50px">
-                <p><%= vibe.name %></p>
+                <input type="checkbox" id="<%= vibe.name %>" name="<%= vibe.name %>">
+                <label for="<%= vibe.name %>"><img src=<%= vibe.icon %> alt= <%= vibe.name %> height="50px"></label>
               </div>
             </div>
           <% end %>
