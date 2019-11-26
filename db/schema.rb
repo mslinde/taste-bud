@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_104243) do
+ActiveRecord::Schema.define(version: 2019_11_26_102037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_104243) do
     t.string "address"
     t.datetime "start_time"
     t.text "description"
+    t.string "title"
     t.bigint "user_id"
     t.bigint "vibe_id"
     t.datetime "created_at", null: false
@@ -45,11 +46,11 @@ ActiveRecord::Schema.define(version: 2019_11_26_104243) do
 
   create_table "user_languages", force: :cascade do |t|
     t.bigint "language_id"
-    t.bigint "user_id"
+    t.bigint "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["language_id"], name: "index_user_languages_on_language_id"
-    t.index ["user_id"], name: "index_user_languages_on_user_id"
+    t.index ["users_id"], name: "index_user_languages_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,5 +83,5 @@ ActiveRecord::Schema.define(version: 2019_11_26_104243) do
   add_foreign_key "spots", "events"
   add_foreign_key "spots", "users"
   add_foreign_key "user_languages", "languages"
-  add_foreign_key "user_languages", "users"
+  add_foreign_key "user_languages", "users", column: "users_id"
 end
