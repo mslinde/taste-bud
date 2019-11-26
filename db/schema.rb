@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_143042) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "capacity"
     t.index ["user_id"], name: "index_events_on_user_id"
     t.index ["vibe_id"], name: "index_events_on_vibe_id"
   end
