@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_102037) do
     t.string "full_name"
     t.string "current_country"
     t.string "origin_country"
-    t.string "email_address"
     t.date "birthday"
     t.string "gender"
     t.string "profile_photo"
