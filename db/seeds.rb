@@ -12,9 +12,9 @@ puts "Creating 20 fake users..."
 
 User.destroy_all
 
+user = []
 20.times do
-  user = []
-  user << User.new(
+  new_user = User.new(
 
   full_name: Faker::Name.name,
   email: Faker::Internet.email,
@@ -26,7 +26,9 @@ User.destroy_all
   gender: Faker::Gender.type,
   profile_photo: "https://www.pinclipart.com/picdir/middle/133-1331433_free-user-avatar-icons-happy-flat-design-png.png")
 
-user.save!
+  new_user.save!
+  user << new_user
+
 end
 
 puts "Clearing Database of events.."
@@ -58,13 +60,13 @@ puts 'Creating 20 languages'
   language.save!
 end
 
-user = User.create!(full_name:"Name", email:"test@example.com", password:"123456")
+user1 = User.create!(full_name:"Name", email:"test@example.com", password:"123456")
 
 puts 'Creating 20 Events'
 
 20.times do
   event = Event.new(
-    title:  Faker::Restaurant.type ,
+    title:  Faker::Restaurant.type,
     address: Faker::Address.city,
     description: Faker::Restaurant.description,
     start_time: "#{Date.today}-#{["19:00","20:00"].sample}",
