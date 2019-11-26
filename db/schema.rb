@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2019_11_26_143042) do
     t.bigint "vibe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "capacity"
     t.float "latitude"
     t.float "longitude"
-    t.integer "capacity"
     t.index ["user_id"], name: "index_events_on_user_id"
     t.index ["vibe_id"], name: "index_events_on_vibe_id"
   end
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_143042) do
     t.string "full_name"
     t.string "current_country"
     t.string "origin_country"
-    t.string "email_address"
     t.date "birthday"
     t.string "gender"
     t.string "profile_photo"
