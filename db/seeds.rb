@@ -72,8 +72,10 @@ puts 'Creating 20 Events'
     start_time: "#{Date.today}-#{["19:00","20:00"].sample}",
     user: user.sample, # User.find(rand(1..20))
     vibe: [v1, v2, v3, v4, v5].sample,
+    capacity: 6,
   )
   event.save!
+
 end
 
 puts 'Finished!'
