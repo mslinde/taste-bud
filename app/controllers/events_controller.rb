@@ -1,13 +1,5 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
-    @event = Event.new
-    @vibes = Vibe.all
-    @events = policy_scope(Event).order(created_at: :asc)
-    # set filters defined in private
-    # With results can create map and markers
-    # use the filters to return the results
-    # Look into the advanced record cheat sheet.
   end
 
   def new
