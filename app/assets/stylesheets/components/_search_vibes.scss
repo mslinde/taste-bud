@@ -7,15 +7,16 @@
   background: #fff;
   padding: 10px;
   border-radius: 5px;
-  opacity: .4;
   flex: 0 0 30%;
   text-align: center;
   font-size: 14px;
   border: 1px solid #ccc;
   color: #393e46;
   &:hover {
-    opacity: 1;
+    opacity: .3;
     cursor: pointer;
+    background: #a8a7a6;
+
   }
   &.active {
   color: white;
