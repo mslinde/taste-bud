@@ -219,11 +219,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-<<<<<<< HEAD
-  cloudinary
-=======
   cloudinary (~> 1.9.1)
->>>>>>> master
   devise
   dotenv-rails
   faker
