@@ -50,4 +50,3 @@ class EventsController < ApplicationController
   end
 end
 
-#comment
