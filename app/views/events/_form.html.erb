@@ -1,14 +1,21 @@
 <div class="container-contact100">
-<!--   <div class="wrap-contact100"> -->
 
     <%= simple_form_for(@event) do |f| %>
       <div class="form-box">
         <div class="left">
           <%= f.input :title %>
-          <%= f.input :start_time %>
+          <div class ="date-box">
+            <div class = "date-box-left">
+              <%= Date.today.strftime("%b %-d, %Y") %>
+            </div>
+            <div class="date-box-right">
+              <%= f.input :start_time, as: :string, input_html: {class: "datepicker"} %>
+            </div>
+          </div>
           <%= f.input :address, :class=> "red-class" %>
           <%= f.input :description %>
           <%= f.input :capacity %>
+
         </div>
         <div class="right">
           <%= f.association :vibe, as: :radio_buttons %>
@@ -19,6 +26,4 @@
       </div>
   <% end %>
 
-
-<!--   </div> -->
 </div>
