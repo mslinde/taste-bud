@@ -6,6 +6,7 @@ class EventsController < ApplicationController
     @vibes = Vibe.all
     # might need for vibe filter
     # @search = Vibe.find(vibe_params).events
+    authorize @events
   end
 
   def new
@@ -17,10 +18,11 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
-      redirect_to user_path(current_user)
+      redirect_to root_path
     else
       render :new
     end
+    authorize @event
   end
 
   private

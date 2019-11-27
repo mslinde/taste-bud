@@ -1,9 +1,27 @@
-<h1>Taste Bud</h1>
-<p>Create, fun, safe experiences</p>
+<%= render 'shared/banner' %>
+
+<div class="container">
+  <h1>TasteBudd Events Around the World</h1>
+
+  <h3>What kind of vibe are you looking for tonight?</h3>
 
 
-<div class="row">
-      <!-- Each starts here -->
-      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
-       <%= render 'layouts/components/card' %>
-      </div>
+    <%= form_tag(events_path, method: :get) do %>
+    <div class="row justify-content-center">
+     <!--  <div class="col-sm-8 text-center"> -->
+          <% @vibes.each do |vibe| %>
+            <div class="d-flex justify-content-center pt-4 mx-3 my1">
+              <div class="vibes clickable">
+              <%= check_box_tag :search, params[:search], (vibe.id) %>
+              <%= label_tag(vibe.id, vibe.name) %>
+
+                <!-- <input type="checkbox" id="<%= vibe.name %>" name="<%= vibe.name %>"> -->
+                <!-- <label for="<%= vibe.name %>"><img src=<%= vibe.icon %> alt= <%= vibe.name %> height="50px"><p><%= vibe.name %></p></label> -->
+              </div>
+            </div>
+          <% end %>
+      <!-- </div>
+    </div>
+      <%= submit_tag 'Search', name: nil, class: "btn-search" %>
+    <% end %>
+</div>

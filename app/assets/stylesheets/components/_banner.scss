@@ -13,16 +13,28 @@
   font-size: 60px;
   font-weight: bold;
   font-family: 'Lily Script One', cursive;
+  padding-left: 0px;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 24px;
   color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  opacity: .8;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: .25em;
+  margin: 10px 0px;
 }
 
 
 .btn {
-  color: white;
+  font-weight: bold;
+  background: #465881;
+  border-radius: 5px;
+  color: rgba(255,255,255,.9);
+
+}
+
+.btn:hover {
+  color: #fff;
+  background: #4F4743;
 }
