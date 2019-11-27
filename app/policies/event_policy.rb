@@ -5,3 +5,5 @@ class EventPolicy < ApplicationPolicy
     end
   end
 end
+
+#comment
