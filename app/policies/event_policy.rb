@@ -1,16 +1,15 @@
 class EventPolicy < ApplicationPolicy
-
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def new?
-    true
+  def create?
+    return true
   end
 
-  def create?
-    true
+  def new?
+    create?
   end
 end
