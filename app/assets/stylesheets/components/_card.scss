@@ -9,6 +9,7 @@ h1 {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 20px;
   padding-bottom: 10px;
+  position: relative
 
 }
 
@@ -35,6 +36,7 @@ h1 {
 
 .card-trip .card-trip-infos {
   padding: 16px;
+  padding-bottom: 9px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -43,15 +45,17 @@ h1 {
 }
 
 .card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  display: flex;
 }
 
+.card-trip-user {
+  position: absolute;
+  bottom: 40px;
+  left: -1px;
+}
 
 .card-trip-user .avatar-bordered {
-height: 90px;
+  width: 60px;
 }
 
 //Comment to be deleted

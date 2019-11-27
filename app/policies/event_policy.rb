@@ -10,10 +10,10 @@ class EventPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    create?
   end
 
   def create?
-    true
+    return true
   end
 end
