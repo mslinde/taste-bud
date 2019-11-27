@@ -5,6 +5,14 @@ class EventPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    return true
+  end
+
+  def show?
+    return true
+  end
+
   def create?
     return true
   end

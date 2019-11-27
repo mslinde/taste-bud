@@ -56,6 +56,9 @@ h1 {
 
 .card-trip-user .avatar-bordered {
   width: 60px;
+  border-radius: 50%;
+  box-shadow: 0 7px 3px rgba(0, 0, 0, 0.2);
+  border: #000000f2 2px solid;
   margin-left: 5px;
 }
 
