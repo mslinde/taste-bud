@@ -1,26 +1,25 @@
+<%= render 'shared/banner' %>
+
 <div class="container">
   <div class="d-flex justify-content-center plot-banner">
     <div class="row">
 
       <div class="col-6">
-        <%= cl_image_tag(@plot.photo) %>
+        <img src="https://source.unsplash.com/random" alt="Event image">
       </div>
       <div class="card bg-light col-6 p-5">
-        <div class="name">
-          <h1><%= @plot.name %></h1>
+        <div class="title">
+          <h1><%= @event.title %></h1>
         </div>
-          <h2>$<%= @plot.price %> per 10 Years</h2>
-        <p><strong>Plot Description: </strong> <%= @plot.description %></p>
-          <% if user_signed_in? %>
-            <%= link_to "Join and Event", new_plot_booking_path(@plot[:id]), class:"btn btn-secondary" %>
-          <% else %>
-            <%= link_to "Sign Up ", new_user_registration_path, class:"btn btn-secondary" %>
-          <% end %>
+          <h2>Vibe :<%= @event.vibe %></h2>
+          <h2>People going: <%= @spot.user.full_name %></h2>
+          <p> Created by <%= @event_user.full_name %> </p>
+          <p>Meeting Time: <%= @event.start_time %></p>
+          <p>Location: <%= @event.address %></p>
 
-        </br>
-        <p><%= link_to "Back to all events", plots_path %></p>
       </div>
     </div>
 
   </div>
-  <div
+e<div
+
