@@ -1,3 +1,30 @@
+ <h1>TasteBudd Events Around the World</h1>
+
+
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="card-trip">
+          <img src="https://source.unsplash.com/random" alt="Event image">
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= event.title %></h2>
+            </div>
+            <h2 class="card-trip-pricing">
+              <p> Created by <%= event.user.full_name %> </p></h2>
+              <% event.attendants.each do |user| %>
+              <div class="card-trip-user avatar-bordered">
+              <%= cl_image_tag(user.profile_photo) %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <div class="container">
   <div
     id="map"
