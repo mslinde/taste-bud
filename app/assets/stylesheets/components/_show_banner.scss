@@ -1,0 +1,24 @@
+_show_banner.scss
+
+.banner {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 100px;
+  text-shadow: 1px 5px 2px black;
+}
+
+.details {
+  font-family: 'Fugaz One', cursive;
+}
+
+.details h2 {
+  font-family: 'Fugaz One', cursive;
+}

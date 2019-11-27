@@ -1,25 +1,42 @@
-<%= render 'shared/banner' %>
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
+      <div class="title">
+        <h1><%= @event.title %></h1>
+      </div>
+        <h2>Vibe <%= @event.vibe %></h2>
+        <a class="btn btn-ghost" href="#">Join Event!</a>
+  </div>
+  <div class="card-trip-user">
+    <% @event.attendants.each do |user| %>
+      <%= cl_image_tag user.profile_photo, width: 70, class: "avatar-bordered" %>
+    <% end %>
+  </div>
+</div>
 
 <div class="container">
   <div class="d-flex justify-content-center plot-banner">
     <div class="row">
-
-      <div class="col-6">
-        <img src="https://source.unsplash.com/random" alt="Event image">
+      <div class="col-6 col-6">
       </div>
-      <div class="card bg-light col-6 p-5">
-        <div class="title">
-          <h1><%= @event.title %></h1>
-        </div>
-          <h2>Vibe :<%= @event.vibe %></h2>
-          <h2>People going: <%= @spot.user.full_name %></h2>
+      <div class="details">
+        <h2>Meeting Time: <%= @event.start_time %></h2>
+        <h2>Location: <%= @event.address %></h2>
           <p> Created by <%= @event_user.full_name %> </p>
-          <p>Meeting Time: <%= @event.start_time %></p>
-          <p>Location: <%= @event.address %></p>
-
+          <p>People going: <%= @spot.user.full_name %></p>
+          <p><strong>Event Description: </strong> <%= @event.description %></p>
       </div>
     </div>
 
   </div>
-e<div
+<div
+
+ <div
+    class="mapbox"
+    id="map"
+    style="width: 400px;
+    height: 350px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
 
