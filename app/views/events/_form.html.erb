@@ -1,11 +1,24 @@
-<%= simple_form_for(@event) do |f| %>
-  <div class="form-group">
-    <%= f.association :vibe, as: :radio_buttons %>
-    <%= f.input :title%>
-    <%= f.input :start_time %>
-    <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :capacity %>
+<div class="container-contact100">
+<!--   <div class="wrap-contact100"> -->
 
-    <%= f.submit %>
-<% end %>
+    <%= simple_form_for(@event) do |f| %>
+      <div class="form-box">
+        <div class="left">
+          <%= f.input :title %>
+          <%= f.input :start_time %>
+          <%= f.input :address, :class=> "red-class" %>
+          <%= f.input :description %>
+          <%= f.input :capacity %>
+        </div>
+        <div class="right">
+          <%= f.association :vibe, as: :radio_buttons %>
+        </div>
+      </div>
+      <div class="button-div">
+        <%= f.submit class: "btn-submit" %>
+      </div>
+  <% end %>
+
+
+<!--   </div> -->
+</div>
