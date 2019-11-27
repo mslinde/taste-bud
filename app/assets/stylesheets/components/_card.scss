@@ -2,6 +2,9 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 20px;
+  padding-bottom: 10px;
+
 }
 
 .card-trip > img {
@@ -29,6 +32,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+
 }
 
 .card-trip-infos .card-trip-user {
@@ -36,4 +40,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+
+.card-trip-infos .card-trip-user .avatar-bordered {
+height: 90px;
 }

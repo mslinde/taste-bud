@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_150450) do
     t.string "address"
     t.datetime "start_time"
     t.text "description"
+    t.string "title"
     t.bigint "user_id"
     t.bigint "vibe_id"
     t.datetime "created_at", null: false
