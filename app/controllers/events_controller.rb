@@ -33,3 +33,5 @@ class EventsController < ApplicationController
   #   params.require(:event).permit(:vibe_id)
   # end
 end
+
+#comment

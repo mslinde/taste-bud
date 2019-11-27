@@ -29,7 +29,7 @@ user = []
   origin_country: Faker::Address.country,
   birthday: Faker::Date.birthday(min_age: 18, max_age: 90),
   gender: Faker::Gender.type,
-  profile_photo: "http://sev.h-cdn.co/assets/cm/15/09/54ee714c5a5b7_-_sev-zac-effron-jryear-de.jpg")
+  profile_photo: "https://4.bp.blogspot.com/__UQSIjH59iA/TEmFazXpwXI/AAAAAAAAFgM/78haTrhcX3s/s1600/Look-At-Demi-Moore-Beautiful-Face-1280x1280-Pixels.jpg")
 
 new_user.save!
 user << new_user

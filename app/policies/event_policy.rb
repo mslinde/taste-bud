@@ -13,3 +13,5 @@ class EventPolicy < ApplicationPolicy
     true
   end
 end
+
+#comment
