@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  def index
 
+  def index
     @events = Event.geocoded
 
     @markers = @events.map do |event|
