@@ -10,11 +10,11 @@ require 'faker'
 
 
 puts "Clearing Database of events.."
+
 Event.destroy_all
 User.destroy_all
 Vibe.destroy_all
 Language.destroy_all
-
 
 puts "Creating 20 fake users..."
 
@@ -29,7 +29,7 @@ user = []
   origin_country: Faker::Address.country,
   birthday: Faker::Date.birthday(min_age: 18, max_age: 90),
   gender: Faker::Gender.type,
-  profile_photo: "https://www.pinclipart.com/picdir/middle/133-1331433_free-user-avatar-icons-happy-flat-design-png.png")
+  profile_photo: "http://sev.h-cdn.co/assets/cm/15/09/54ee714c5a5b7_-_sev-zac-effron-jryear-de.jpg")
 
 new_user.save!
 user << new_user
@@ -75,7 +75,7 @@ events = []
   events << event
 end
 
-puts "creating 20 spots..."
+puts "Creating 20 spots..."
 
 20.times do
   my_event = events.sample
@@ -85,4 +85,5 @@ puts "creating 20 spots..."
   )
   spot.save!
 end
+
 puts 'Finished!'
