@@ -4,6 +4,14 @@ class EventPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def create?
+    return true
+  end
+
+  def new?
+    create?
+  end
 end
 
 #comment
