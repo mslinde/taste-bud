@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
+<<<<<<< HEAD
     @events = Event.geocoded
 
     @markers = @events.map do |event|
@@ -10,6 +12,10 @@ class EventsController < ApplicationController
         # image_url: helpers.asset_url('/assets/images/random.png')
       }
     end
+=======
+    @events = policy_scope(Event).order(created_at: :asc)
+    @events = Event.all
+>>>>>>> master
   end
 
   def new

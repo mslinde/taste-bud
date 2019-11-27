@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_11_26_143042) do
+=======
+ActiveRecord::Schema.define(version: 2019_11_26_150450) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +33,11 @@ ActiveRecord::Schema.define(version: 2019_11_26_143042) do
     t.float "longitude"
     t.index ["user_id"], name: "index_events_on_user_id"
     t.index ["vibe_id"], name: "index_events_on_vibe_id"
+  end
+
+  create_table "indices", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "languages", force: :cascade do |t|
