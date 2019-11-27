@@ -13,3 +13,5 @@ class EventPolicy < ApplicationPolicy
     create?
   end
 end
+
+#comment

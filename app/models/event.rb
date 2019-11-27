@@ -7,3 +7,5 @@ class Event < ApplicationRecord
   has_many :attendants, through: :spots, source: :user
   belongs_to :user
 end
+
+#comment

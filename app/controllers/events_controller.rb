@@ -39,3 +39,5 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :address, :start_time, :description, :capacity, :vibe_id)
   end
 end
+
+#comment
