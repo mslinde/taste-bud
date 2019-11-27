@@ -17,7 +17,7 @@ Language.destroy_all
 
 puts "Creating 20 fake users..."
 
-user = []
+users = []
 20.times do
   new_user = User.new(
   full_name: Faker::Name.name,
@@ -31,7 +31,7 @@ user = []
   profile_photo: "https://4.bp.blogspot.com/__UQSIjH59iA/TEmFazXpwXI/AAAAAAAAFgM/78haTrhcX3s/s1600/Look-At-Demi-Moore-Beautiful-Face-1280x1280-Pixels.jpg")
 
 new_user.save!
-user << new_user
+users << new_user
 end
 
 puts "Creating 5 vibes..."
@@ -66,7 +66,7 @@ events = []
     address: Faker::Address.city,
     description: Faker::Restaurant.description,
     start_time: "#{Date.today}-#{["19:00","20:00"].sample}",
-    user: user.sample,
+    user: users.sample,
     vibe: [v1, v2, v3, v4, v5].sample,
     capacity: 6,
   )
@@ -75,15 +75,19 @@ events = []
 
 end
 
-puts "Creating 20 spots..."
+puts "Creating random number of spots..."
 
-20.times do
-  my_event = events.sample
-  spot = Spot.new(
-    user: my_event.user,
-    event: my_event
-  )
-  spot.save!
+events.each do |event|
+  possible_attendants = users.reject { |u| u == event.user }
+  rand(1..6).times do
+    spot = Spot.new(
+      user: possible_attendants.shuffle.pop,
+      event: event
+    )
+    spot.save!
+  end
 end
+
+puts "Created #{Spot.count} spots"
 
 puts 'Finished!'

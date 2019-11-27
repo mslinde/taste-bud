@@ -12,13 +12,14 @@
             <div>
               <h2><%= event.title %></h2>
             </div>
-            <h2 class="card-trip-pricing">
-              <p> Created by <%= event.user.full_name %> </p></h2>
-              <% event.attendants.each do |user| %>
-              <div class="card-trip-user avatar-bordered">
-              <%= cl_image_tag(user.profile_photo) %>
+            <div class="card-trip-pricing">
+              <p> Created by <%= event.user.full_name %> </p>
             </div>
-            <% end %>
+            <div class="card-trip-user">
+              <% event.attendants.each do |user| %>
+                <%= cl_image_tag user.profile_photo, width: 70, class: "avatar-bordered" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
