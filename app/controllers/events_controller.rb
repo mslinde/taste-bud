@@ -3,6 +3,10 @@ class EventsController < ApplicationController
     @events = Event.all
     @event = Event.new
     @vibes = Vibe.all
+    #set filters defined in private
+    # With results can create map and markers
+    # use the filters to return the results
+    Look into the advanced record cheat sheet.
   end
 
   def new
