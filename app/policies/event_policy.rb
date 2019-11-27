@@ -6,14 +6,18 @@ class EventPolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    return true
   end
 
-  def new?
-    create?
+  def show?
+    return true
   end
 
   def create?
     return true
+  end
+
+  def new?
+    create?
   end
 end

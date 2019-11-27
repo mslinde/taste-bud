@@ -23,8 +23,9 @@ class EventsController < ApplicationController
 
   def show
     set_event
+    @event_user = @event.user
+    @spot = Spot.find_by_id(params[:id])
     authorize @event
-    @event = @event.user
   end
 
 
@@ -60,4 +61,3 @@ class EventsController < ApplicationController
   end
 end
 
-#comment

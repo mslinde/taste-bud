@@ -27,7 +27,7 @@
           <img src="https://source.unsplash.com/random" alt="Event image">
           <div class="card-trip-infos">
             <div>
-              <h2><%= event.title %></h2>
+              <h2><%= link_to event.title, event_path(event) %></h2>
             </div>
             <div class="card-trip-pricing">
               <p> Created by <%= event.user.full_name %> </p>

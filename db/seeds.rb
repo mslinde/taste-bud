@@ -63,7 +63,7 @@ puts 'Creating 20 Events'
 events = []
 20.times do
   event = Event.new(
-    title:  Faker::Restaurant.type ,
+    title:  Faker::Restaurant.type,
     address: Faker::Address.city,
     description: Faker::Restaurant.description,
     start_time: "#{Date.today}-#{["19:00","20:00"].sample}",
