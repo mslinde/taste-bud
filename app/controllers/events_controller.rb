@@ -15,8 +15,6 @@ class EventsController < ApplicationController
     @events = policy_scope(Event).order(created_at: :asc)
     @events = Vibe.find(params[:vibe_id]).events
     @vibes = Vibe.all
-    # might need for vibe filter
-    # @search = Vibe.find(vibe_params).events
     @current_vibe = Vibe.find(params[:vibe_id]).name
     authorize @events
   end
