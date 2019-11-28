@@ -2,25 +2,33 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @events = Event.geocoded
-
-      @markers = @events.map do |event|
-        {
-          lat: event.latitude,
-          lng: event.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { event: event })
-          # image_url: helpers.asset_url('/assets/images/random.png')
-        }
-      end
     @events = policy_scope(Event).order(created_at: :asc)
+    @vibes = Vibe.all
 
+    @markers = @events.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
+        # image_url: helpers.asset_url('/assets/images/random.png')
+      }
+    end
 
     @location = params[:search]
     @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
-    @vibes = Vibe.all
     @current_vibe = Vibe.find(params[:vibe_id]).name
+    if !@events.present?
+      @events = Event.geocoded
+    end
+    # if params[:search].present? && params[:vibe_id].present?
+    #   @location = params[:search]
+    #   @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
+    #   @current_vibe = Vibe.find(params[:vibe_id]).name
+    # elsif params[:search] == []
+    #   @events
+    #   @vibes
+    # end
 
-    authorize @events
   end
 
   def show
