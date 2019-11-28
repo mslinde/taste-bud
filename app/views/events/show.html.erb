@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
+  <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
     <div class="title">
       <h1><%= @event.title %></h1>
     </div>
@@ -7,22 +7,11 @@
       <h2>Meeting Time: <%= @event.start_time %></h2>
       <div class="container"></div>
       <div id="join-card">
-        <a class="btn btn-ghost" href="#">Join Event!</a>
+        <a class="btn btn-ghost" <%= link_to "Join Event!", join_event_path(@event), method: :post %>></a>
       </div>
     </div>
   </div>
 </div>
-
-<div class="container">
-  <%= link_to "Join", join_event_path(@event), method: :post %>
-  <!-- <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-    <%#= simple_form_for([@plot, @booking]) do |f| %>
-
-      <%#= f.button :submit, 'Confirm Booking', class: "btn btn-primary" %>
-    <% #end %>
-  </div> -->
-</div>
-
 
 <div class="main-container">
   <div class="buddy-left">

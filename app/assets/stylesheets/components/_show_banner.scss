@@ -1,4 +1,4 @@
-.banner {
+.show-banner {
   color: white;
   height: 385px;
   background-size: cover;
@@ -23,12 +23,12 @@
   bottom: 100px;
 }
 
-.banner h2 {
+.show-banner h2 {
   padding-bottom: 3px;
   font-family: 'Alice', serif;
 }
 
-.banner h1 {
+.show-banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);

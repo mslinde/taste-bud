@@ -45,8 +45,8 @@ class EventsController < ApplicationController
 
   def join
     set_event
-    Spot.create(event:@event, user: current_user)
-    flash[:notice] = "You are not authorized to perform this action."
+    Spot.create(event: @event, user: current_user)
+    flash[:notice] = "You're going to this event!"
     redirect_to event_path(@event)
     authorize @event
   end
