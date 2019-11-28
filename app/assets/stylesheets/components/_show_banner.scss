@@ -1,10 +1,31 @@
-_show_banner.scss
-
 .banner {
-  height: 350px;
+  color: white;
+  height: 385px;
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  display: flex;
+}
+
+#join-card {
+  justify-content: flex-end, start;
+  align-items: flex-end;
+  right: 100px;
+  bottom: 100px;
+  background-color: white;
+  border: black 1px solid;
+  width: 200px;
+  height: 100px;
+
+}
+.btn {
+  right: 100px;
+  bottom: 100px;
+}
+
+.banner h2 {
+  padding-bottom: 3px;
+  font-family: 'Alice', serif;
 }
 
 .banner h1 {
@@ -13,12 +34,13 @@ _show_banner.scss
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-size: 100px;
   text-shadow: 1px 5px 2px black;
+  padding-left: 80px;
 }
 
 .details {
-  font-family: 'Fugaz One', cursive;
+  font-family: 'Alice', serif;
 }
 
 .details h2 {
-  font-family: 'Fugaz One', cursive;
+  font-family: 'Alice', serif;
 }
