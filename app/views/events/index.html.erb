@@ -20,9 +20,7 @@
           <%= submit_tag 'Search', name: nil, class: "btn btn-primary btn-search" %>
         </div>
     <% end %>
-        <%= link_to 'View Event Map', root_path(anchor:'map'), class: "btn btn-primary" %>
-
-
+  <a href="#display-map" class="btn btn-primary">View Event Map</a>
   <h3>TasteBudd Events Around the World</h3>
   <div class="row">
     <% @events.each do |event| %>
@@ -50,6 +48,7 @@
     <% end %>
   </div>
 
+  <a name="display-map"></a>
    <div
     class="mapbox"
     id="map"
