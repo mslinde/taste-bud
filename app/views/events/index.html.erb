@@ -19,7 +19,8 @@
       </div>
     <% end %>
 
-  <h3><%= @current_vibe %> Events Near You</h3>
+  <h3> Events Near You</h3>
+  <%= @no_events %>
   <div class="row">
     <% @events.each do |event| %>
       <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
@@ -32,6 +33,7 @@
             <div class="card-trip-pricing">
               <p> Created by <%= event.user.full_name %> </p>
               <p> <%= event.vibe.name %> </p>
+              <p><%= event.distance_from(@location) %> km away</p>
             </div>
             <div class="card-trip-user">
               <% event.attendants.each do |user| %>
