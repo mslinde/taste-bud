@@ -1,18 +1,16 @@
-<%= render 'shared/banner' %>
-
 <div class="container">
-  <div class="d-flex justify-content-center plot-banner">
-    <div class="row">
-      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
-      <% @events.user.each do |event| %>
-        <div class="card-trip">
-          <div>
-            <h2><%= event.title %></h2>
-          </div>
+  <h1 class="">Hello <%= current_user.full_name %></h1>
+  <div class="row">
+    <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card">
+      <h1>My Upcoming Events</h1>
+        <% @events.each do |event| %>
+        <div>
+          <h2><%= event.title %></h2>
         </div>
       </div>
-    <% end %>
     </div>
+  <% end %>
   </div>
 </div>
 
