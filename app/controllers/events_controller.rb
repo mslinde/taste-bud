@@ -52,6 +52,7 @@ class EventsController < ApplicationController
   # def vibe_params
   #   params.require(:event).permit(:vibe_id)
   # end
-   def set_event
+  def set_event
     @event = Event.find(params[:id])
   end
+end
