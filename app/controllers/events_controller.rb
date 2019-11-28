@@ -13,9 +13,13 @@ class EventsController < ApplicationController
         }
       end
     @events = policy_scope(Event).order(created_at: :asc)
-    @events = Vibe.find(params[:vibe_id]).events
+
+
+    @location = params[:search]
+    @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
     @vibes = Vibe.all
     @current_vibe = Vibe.find(params[:vibe_id]).name
+
     authorize @events
   end
 
@@ -48,10 +52,7 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :address, :start_time, :description, :capacity, :vibe_id)
   end
-  # might need for vibe filter
-  # def vibe_params
-  #   params.require(:event).permit(:vibe_id)
-  # end
+
   def set_event
     @event = Event.find(params[:id])
   end
