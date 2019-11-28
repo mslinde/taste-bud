@@ -4,27 +4,17 @@
 
 .clickable {
   line-height: 1.5em;
-  background: #fff;
   padding: 10px;
-  border-radius: 5px;
   flex: 0 0 30%;
   text-align: center;
   font-size: 14px;
-  border: 1px solid #ccc;
-  color: #393e46;
-  &:hover {
-    opacity: .3;
-    cursor: pointer;
-    background: #a8a7a6;
+  color: #000;
 
-  }
   &.active {
   color: white;
   opacity: 1;
   }
-  img {
-    width: 80px;
-  }
+
   p {
     margin: 0;
   }
@@ -32,3 +22,39 @@
     margin: 0;
   }
 }
+
+.radio_item {
+ // display: none !important;
+ margin: 5px 20px;
+}
+
+.label_item {
+opacity: 1;
+color: #000;
+}
+
+.cickable:checked {
+  font-weight: bold;
+}
+
+input[type="radio"]:checked+label { font-weight: bold; }
+
+.clickable img {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  height: 70px;
+}
+.clickable:hover {
+  font-weight: bold;
+}
+
+.banner-search {
+  background-color: #74797A;
+  border-radius: 10px;
+  opacity: .9;
+  margin: 10px 0px;
+}
+
+
+

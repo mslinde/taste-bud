@@ -1,11 +1,17 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://www.themodernman.com/wp-content/uploads/is-it-okay-to-let-your-girlfriend-have-guy-friends.jpg);">
   <div class="container">
-    <h1><strong>TasteBudd</strong> </h1>
-    <p>Never dine alone</p>
-    <a class="btn btn-flat" href="#">Find spontaneous friends go out with!</a>
-    </br>
-    </br>
-    <%= link_to 'View Event Map', root_path(anchor:'map'), class: "btn btn-primary" %>
+    <div class="row">
+      <div class="banner-text col-6">
+        <h1><strong>TasteBudd</strong> </h1>
+        <p>Never dine alone</p>
+        <p><span>Find spontaneous friends go out with!</span></p>
+        </br>
+        </br>
+      </div>
+      <div class="col-5">
+      <%= render 'shared/vibe_search' %>
+      </div>
+    </div>
   </div>
 </div>
 
