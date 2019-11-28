@@ -3,30 +3,23 @@
 <div class="container">
   <div class="d-flex justify-content-center plot-banner">
     <div class="row">
-
-      <div class="col-6">
-        <img src="https://source.unsplash.com/random" alt="Event image">
-      </div>
-      <div class="card bg-light col-6 p-5">
-        <div class="title">
-          <h1><%= @event.title %></h1>
+      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
+      <% @events.user.each do |event| %>
+        <div class="card-trip">
+          <div>
+            <h2><%= event.title %></h2>
+          </div>
         </div>
-          <h2>Vibe :<%= @event.vibe %></h2>
-          <h2>People going: <%= @spot.user.full_name %></h2>
-          <p> Created by <%= @event_user.full_name %> </p>
-          <p>Meeting Time: <%= @event.start_time %></p>
-          <p>Location: <%= @event.address %></p>
-
       </div>
+    <% end %>
     </div>
-
   </div>
 </div>
 
 <!-- Grid setup with 4 tiles (2 on 2) -->
-  <!-- Tiles have margin between them (top/bottom & each side) -->
-  <!-- My Events have links to individual events -->
-  <!-- User can choose to cancel from dashboard tile -->
-  <!-- User can view and navigate to their HOSTED events in My Hosted tile-->
-  <!-- User can update profile information and edit profile picture -->
-  <!-- User can view events they attended in Past Events tile -->
+<!-- Tiles have margin between them (top/bottom & each side) -->
+<!-- My Events have links to individual events -->
+<!-- User can choose to cancel from dashboard tile -->
+<!-- User can view and navigate to their HOSTED events in My Hosted tile-->
+<!-- User can update profile information and edit profile picture -->
+<!-- User can view events they attended in Past Events tile -->
