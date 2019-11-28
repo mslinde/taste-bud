@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @events = Event.geocoded
@@ -44,6 +44,14 @@ class EventsController < ApplicationController
     else
       render :new
     end
+    authorize @event
+  end
+
+  def join
+    set_event
+    Spot.create(event:@event, user: current_user)
+    flash[:notice] = "You are not authorized to perform this action."
+    redirect_to event_path(@event)
     authorize @event
   end
 
