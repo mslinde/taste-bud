@@ -230,6 +230,7 @@ DEPENDENCIES
   bootsnap
   cloudinary (~> 1.9.1)
   devise
+  dotenv
   dotenv-rails
   faker
   font-awesome-sass (~> 5.6.1)

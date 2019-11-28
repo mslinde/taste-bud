@@ -4,18 +4,19 @@ class EventsController < ApplicationController
   def index
     @events = Event.geocoded
 
-    @markers = @events.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
-        # image_url: helpers.asset_url('/assets/images/random.png')
-      }
-    end
-
+      @markers = @events.map do |event|
+        {
+          lat: event.latitude,
+          lng: event.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { event: event })
+          # image_url: helpers.asset_url('/assets/images/random.png')
+        }
+      end
     @events = policy_scope(Event).order(created_at: :asc)
-    @events = Event.all
-
+    @events = Vibe.find(params[:vibe_id]).events
+    @vibes = Vibe.all
+    @current_vibe = Vibe.find(params[:vibe_id]).name
+    authorize @events
   end
 
   def show
@@ -24,6 +25,7 @@ class EventsController < ApplicationController
     @spot = Spot.find_by_id(params[:id])
     authorize @event
   end
+
 
   def new
     @event = Event.new
@@ -46,9 +48,10 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :address, :start_time, :description, :capacity, :vibe_id)
   end
-
+  # might need for vibe filter
+  # def vibe_params
+  #   params.require(:event).permit(:vibe_id)
+  # end
    def set_event
     @event = Event.find(params[:id])
   end
-end
-

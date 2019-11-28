@@ -8,6 +8,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+
 puts "Clearing Database of events.."
 
 Event.destroy_all
@@ -36,16 +37,16 @@ end
 
 puts "Creating 5 vibes..."
 
-v1 = Vibe.create!(name: Faker::FunnyName.name,
-     :icon => 'https://source.unsplash.com/random')
-v2 = Vibe.create!(name: Faker::FunnyName.name,
-     :icon => 'https://source.unsplash.com/random')
-v3 = Vibe.create!(name: Faker::FunnyName.name,
-     :icon => 'https://source.unsplash.com/random')
-v4 = Vibe.create!(name: Faker::FunnyName.name,
-     :icon => 'https://source.unsplash.com/random')
-v5 = Vibe.create!(name: Faker::FunnyName.name,
-     :icon => 'https://source.unsplash.com/random')
+v1 = Vibe.create!(name: "Chill",
+     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
+v2 = Vibe.create!(name: "Sophisticated",
+     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
+v3 = Vibe.create!(name: "Party",
+     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
+v4 = Vibe.create!(name: "Saucy",
+     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
+v5 = Vibe.create!(name: "Adventurous",
+     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
 
 puts 'Creating 20 languages'
 
@@ -72,7 +73,6 @@ events = []
   )
   event.save!
   events << event
-
 end
 
 puts "Creating random number of spots..."
