@@ -13,6 +13,7 @@ class EventPolicy < ApplicationPolicy
     return true
   end
 
+
   def create?
     return true
   end
@@ -20,6 +21,5 @@ class EventPolicy < ApplicationPolicy
   def new?
     create?
   end
-end
 
-#comment
+end
