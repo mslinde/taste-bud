@@ -1,0 +1,30 @@
+.main-container {
+  display: flex;
+  margin: 0 auto;
+  width: 1110px;
+  justify-content: space-between;
+  padding-top: 42px;
+}
+
+
+h2 {
+  padding-bottom: 34px;
+  font-family: 'Alice', serif;
+}
+
+.buddy-left {
+  width: 45%;
+
+}
+
+.detail-right {
+ width: 50%;
+}
+
+.details {
+  width: 400px;
+}
+
+.mapbox {
+  border: black 1px solid;
+}
