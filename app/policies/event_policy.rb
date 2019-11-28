@@ -22,4 +22,7 @@ class EventPolicy < ApplicationPolicy
     create?
   end
 
+  def join?
+    return true
+  end
 end
