@@ -1,8 +1,8 @@
 .banner {
-  height: 500px;
+  // height: 500px;
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 120px 0 150px 0;
 
 }
 
@@ -17,21 +17,22 @@
 }
 
 .banner p {
-  font-size: 24px;
+  font-size: 30px;
   color: white;
   opacity: .8;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   letter-spacing: .25em;
-  margin: 10px 0px;
+  margin: 10px 0 0 0;
 }
 
+.banner p span {
+  letter-spacing: 0em;
+  font-size: 20px;
+  opacity: 1!important;
+}
 
 .btn {
   font-weight: bold;
-  background: #465881;
-  border-radius: 5px;
-  color: rgba(255,255,255,.9);
-
 }
 
 .btn:hover {

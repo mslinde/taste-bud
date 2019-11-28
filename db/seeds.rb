@@ -38,15 +38,15 @@ end
 puts "Creating 5 vibes..."
 
 v1 = Vibe.create!(name: "Chill",
-     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
+     :icon => "Icon_Chilled.png")
 v2 = Vibe.create!(name: "Sophisticated",
-     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
+     :icon => "Icon_Sophisticated.png")
 v3 = Vibe.create!(name: "Party",
-     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
+     :icon => "Icon_Party.png")
 v4 = Vibe.create!(name: "Saucy",
-     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
+     :icon => "Icon_Saucy.png")
 v5 = Vibe.create!(name: "Adventurous",
-     :icon => "https://image.freepik.com/free-icon/cocktail-drink-with-stirrer_318-36713.jpg")
+     :icon => "Icon_Adventure.png")
 
 puts 'Creating 20 languages'
 
