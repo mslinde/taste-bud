@@ -24,6 +24,7 @@
   font-weight: bold;
   margin: 0;
   font-family: 'Sofia', cursive;
+  padding-bottom: 20px;
 }
 
 .card-trip p {
@@ -50,14 +51,14 @@
 
 .card-trip-user {
   position: absolute;
-  bottom: 40px;
+  bottom: 55px;
   left: -1px;
 }
 
 .card-trip-user .avatar-bordered {
   width: 60px;
   border-radius: 50%;
-  box-shadow: 0 7px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
   // border: #000000f2 2px solid;
   margin-left: 5px;
 }
