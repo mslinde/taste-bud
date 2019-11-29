@@ -12,4 +12,3 @@ initMapbox();
 
 window.initAutocomplete = initAutocomplete
 initAutocomplete()
-
