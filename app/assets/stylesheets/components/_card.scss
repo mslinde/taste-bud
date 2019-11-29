@@ -24,7 +24,7 @@
   font-weight: bold;
   margin: 0;
   font-family: 'Sofia', cursive;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 
 
 }
@@ -42,10 +42,9 @@
 .card-trip .card-trip-infos {
   padding: 16px;
   padding-bottom: 9px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  // display: flex;
+  // justify-content: space-between;
+  // position: relative;
 }
 
 .card-trip-infos h2, a {
@@ -71,8 +70,14 @@
 }
 
 .card-trip-pricing {
-  width: 236px;
-  height: 44px;
+    width: 315px;
+    height: 44px;
+}
+
+
+.card-info-vibe-distance {
+  display: flex;
+  justify-content: space-between;
 }
 
 //Comment to be deleted
