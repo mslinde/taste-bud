@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>What kind of vibe are you looking for tonight?</h1>
+    <h1 style="text-align: center;">What kind of vibe are you looking for tonight?</h1>
       <%= form_tag(events_path, method: :get) do %>
         <div class="row justify-content-center">
             <%= text_field_tag :search, params[:search], class: 'form-control banner-searchbar col-4', placeholder: 'Location' %>
@@ -20,13 +20,13 @@
           <%= submit_tag 'Search', name: nil, class: "btn btn-primary btn-search" %>
         </div>
     <% end %>
-  <a href="#display-map" class="btn btn-primary">View Event Map</a>
-  <h3>TasteBudd Events Around the World</h3>
+ <!--  <a href="#display-map" class="btn btn-primary">View Event Map</a> -->
+  <h3 style="text-align: center;">TasteBudd Events Around the World</h3>
   <div class="row">
     <% @events.each do |event| %>
       <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
         <div class="card-trip">
-          <img src="https://source.unsplash.com/random" alt="Event image">
+        <%= image_tag(event.photo) %>
           <div class="card-trip-infos">
             <div>
               <h2><%= link_to event.title, event_path(event) %></h2>
@@ -34,6 +34,7 @@
             <div class="card-trip-pricing">
               <p> Created by <%= event.user.full_name %> </p>
               <p> <%= event.vibe.name %> </p>
+              <p> <%= event.distance_to(params[:search]).truncate(1) %> km away</p>
             </div>
           </div>
             <div class="card-trip-user">

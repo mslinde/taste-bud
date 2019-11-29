@@ -17,9 +17,16 @@ class EventsController < ApplicationController
     @location = params[:search]
     @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
     @current_vibe = Vibe.find(params[:vibe_id]).name
+
     if !@events.present?
       @events = Event.geocoded
+      @events.near(params[:search])
+      if !@events.present?
+        @events = Event.geocoded
+      end
     end
+
+
     # if params[:search].present? && params[:vibe_id].present?
     #   @location = params[:search]
     #   @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
@@ -36,6 +43,7 @@ class EventsController < ApplicationController
     @event_user = @event.user
     @spot = Spot.find_by_id(params[:id])
     authorize @event
+    @markers = [{ lat: @event.latitude, lng: @event.longitude }]
   end
 
 

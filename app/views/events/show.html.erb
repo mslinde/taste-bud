@@ -1,9 +1,9 @@
 <div class="container">
+  <%#= image_tag(@event.photo, class:"img mainbannercontainer", style:"background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4))") %>
   <div class="img mainbannercontainer" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
       <div class="showbannercontainer-left">
         <h1><%= @event.title %></h1>
-        <h2><%= @event.vibe %></h2>
-        <h2><%= @event.start_time %></h2>
+        <h2><%= @event.start_time.strftime("%d of %B, %Y") %> at <%= @event.start_time.strftime("%k:%M")%></h2>
       </div>
       <div class="buttoncontainer-right">
         <% if user %>
@@ -16,6 +16,15 @@
 <div class="main-container">
   <div class="buddy-left">
     <h2>Budds Going</h2>
+
+    <div class="card-product">
+      <%= cl_image_tag @event.user.profile_photo, width: 70, class: "avatar-bordered" %>
+      <div class="card-product-infos">
+        <h3><%= @event.user.full_name %></h3>
+        <p><%= @event.user.current_country %></p>
+      </div>
+    </div>
+
     <% @event.attendants.each do |user| %>
     <div class="card-product">
       <%= cl_image_tag user.profile_photo, width: 70, class: "avatar-bordered" %>
@@ -29,9 +38,10 @@
 
   <div class="detail-right">
     <div class="details">
-      <h2>Location: <%= @event.address %></h2>
-      <p> Created by <%= @event_user.full_name %> </p>
+      <p><strong>Created by:</strong> <%= @event_user.full_name %> </p>
       <p><strong>Event Description: </strong> <%= @event.description %></p>
+      <p><strong>Location:</strong> <%= @event.address %></p>
+
     </div>
     <div class="mapbox" id="map" style="width: 400px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>

@@ -59,9 +59,10 @@ puts 'Creating 20 languages'
   language.save!
 end
 
-puts 'Creating 20 Events'
+puts 'Creating 7 Events'
 
 events = []
+
 20.times do
   event = Event.new(
     title:  Faker::Restaurant.type,
@@ -70,11 +71,106 @@ events = []
     start_time: "#{Date.today}-#{["19:00","20:00"].shuffle.pop}",
     user: users.shuffle.pop,
     vibe: [v1, v2, v3, v4, v5].shuffle.pop,
+
+  e1 = Event.new(
+    title:  "Explore the German Market",
+    address: "Skalitzer Str. 97",
+    description: "Let's go explore a German a market. Get some good food and drinks while we do it.",
+    start_time: "#{Date.today}- 16:00",
+    user: users.sample,
+    vibe: v1,
     capacity: 6,
+    photo: "https://twoandahalfbloggers.files.wordpress.com/2014/12/dscf2096.jpg",
   )
-  event.save!
-  events << event
-end
+  e1.save!
+
+  e2 = Event.new(
+    title:  "A German Night Out!",
+    address: "Oderberger Str. 21, 10435 Berlin",
+    description: "An authentic German restaurant that I've always wanted to check out.",
+    start_time: "#{Date.today}- 19:00",
+    user: users.sample,
+    vibe: v1,
+    capacity: 6,
+    photo: "https://clovereats.files.wordpress.com/2014/08/metzger-4.jpg",
+  )
+  e2.save!
+
+  e3 = Event.new(
+    title:  "Cocktail Night!",
+    address: "Winterfeldtstraße 50, Berlin",
+    description: "See where the night takes us after a few cocktiails.",
+    start_time: "#{Date.today}- 20:00",
+    user: users.sample,
+    vibe: v4,
+    capacity: 6,
+    photo: "https://makemeacocktail.com/blog/wp-content/uploads/2019/02/a1.jpg",
+  )
+  e3.save!
+
+  e4 = Event.new(
+    title:  "Let's be Fancy",
+    address: "Nollendorfstraße 27, 10777 Berlin",
+    description: "Let's pretend to be venture capitalists.",
+    start_time: "#{Date.today}- 20:00",
+    user: users.sample,
+    vibe: v2,
+    capacity: 6,
+    photo: "https://pea-7f65.kxcdn.com/img/image_db/michelin_restaurants_in_rome-942.jpg",
+  )
+  e4.save!
+
+  e5 = Event.new(
+    title:  "Kit Kat - Let's Do it !",
+    address: "Köpenicker Str. 76, 10179 Berlin",
+    description: "You only live once. Let's go take on Kit Kat.",
+    start_time: "#{Date.today}- 23:00",
+    user: users.sample,
+    vibe: v5,
+    capacity: 6,
+    photo: "https://i.pinimg.com/736x/74/12/d3/7412d387ecb00da630ca9026eabbd2e0.jpg",
+  )
+  e5.save!
+
+  e6 = Event.new(
+    title:  "Bier Garten",
+    address: "Kastanienallee 7-910435 Berlin",
+    description: "We have to go to at least one German Bier Garten. Come join me for a few biers.",
+    start_time: "#{Date.today}- 16:00",
+    user: users.sample,
+    vibe: v5,
+    capacity: 6,
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Hofbraeukeller_5906.JPG/1200px-Hofbraeukeller_5906.JPG",
+  )
+  e6.save!
+
+  e7 = Event.new(
+    title:  "Dance!",
+    address: "Köpenicker Str. 70",
+    description: "Let's go explore some clubs in Berlin.",
+    start_time: "#{Date.today}- 22:00",
+    user: users.sample,
+    vibe: v3,
+    capacity: 6,
+    photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
+  )
+  e7.save!
+
+  events == [e1, e2, e3, e4, e5, e6, e7]
+
+# 20.times do
+#   event = Event.new(
+#     title:  Faker::Restaurant.type,
+#     address: Faker::Address.city,
+#     description: Faker::Restaurant.description,
+#     start_time: "#{Date.today}-#{["19:00","20:00"].sample}",
+#     user: users.sample,
+#     vibe: [v1, v2, v3, v4, v5].sample,
+#     capacity: 6,
+#   )
+#   event.save!
+#   events << event
+# end
 
 puts "Creating random number of spots..."
 
@@ -91,6 +187,5 @@ events.each do |event|
 end
 
 puts "Created #{Spot.count} spots"
-
 
 puts 'Finished!'
