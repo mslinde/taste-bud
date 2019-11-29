@@ -10,3 +10,23 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
+.navbar-brand h1 {
+  margin: 0;
+  color: $yellow;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Lily Script One', cursive;
+  padding-left: 0px;
+}
+
+.navbar  {
+  background-color: $green;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: #FDFFC4;
+}

@@ -27,13 +27,21 @@
 
 .showbannercontainer-left h2 {
   padding-bottom: 3px;
-  font-family: 'Alice', serif;
+  // font-family: 'Alice', serif;
 }
 
 .buttoncontainer-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.details {
+  // font-family: 'Alice', serif;
+}
+
+.details h2 {
+  // font-family: 'Alice', serif;
 }
 
 .btn  {
@@ -59,4 +67,3 @@
 //   width: 200px;
 //   height: 100px;
 // }
-
