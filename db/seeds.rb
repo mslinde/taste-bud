@@ -63,14 +63,14 @@ puts 'Creating 7 Events'
 
 events = []
 
-20.times do
-  event = Event.new(
-    title:  Faker::Restaurant.type,
-    address: Faker::Address.city,
-    description: Faker::Restaurant.description,
-    start_time: "#{Date.today}-#{["19:00","20:00"].shuffle.pop}",
-    user: users.shuffle.pop,
-    vibe: [v1, v2, v3, v4, v5].shuffle.pop,
+# 20.times do
+#   event = Event.new(
+#     title:  Faker::Restaurant.type,
+#     address: Faker::Address.city,
+#     description: Faker::Restaurant.description,
+#     start_time: "#{Date.today}-#{["19:00","20:00"].shuffle.pop}",
+#     user: users.shuffle.pop,
+#     vibe: [v1, v2, v3, v4, v5].shuffle.pop,
 
   e1 = Event.new(
     title:  "Explore the German Market",
