@@ -1,7 +1,7 @@
 class EventPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.geocoded
     end
   end
 
@@ -12,7 +12,6 @@ class EventPolicy < ApplicationPolicy
   def show?
     return true
   end
-
 
   def create?
     return true
