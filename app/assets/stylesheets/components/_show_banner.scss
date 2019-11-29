@@ -25,7 +25,7 @@
 
 .showbannercontainer-left h2 {
   padding-bottom: 3px;
-  font-family: 'Alice', serif;
+  // font-family: 'Alice', serif;
 }
 
 .buttoncontainer-right {
@@ -34,7 +34,9 @@
   align-items: flex-end;
 }
 
-.btn-join  {
+
+
+.btn  {
   color: #fdfdfd;
   user-select: none;
   background-color: #30caad;
@@ -57,4 +59,3 @@
 //   width: 200px;
 //   height: 100px;
 // }
-
