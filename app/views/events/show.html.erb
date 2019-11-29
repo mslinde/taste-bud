@@ -1,41 +1,40 @@
 <div class="container">
-  <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
-    <div class="title">
-      <h1><%= @event.title %></h1>
-    </div>
-      <h2>Vibe <%= @event.vibe %></h2>
-      <h2>Meeting Time: <%= @event.start_time %></h2>
-      <div class="container"></div>
-      <div id="join-card">
-        <a class="btn btn-ghost" <%= link_to "Join Event!", join_event_path(@event), method: :post %>></a>
+  <div class="img mainbannercontainer" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
+      <div class="showbannercontainer-left">
+        <h1><%= @event.title %></h1>
+        <h2><%= @event.vibe %></h2>
+        <h2><%= @event.start_time %></h2>
       </div>
-    </div>
+      <div class="buttoncontainer-right">
+        <a class="btn btn-join" <%= link_to "Join Event!", join_event_path(@event), method: :post %></a>
+      </div>
   </div>
+</div>
 </div>
 
 <div class="main-container">
   <div class="buddy-left">
     <h2>Budds Going</h2>
-        <% @event.attendants.each do |user| %>
-        <div class="card-product">
-          <%= cl_image_tag user.profile_photo, width: 70, class: "avatar-bordered" %>
-        <div class="card-product-infos">
-          <h3><%= @spot.user.full_name %></h3>
-            <p>Tagline: <em>"Ho ho ho!"</em></p>
-        </div>
-        </div>
-        <% end %>
+    <% @event.attendants.each do |user| %>
+    <div class="card-product">
+      <%= cl_image_tag user.profile_photo, width: 70, class: "avatar-bordered" %>
+      <div class="card-product-infos">
+        <h3><%= @spot.user.full_name %></h3>
+        <p>Tagline: <em>"Ho ho ho!"</em></p>
+      </div>
+    </div>
+    <% end %>
   </div>
 
   <div class="detail-right">
     <div class="details">
       <h2>Location: <%= @event.address %></h2>
-        <p> Created by <%= @event_user.full_name %> </p>
-        <p><strong>Event Description: </strong> <%= @event.description %></p>
+      <p> Created by <%= @event_user.full_name %> </p>
+      <p><strong>Event Description: </strong> <%= @event.description %></p>
     </div>
-      <div class="mapbox" id="map" style="width: 400px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    </div>
+    <div class="mapbox" id="map" style="width: 400px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+</div>
 </div>
 
 
