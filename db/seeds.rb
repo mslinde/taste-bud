@@ -70,6 +70,7 @@ events = []
     user: users.sample,
     vibe: v1,
     capacity: 6,
+    photo: "https://twoandahalfbloggers.files.wordpress.com/2014/12/dscf2096.jpg",
   )
   e1.save!
 
@@ -81,6 +82,7 @@ events = []
     user: users.sample,
     vibe: v1,
     capacity: 6,
+    photo: "https://clovereats.files.wordpress.com/2014/08/metzger-4.jpg",
   )
   e2.save!
 
@@ -92,6 +94,7 @@ events = []
     user: users.sample,
     vibe: v4,
     capacity: 6,
+    photo: "https://makemeacocktail.com/blog/wp-content/uploads/2019/02/a1.jpg",
   )
   e3.save!
 
@@ -103,6 +106,7 @@ events = []
     user: users.sample,
     vibe: v2,
     capacity: 6,
+    photo: "https://pea-7f65.kxcdn.com/img/image_db/michelin_restaurants_in_rome-942.jpg",
   )
   e4.save!
 
@@ -114,6 +118,7 @@ events = []
     user: users.sample,
     vibe: v5,
     capacity: 6,
+    photo: "https://i.pinimg.com/736x/74/12/d3/7412d387ecb00da630ca9026eabbd2e0.jpg",
   )
   e5.save!
 
@@ -125,6 +130,7 @@ events = []
     user: users.sample,
     vibe: v5,
     capacity: 6,
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Hofbraeukeller_5906.JPG/1200px-Hofbraeukeller_5906.JPG",
   )
   e6.save!
 
@@ -136,6 +142,7 @@ events = []
     user: users.sample,
     vibe: v3,
     capacity: 6,
+    photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
   )
   e7.save!
 
@@ -173,22 +180,22 @@ end
 
 puts "Created #{Spot.count} spots"
 
-puts "Creating photo seeds..."
+# puts "Creating photo seeds..."
 
-photo_url = "https://media.istockphoto.com/photos/handsome-and-happy-picture-id516065432?k=6&m=516065432&s=612x612&w=0&h=0On1LTM9MSRBK7DlQPd71uakgMR74moV4LSgv-ZLQmk="
-photo_url = "https://static6.depositphotos.com/1051698/612/i/950/depositphotos_6124126-stock-photo-african-woman-beautiful-face.jpg"
-photo_url = "https://media.istockphoto.com/photos/mature-businessman-smiling-over-white-background-picture-id685132245?k=6&m=685132245&s=612x612&w=0&h=KO9YNXHtaYV4NGqoGQcTd5Aq8zD0Dl06knQQGP0BrwM="
-photo_url = ""
-photo_url = ""
-photo_url = ""
-photo_url = ""
-photo_url = ""
-photo_url = ""
-photo_url = ""
-photo_url = ""
-photo_url = ""
+# photo_url = "https://media.istockphoto.com/photos/handsome-and-happy-picture-id516065432?k=6&m=516065432&s=612x612&w=0&h=0On1LTM9MSRBK7DlQPd71uakgMR74moV4LSgv-ZLQmk="
+# photo_url = "https://static6.depositphotos.com/1051698/612/i/950/depositphotos_6124126-stock-photo-african-woman-beautiful-face.jpg"
+# photo_url = "https://media.istockphoto.com/photos/mature-businessman-smiling-over-white-background-picture-id685132245?k=6&m=685132245&s=612x612&w=0&h=KO9YNXHtaYV4NGqoGQcTd5Aq8zD0Dl06knQQGP0BrwM="
+# # photo_url = ""
+# # photo_url = ""
+# # photo_url = ""
+# # photo_url = ""
+# # photo_url = ""
+# # photo_url = ""
+# # photo_url = ""
+# # photo_url = ""
+# # photo_url = ""
 
 
-"puts "Created photo seeds.
+# puts "Created photo seeds"
 
 puts 'Finished!'

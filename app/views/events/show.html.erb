@@ -1,9 +1,9 @@
 <div class="container">
+  <%#= image_tag(@event.photo, class:"img mainbannercontainer", style:"background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4))") %>
   <div class="img mainbannercontainer" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
       <div class="showbannercontainer-left">
         <h1><%= @event.title %></h1>
-        <h2><%= @event.vibe %></h2>
-        <h2><%= @event.start_time %></h2>
+        <h2><%= @event.start_time.strftime("%d of %B, %Y") %> at <%= @event.start_time.strftime("%k:%M")%></h2>
       </div>
       <div class="buttoncontainer-right">
         <a class="btn-join" <%= link_to "Join Event!", join_event_path(@event), method: :post %></a>
