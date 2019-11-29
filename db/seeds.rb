@@ -90,4 +90,22 @@ end
 
 puts "Created #{Spot.count} spots"
 
+puts "Creating photo seeds..."
+
+photo_url = "https://media.istockphoto.com/photos/handsome-and-happy-picture-id516065432?k=6&m=516065432&s=612x612&w=0&h=0On1LTM9MSRBK7DlQPd71uakgMR74moV4LSgv-ZLQmk="
+photo_url = "https://static6.depositphotos.com/1051698/612/i/950/depositphotos_6124126-stock-photo-african-woman-beautiful-face.jpg"
+photo_url = "https://media.istockphoto.com/photos/mature-businessman-smiling-over-white-background-picture-id685132245?k=6&m=685132245&s=612x612&w=0&h=KO9YNXHtaYV4NGqoGQcTd5Aq8zD0Dl06knQQGP0BrwM="
+photo_url = ""
+photo_url = ""
+photo_url = ""
+photo_url = ""
+photo_url = ""
+photo_url = ""
+photo_url = ""
+photo_url = ""
+photo_url = ""
+
+
+"puts "Created photo seeds.
+
 puts 'Finished!'

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :events, except: [:update, :destroy] do
     member do
       post :join
+      delete :cancel
     end
   end
 
