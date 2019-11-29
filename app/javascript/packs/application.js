@@ -11,5 +11,5 @@ import { initAutocomplete } from "../plugins/init_autocomplete.js";
 initMapbox();
 
 window.initAutocomplete = initAutocomplete
-initAutocomplete()
+initAutocomplete();
 
