@@ -1,5 +1,5 @@
 class EventPolicy < ApplicationPolicy
-  class Scope < Sscope
+  class Scope < Scope
     def resolve
       scope.all
     end

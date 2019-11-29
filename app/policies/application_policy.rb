@@ -34,7 +34,7 @@ class ApplicationPolicy
     false
   end
 
-  class Sscope
+  class Scope
     attr_reader :user, :scope
 
     def initialize(user, scope)
