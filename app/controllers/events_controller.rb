@@ -65,9 +65,16 @@ class EventsController < ApplicationController
   def join
     set_event
     Spot.create(event: @event, user: current_user)
-    flash[:notice] = "You're going to this event!"
-    redirect_to event_path(@event)
+    redirect_to event_path(@event), notice: "You're going to this event!"
     authorize @event
+  end
+
+  def cancel
+    set_event
+    @spot = spot.find(params[:id])
+    Spot.destroy(event: @event, user: current_user)
+    redirect_to event_path(@event), notice: "You are no longer going"
+    authorize @spot
   end
 
   private

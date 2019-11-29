@@ -6,7 +6,7 @@
         <h2><%= @event.start_time %></h2>
       </div>
       <div class="buttoncontainer-right">
-        <a class="btn btn-join" <%= link_to "Join Event!", join_event_path(@event), method: :post %></a>
+        <a class="btn-join" <%= link_to "Join Event!", join_event_path(@event), method: :post %></a>
       </div>
   </div>
 </div>
@@ -20,7 +20,7 @@
       <%= cl_image_tag user.profile_photo, width: 70, class: "avatar-bordered" %>
       <div class="card-product-infos">
         <h3><%= @spot.user.full_name %></h3>
-        <p>Tagline: <em>"Ho ho ho!"</em></p>
+        <p><%= @spot.user.current_country %></p>
       </div>
     </div>
     <% end %>
