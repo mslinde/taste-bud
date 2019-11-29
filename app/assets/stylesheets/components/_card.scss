@@ -6,11 +6,11 @@
 .card-trip {
   overflow: hidden;
   background: white;
+  background-color: $green;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 20px;
   padding-bottom: 10px;
   position: relative
-
 }
 
 .card-trip > img {
@@ -25,13 +25,17 @@
   margin: 0;
   font-family: 'Sofia', cursive;
   padding-bottom: 20px;
+
+
 }
 
 .card-trip p {
   font-size: 15px;
   opacity: .9;
   margin: 0;
-  font-family: 'Alice', serif;
+  color: white;
+
+  // font-family: 'Alice', serif;
 }
 
 
@@ -42,7 +46,10 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
 
+.card-trip-infos h2, a {
+  color: #FDFFC4;
 }
 
 .card-trip-infos .card-trip-user {
@@ -61,6 +68,11 @@
   box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
   // border: #000000f2 2px solid;
   margin-left: 5px;
+}
+
+.card-trip-pricing {
+  width: 236px;
+  height: 44px;
 }
 
 //Comment to be deleted
