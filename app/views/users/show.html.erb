@@ -6,9 +6,10 @@
       <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
         <div class="dashboard-card">
           <h2>My Upcoming Events</h2>
-          <% @events.each do |event| %>
+          <% current_user.spots.each do |spot| %>
             <div>
-              <h3><%= event.title %></h3>
+              <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
+              <h3><%= spot.event.title %></h3>
             </div>
           <% end %>
         </div>
@@ -16,21 +17,13 @@
       <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
         <div class="dashboard-card">
           <h2>My Hosted Events</h2>
+          <% @events.each do |event| %>
+          <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
+            <h3><%= event.title %></h3>
+          <% end %>
         </div>
       </div>
     </div>
-    <!-- <div class="row justify-content-center">
-      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="dashboard-card">
-        <h1>Events I Have Attended</h1>
-        </div>
-      </div>
-      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="dashboard-card">
-          <h1>Events I Have Hosted</h1>
-        </div>
-      </div>
-    </div> -->
   </div>
 </div>
 
