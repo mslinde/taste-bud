@@ -41,7 +41,7 @@ class EventsController < ApplicationController
   def show
     set_event
     @event_user = @event.user
-    @spot = Spot.find_by_id(params[:id])
+    # @spot = Spot.find_by_id(params[:id]) || Spot.new
     authorize @event
     @markers = [{ lat: @event.latitude, lng: @event.longitude }]
   end

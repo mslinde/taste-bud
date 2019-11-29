@@ -28,8 +28,8 @@
     <div class="card-product">
       <%= cl_image_tag user.profile_photo, width: 70, class: "avatar-bordered" %>
       <div class="card-product-infos">
-        <h3><%= @spot.user.full_name %></h3>
-        <p><%= @spot.user.current_country %></p>
+        <h3><%= user.full_name %></h3>
+        <p><%= user.current_country %></p>
       </div>
     </div>
     <% end %>
