@@ -1,16 +1,36 @@
 <div class="container">
-  <h1 class="">Hello <%= current_user.full_name %></h1>
-  <div class="row">
-    <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
-      <div class="card">
-      <h1>My Upcoming Events</h1>
-        <% @events.each do |event| %>
-        <div>
-          <h2><%= event.title %></h2>
+  <div class="dashboard-container">
+    <h1 class="">Hello <%= current_user.full_name %></h1>
+    <%= link_to "Edit Profile", edit_user_registration_path(current_user[:id]) %>
+    <div class="row">
+      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="dashboard-card">
+          <h2>My Upcoming Events</h2>
+          <% @events.each do |event| %>
+            <div>
+              <h3><%= event.title %></h3>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="dashboard-card">
+          <h2>My Hosted Events</h2>
         </div>
       </div>
     </div>
-  <% end %>
+    <!-- <div class="row justify-content-center">
+      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="dashboard-card">
+        <h1>Events I Have Attended</h1>
+        </div>
+      </div>
+      <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="dashboard-card">
+          <h1>Events I Have Hosted</h1>
+        </div>
+      </div>
+    </div> -->
   </div>
 </div>
 
