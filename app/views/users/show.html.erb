@@ -9,7 +9,7 @@
           <% current_user.spots.each do |spot| %>
             <div>
               <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
-              <h3><%= spot.event.title %></h3>
+              <h3><%= link_to spot.event.title, event_path(spot.event.id) %></h3>
             </div>
           <% end %>
         </div>
@@ -19,7 +19,7 @@
           <h2>My Hosted Events</h2>
           <% @events.each do |event| %>
           <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
-            <h3><%= event.title %></h3>
+            <h3><%= link_to event.title, event_path(event.id) %></h3>
           <% end %>
         </div>
       </div>
