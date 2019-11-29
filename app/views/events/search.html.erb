@@ -13,7 +13,7 @@
               <h2><%= event.title %></h2>
             </div>
             <h2 class="card-trip-pricing">
-              <p> Created by <%= event.user.full_name %> </p></h2>
+              <p> By <%= event.user.full_name %> </p></h2>
               <% event.attendants.each do |user| %>
               <div class="card-trip-user avatar-bordered">
               <%= cl_image_tag(user.profile_photo) %>

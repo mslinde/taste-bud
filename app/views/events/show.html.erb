@@ -40,7 +40,6 @@
       <p><strong>Created by:</strong> <%= @event_user.full_name %> </p>
       <p><strong>Event Description: </strong> <%= @event.description %></p>
       <p><strong>Location:</strong> <%= @event.address %></p>
-
     </div>
     <div class="mapbox" id="map" style="width: 400px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
