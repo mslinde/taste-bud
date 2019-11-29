@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @events = policy_scope(Event).order(created_at: :asc)
+    @events = policy_scope(Event).order(created_at: :asc).geocoded
     @vibes = Vibe.all
 
     @markers = @events.map do |event|
@@ -26,6 +26,7 @@ class EventsController < ApplicationController
       end
     end
 
+#test
 
     # if params[:search].present? && params[:vibe_id].present?
     #   @location = params[:search]
