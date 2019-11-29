@@ -26,7 +26,6 @@ class EventsController < ApplicationController
       end
     end
 
-#test
 
     # if params[:search].present? && params[:vibe_id].present?
     #   @location = params[:search]
@@ -42,7 +41,6 @@ class EventsController < ApplicationController
   def show
     set_event
     @event_user = @event.user
-    # @spot = Spot.find_by_id(params[:id]) || Spot.new
     authorize @event
     @markers = [{ lat: @event.latitude, lng: @event.longitude }]
   end
