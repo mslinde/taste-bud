@@ -12,7 +12,7 @@
   padding-bottom: 10px;
   position: relative;
   height: 300px;
-
+  border-radius: 5px;
 }
 
 .card-trip > img {
@@ -28,8 +28,23 @@
   font-family: 'Sofia', cursive;
   padding-bottom: 5px;
   padding-top: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: 220px;
+  left: 16px;
 
 
+}
+
+.card-trip p.time {
+  position: absolute;
+  right: 16px;
+  bottom: 70px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: right;
 }
 
 .card-trip p {
@@ -37,7 +52,6 @@
   opacity: .9;
   margin: 0;
   color: white;
-
   // font-family: 'Alice', serif;
 }
 
@@ -45,8 +59,8 @@
 .card-trip .card-trip-infos {
   padding: 16px;
   padding-bottom: 9px;
-  padding-top: 29px;
-  display: flex;
+  padding-top: 10px;
+  // display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
@@ -80,13 +94,24 @@
 }
 
 .card-trip-pricing {
-    width: 315px;
-    height: 44px;
+  width: 315px;
+  height: 44px;
+  padding: 15px 0 0 0;
+}
+
+.card-info-vibe-distance img {
+  height: 30px;
 }
 
 
 .card-info-vibe-distance {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  align-items: center;
+  margin: 10px 0 0 0;
+
+  p {
+    margin: 0 0 0 5px;
+  }
 }
 
