@@ -21,6 +21,12 @@
   object-fit: cover;
 }
 
+.card-trip > a img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .card-trip h2 {
   font-size: 20px;
   font-weight: bold;
@@ -37,14 +43,13 @@
 }
 
 .card-trip p.time {
-  position: absolute;
-  right: 16px;
-  bottom: 70px;
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.8);
   padding: 5px;
   border-radius: 5px;
   text-align: right;
+
+  strong {
+    font-weight: bold;
+  }
 }
 
 .card-trip p {
@@ -52,6 +57,7 @@
   opacity: .9;
   margin: 0;
   color: white;
+  text-align: right;
   // font-family: 'Alice', serif;
 }
 
@@ -97,21 +103,27 @@
   width: 315px;
   height: 44px;
   padding: 15px 0 0 0;
-}
-
-.card-info-vibe-distance img {
-  height: 30px;
+  margin-right: 0px!important;
 }
 
 
 .card-info-vibe-distance {
   display: flex;
+  justify-content: space-between;
+}
+
+.card-info-vibe {
+  display: flex;
   justify-content: left;
   align-items: center;
-  margin: 10px 0 0 0;
+  margin: 10px 0 10px 0;
 
   p {
     margin: 0 0 0 5px;
+  }
+
+  img {
+    height: 30px;
   }
 }
 

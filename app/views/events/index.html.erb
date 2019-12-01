@@ -32,32 +32,39 @@
   <h3 style="text-align: center;">TasteBudd Events Around the World</h3>
   <div class="row">
     <% @events.each do |event| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="card-trip">
-        <%= image_tag(event.photo) %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= link_to event.title, event_path(event) %></h2>
 
-            </div>
-            <div class="card-trip-pricing">
-              <p> Created by <%= event.user.full_name %> </p>
-              <p class="time">Starts at <%= event.start_time.hour %> </br>
-              <%= event.distance_to(params[:search]).truncate(1) %> km away</p>
-              <div class ="card-info-vibe-distance">
-                <%= image_tag(event.vibe.icon) %>
-                <p> <%= event.vibe.name %>  </p>
-                <p> </p>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="card-trip">
+            <%= link_to event_path(event) do %>
+              <%= image_tag(event.photo) %>
+            <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= link_to event.title, event_path(event) %></h2>
+
+              </div>
+              <div class="card-trip-pricing">
+                <p> Created by <%= event.user.full_name %> </p>
+                <div class="card-info-vibe-distance">
+                  <div class ="card-info-vibe">
+                    <%= image_tag(event.vibe.icon) %>
+                    <p> <%= event.vibe.name %>  </p>
+                  </div>
+                  <div class="card-info-distance">
+                    <p class="time"><strong>Starts at <%= event.start_time.hour %> </strong> </br>
+                    <%= event.distance_to(params[:search]).truncate(1) %> km away</p>
+                  </div>
+                </div>
               </div>
             </div>
+              <div class="card-trip-user">
+                <% event.attendants.each do |user| %>
+                  <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
+                <% end %>
+              </div>
           </div>
-            <div class="card-trip-user">
-              <% event.attendants.each do |user| %>
-                <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
-              <% end %>
-            </div>
         </div>
-      </div>
+
     <% end %>
   </div>
 

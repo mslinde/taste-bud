@@ -53,3 +53,14 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+a.sign-up.nav-link.btn {
+  color: $green;
+  user-select: none;
+  background-color: $yellow;
+  padding: 5px 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 10px;
+  border: none !important;
+}
