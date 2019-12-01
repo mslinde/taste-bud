@@ -7,24 +7,39 @@
 }
 
 h2 {
-  padding-bottom: 34px;
+  // padding-bottom: 34px;
   // font-family: 'Alice', serif;
 }
 
 .buddy-left {
-  width: 45%;
+  // width: 45%;
 
 }
 
 .detail-right {
- width: 50%;
+ // width: 50%;
 }
 
 .details {
-  width: 400px;
+  // width: 400px;
 }
 
 .details h2 {
   font-family: 'Alice', serif;
 }
 
+.buttoncontainer-right {
+  display: block;
+  background: #fff;
+  border-radius: 5px;
+  /* border: 1px solid; */
+  padding: 40px 30px;
+  margin: 5px 130px 10px 130px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  justify-content: center;
+
+  p {
+    font-weight: bold;
+  }
+}

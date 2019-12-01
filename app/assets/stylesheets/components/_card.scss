@@ -38,6 +38,12 @@
   position: absolute;
   bottom: 220px;
   left: 16px;
+  transition: opacity 0.3s ease;
+
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 
 
 }
@@ -57,7 +63,7 @@
   opacity: .9;
   margin: 0;
   color: white;
-  text-align: right;
+  text-align: left;
   // font-family: 'Alice', serif;
 }
 

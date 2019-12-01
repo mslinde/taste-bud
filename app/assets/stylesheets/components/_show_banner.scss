@@ -7,10 +7,10 @@
 
 .showbannercontainer-left {
   color: white;
-  height: 385px;
+  // height: 385px;
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 10px 0;
   // width: 50%;
   text-align: center;
 }
@@ -28,14 +28,6 @@
   padding-bottom: 3px;
   // font-family: 'Alice', serif;
 }
-
-.buttoncontainer-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-
 
 .btn  {
   color: $yellow;
