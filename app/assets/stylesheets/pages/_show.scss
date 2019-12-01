@@ -1,10 +1,10 @@
-.main-container {
-  display: flex;
-  margin: 0 auto;
-  width: 1110px;
-  justify-content: space-between;
-  padding-top: 42px;
-}
+// .main-container {
+//   display: flex;
+//   margin: 0 auto;
+//   width: 1110px;
+//   justify-content: space-between;
+//   padding-top: 42px;
+// }
 
 h2 {
   // padding-bottom: 34px;
@@ -34,12 +34,16 @@ h2 {
   border-radius: 5px;
   /* border: 1px solid; */
   padding: 40px 30px;
-  margin: 5px 130px 10px 130px;
+  margin: 5px 75px 20px 75px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   justify-content: center;
 
   p {
     font-weight: bold;
+  }
+
+  .btn {
+    padding: 10px 10px;
   }
 }

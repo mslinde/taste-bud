@@ -1,16 +1,14 @@
 <div class="container">
-  <div class="row">
-    <div class="search-bar">
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-col-3">
+  <div class="search-bar">
+    <div class="row outer">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
         <%= form_tag(events_path, method: :get) do %>
-          <div class="">
-              <%= text_field_tag :search, params[:search], class: 'form-control banner-searchbar', placeholder: 'Enter Your Location' %>
-          </div>
+        <%= text_field_tag :search, params[:search], class: 'form-control banner-searchbar', placeholder: 'Enter Your Location' %>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <div class="row justify-content-center">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+          <div class="row justify-content-center border-0 m-0">
                 <% @vibes.each do |vibe| %>
-                  <div class="d-flex justify-content-center pt-4 col-1 mx-3 p-2">
+                  <div class="d-flex justify-content-center pt-0 col-1 mx-3 p-2">
                     <div class="vibes clickable">
                       <%#= image_tag(vibe.icon) %>
                       <%= radio_button_tag :vibe_id, vibe.id, (vibe.id), class:"radio_item" %>
@@ -20,20 +18,20 @@
                 <% end %>
           </div>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-          <div class="row justify-content-center my-2">
-            <%= submit_tag 'Search', name: nil, class: "btn btn-primary btn-search" %>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+          <div class="justify-content-center my-2">
+            <%= submit_tag 'Find Events', name: nil, class: "btn btn-primary btn-search" %>
           </div>
       <% end %>
       </div>
     </div>
   </div>
- <!--  <a href="#display-map" class="btn btn-primary">View Event Map</a> -->
+  <!--  <a href="#display-map" class="btn btn-primary">View Event Map</a> -->
   <h3 style="text-align: center;">TasteBudd Events Around the World</h3>
   <div class="row">
     <% @events.each do |event| %>
 
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
           <div class="card-trip">
             <%= link_to event_path(event), target: :_blank do %>
               <%= image_tag(event.photo) %>
