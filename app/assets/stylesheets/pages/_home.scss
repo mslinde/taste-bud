@@ -37,4 +37,69 @@ body {
   border: none !important;
 
   }
+
+
 }
+
+
+
+
+.vibes input[type=checkbox] {
+  // display:none;
+}
+
+.clickable {
+  line-height: 1.5em;
+  padding: 10px;
+  flex: 0 0 30%;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+
+  &.active {
+  color: white;
+  opacity: 1;
+  }
+
+  p {
+    margin: 0;
+  }
+  label {
+    margin: 0;
+  }
+}
+
+.radio_item {
+ // display: none !important;
+ margin: 5px 20px;
+}
+
+.label_item {
+opacity: 1;
+color: #000;
+}
+
+.cickable:checked {
+  font-weight: bold;
+}
+
+input[type="radio"]:checked+label { font-weight: bold; }
+
+.clickable img {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  height: 70px;
+}
+.clickable:hover {
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
