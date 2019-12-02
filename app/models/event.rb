@@ -6,6 +6,7 @@ class Event < ApplicationRecord
   has_many :spots, dependent: :destroy
   has_many :attendants, through: :spots, source: :user
   belongs_to :user
+  has_many :reviews, dependent: :destroy
 
   validates :start_time, inclusion: { in: (Date.today..Date.tomorrow) }
 end

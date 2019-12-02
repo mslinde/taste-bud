@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
     create_table :reviews do |t|
       t.text :comment
       t.integer :vibe
-      t.integer :location
+      t.integer :neighborhood
       t.integer :venue
       t.boolean :attended
       t.references :user, foreign_key: true
