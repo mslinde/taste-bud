@@ -8,10 +8,17 @@ class SpotsController < ApplicationController
     set_spot
   end
 
+  def destroy
+    set_spot
+    @spot.destroy
+    redirect_to user_path(current_user)
+    authorize @spot
+  end
+
 private
 
   def set_spot
-    @spot = spot.find(params[:id])
+    @spot = Spot.find(params[:id])
   end
 end
 

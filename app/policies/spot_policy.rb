@@ -20,4 +20,8 @@ class EventPolicy < ApplicationPolicy
   def new?
     create?
   end
+
+  def destroy?
+    record.user == user
+  end
 end

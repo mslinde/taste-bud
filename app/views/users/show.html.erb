@@ -15,7 +15,7 @@
                 <p><%= link_to spot.event.title, event_path(spot.event.id) %></br>
                 <%= spot.event.start_time.strftime("%B %d, %Y") %> at <%= spot.event.start_time.strftime("%k:%M") %></p>
                 <div class="event-list-options">
-                  <%= link_to "Cancel", cancel_event(@spot), method: :delete, class: "btn btn-danger" %>
+                  <%= link_to "Cancel", spot_path(spot.id), method: :delete, class: "btn btn-danger" %>
                   <%# end %>
                 </div>
               </div>
