@@ -1,7 +1,6 @@
 <div class="container">
   <div class="dashboard-container">
     <h1 class="">Hello <%= current_user.full_name %></h1>
-
     <%= link_to edit_user_registration_path(current_user[:id]) do %>
       <i class="fas fa-pencil-alt"> Edit Profile</i>
     <% end %>
