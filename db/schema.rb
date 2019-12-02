@@ -44,6 +44,20 @@ ActiveRecord::Schema.define(version: 2019_12_02_095113) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "vibe"
+    t.integer "neighborhood"
+    t.integer "venue"
+    t.boolean "attended"
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_reviews_on_event_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "spots", force: :cascade do |t|
     t.bigint "event_id"
     t.bigint "user_id"
@@ -88,6 +102,8 @@ ActiveRecord::Schema.define(version: 2019_12_02_095113) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "reviews", "events"
+  add_foreign_key "reviews", "users"
   add_foreign_key "spots", "events"
   add_foreign_key "spots", "users"
   add_foreign_key "user_languages", "languages"
