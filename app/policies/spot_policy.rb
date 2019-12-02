@@ -1,4 +1,4 @@
-class EventPolicy < ApplicationPolicy
+class SpotPolicy < ApplicationPolicy
   class Scope < PunditScope
     def resolve
       scope.all
@@ -22,6 +22,6 @@ class EventPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    true
   end
 end
