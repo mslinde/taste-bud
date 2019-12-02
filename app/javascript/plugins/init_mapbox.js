@@ -9,8 +9,9 @@ const buildMap = () => {
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10',
     center: [-74.50, 40],
-    zoom: 9
+    zoom: 1
   });
+  map.scrollZoom.disable();
 };
 
 const addMarkersToMap = (map, markers) => {
@@ -40,5 +41,7 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
   }
 };
+
+
 
 export { initMapbox };
