@@ -27,7 +27,7 @@
           <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
           <div class="card-product-infos">
             <h3><%= user.full_name %></h3>
-            <p><%= (Date.today - user.birthday).to_i / 365 %> years old</p>
+            <!-- <p><%#= (Date.today - user.birthday).to_i / 365 %> years old</p> -->
             <p>Lives in <%= user.current_country %>, from <%= user.origin_country %></p>
           </div>
         </div>
