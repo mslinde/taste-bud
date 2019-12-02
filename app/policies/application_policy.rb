@@ -34,8 +34,8 @@ class ApplicationPolicy
     false
   end
 
-
-  class Scope
+  class PunditScope
+    #Dealing with heroku caching shit
     attr_reader :user, :scope
 
     def initialize(user, scope)
@@ -49,4 +49,3 @@ class ApplicationPolicy
   end
 end
 
-#Delete this comment later, just used for push.
