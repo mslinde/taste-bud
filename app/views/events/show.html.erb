@@ -40,7 +40,7 @@
           <% if current_user %>
             <%= link_to "Join Event!", join_event_path(@event), method: :post, class: "btn btn-join" %>
           <% else %>
-            <%= link_to "Sign up to Join!", new_user_registration_path, method: :post, class: "btn btn-join" %>
+            <%= link_to "Sign up to Join!", new_user_registration_path, class: "btn btn-join" %>
           <% end %>
         </div>
 
