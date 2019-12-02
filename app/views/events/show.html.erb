@@ -1,51 +1,59 @@
+<div class="img mainbannercontainer" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
+  <div class="showbannercontainer-left">
+    <h1><%= @event.title %></h1>
+    <h2><%= @event.start_time.strftime("%d of %B, %Y") %> at <%= @event.start_time.strftime("%k:%M")%></h2>
+  </div>
+</div>
+
 <div class="container">
-  <%#= image_tag(@event.photo, class:"img mainbannercontainer", style:"background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4))") %>
-  <div class="img mainbannercontainer" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
-    <div class="showbannercontainer-left">
-      <h1><%= @event.title %></h1>
-      <h2><%= @event.start_time.strftime("%d of %B, %Y") %> at <%= @event.start_time.strftime("%k:%M")%></h2>
-    </div>
-    <div class="buttoncontainer-right">
-      <% if current_user %>
-      <%= link_to "Join Event!", join_event_path(@event), method: :post, class: "btn-join" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-</div>
+  <!-- <div class="main-container"> -->
+    <div class="row">
+      <div class="buddy-left  col-xm-12 col-md-6">
+        <h2><%= @event.title %></h2>
+        <p><%= @event.start_time.strftime("%B %d") %> at <%= @event.start_time.strftime("%k:%M")%> at <%= @event.address %></p>
 
-<div class="main-container">
-  <div class="buddy-left">
-    <h2>Budds Going</h2>
+        <h3>Budds Going</h3>
 
-    <div class="card-product">
-      <%= cl_image_tag @event.user.profile_photo, width: 70, class: "avatar-bordered" %>
-      <div class="card-product-infos">
-        <h3><%= @event.user.full_name %></h3>
-        <p><%= @event.user.current_country %></p>
+        <div class="card-product">
+          <%= cl_image_tag @event.user.profile_photo, class: "avatar-bordered" %>
+          <div class="card-product-infos">
+            <h3><%= @event.user.full_name %> (creator)</h3>
+            <p><%= (Date.today - @event.user.birthday).to_i / 365 %> years old</p>
+            <p>Lives in <%= @event.user.current_country %>, from <%= @event.user.origin_country %></p>
+          </div>
+        </div>
+        <% @event.attendants.each do |user| %>
+        <div class="card-product">
+          <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
+          <div class="card-product-infos">
+            <h3><%= user.full_name %></h3>
+            <p><%= (Date.today - user.birthday).to_i / 365 %> years old</p>
+            <p>Lives in <%= user.current_country %>, from <%= user.origin_country %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="detail-right col-xs-12 col-md-6">
+       <div class="buttoncontainer-right">
+        <p><%= @event.capacity - @event.attendants.count - 1 %> <%= "Spot".pluralize(@event.capacity - @event.attendants.count) %> Left!</p>
+          <% if current_user %>
+            <%= link_to "Join Event!", join_event_path(@event), method: :post, class: "btn btn-join" %>
+          <% else %>
+            <%= link_to "Sign up to Join!", new_user_registration_path, method: :post, class: "btn btn-join" %>
+          <% end %>
+        </div>
+
+        <div class="details">
+          <p><strong>Created by:</strong></br><%= @event_user.full_name %> </p>
+          <p><strong>About the Event:</strong></br><%= @event.description %></p>
+          <p><strong>When:</strong></br><%= @event.start_time.strftime("%B %d") %> at <%= @event.start_time.strftime("%k:%M")%></p>
+          <p><strong>Location:</strong></br><%= @event.address %></p>
+        </div>
+        <div class="mapbox" id="map" style="width: 400px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
       </div>
     </div>
-
-    <% @event.attendants.each do |user| %>
-    <div class="card-product">
-      <%= cl_image_tag user.profile_photo, width: 70, class: "avatar-bordered" %>
-      <div class="card-product-infos">
-        <h3><%= user.full_name %></h3>
-        <p><%= user.current_country %></p>
-      </div>
     </div>
-    <% end %>
-  </div>
+<!--   </div> -->
 
-  <div class="detail-right">
-    <div class="details">
-      <p><strong>Created by:</strong> <%= @event_user.full_name %> </p>
-      <p><strong>Event Description: </strong> <%= @event.description %></p>
-      <p><strong>Location:</strong> <%= @event.address %></p>
-    </div>
-    <div class="mapbox" id="map" style="width: 400px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
 </div>
-</div>
-
-

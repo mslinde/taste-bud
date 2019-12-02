@@ -1,3 +1,55 @@
-.user-dashboard img {
-  height: 70px;
+
+  a .fas {
+    color:$green;
+    transition: .05s ease;
+    margin: 0px 10px;
+  }
+
+  a:hover .fas {
+    color: $gray;
+  }
+
+.event-list {
+  display: flex;
+  background: rgba(255,255,255,.5);
+  padding: 10px 5px 5px 10px;
+  border-radius: 5px;
+  margin:0px 10px 10px 0px;
+
+  img {
+    height: 40px;
+    margin: 0 10px 0 0;
+  }
+  p a {
+    color: $gray;
+    margin: 0px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  p a:hover {
+    color: $green;
+  }
+
+  a .fas {
+    color:$green;
+    transition: .05s ease;
+    margin: 0px 10px;
+  }
+
+  a:hover .fas {
+    color: $gray;
+  }
+}
+
+.event-list-options {
+  display:flex;
+  padding: 5px 0px 0px 15px;
+}
+
+.dashboard-card-background {
+  background: rgba(129,129,129,.3);
+  padding: 10px 5px 5px 10px;
+  border-radius: 5px;
+  margin:0px 20px 20px 0px;
 }
