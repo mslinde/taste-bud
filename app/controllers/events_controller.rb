@@ -69,13 +69,12 @@ class EventsController < ApplicationController
     authorize @event
   end
 
-  def cancel
-    set_event
-    @spot = spot.find(params[:id])
-    Spot.destroy(event: @event, user: current_user)
-    redirect_to event_path(@event), notice: "You are no longer going"
-    authorize @spot
-  end
+  # def cancel
+  #   @spot = Spot.find(params[:id])
+  #   Spot.destroy(event: @event, user: current_user)
+  #   redirect_to event_path(@event), notice: "You are no longer going"
+  #   authorize @spot
+  # end
 
   private
 

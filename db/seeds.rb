@@ -49,15 +49,16 @@ v4 = Vibe.create!(name: "Saucy",
 v5 = Vibe.create!(name: "Adventurous",
      :icon => "Icon_Adventure.png")
 
-puts 'Creating 20 languages'
+puts 'Creating 10 languages'
 
-20.times do
+10.times do
   language = Language.new(
     language:    Faker::ProgrammingLanguage.name,
-    icon:   'https://image.flaticon.com/icons/svg/197/197593.svg'
+    icon:   'https://image.flaticon.com/icons/svg/197/197593.svg',
   )
   language.save!
 end
+
 
 puts 'Creating 7 Events'
 
@@ -187,5 +188,21 @@ events.each do |event|
 end
 
 puts "Created #{Spot.count} spots"
+
+puts 'Creating review seeds'
+
+20.times do
+  review = Review.new(
+    user: users.sample,
+    event: [e1, e2, e3, e4, e5, e6, e7].sample,
+    vibe: rand(1..5),
+    venue: rand(1..5),
+    neighborhood: rand(1..5),
+    attended: [true, false].sample,
+    comment: Faker::Restaurant.review,
+    )
+  review.save!
+end
+puts 'Created reviews'
 
 puts 'Finished!'
