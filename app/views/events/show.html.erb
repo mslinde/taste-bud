@@ -17,18 +17,31 @@
         <div class="card-product">
           <%= cl_image_tag @event.user.profile_photo, class: "avatar-bordered" %>
           <div class="card-product-infos">
-            <h3><%= @event.user.full_name %> (creator)</h3>
-            <p><%= (Date.today - @event.user.birthday).to_i / 365 %> years old</p>
-            <p>Lives in <%= @event.user.current_country %>, from <%= @event.user.origin_country %></p>
+            <% if @event.user.full_name != nil %>
+              <h3><%= @event.user.full_name %> (creator)</h3>
+            <% end %>
+            <% if @event.user.birthday != nil %>
+              <p><%= (Date.today - @event.user.birthday).to_i / 365 %> years old</p>
+            <% end %>
+            <% if @event.user.current_country != nil && @event.user.origin_country != nil %>
+              <p>Lives in <%= @event.user.current_country %>, from <%= @event.user.origin_country %></p>
+            <% end  %>
           </div>
         </div>
+
         <% @event.attendants.each do |user| %>
         <div class="card-product">
           <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
           <div class="card-product-infos">
-            <h3><%= user.full_name %></h3>
-            <!-- <p><%#= (Date.today - user.birthday).to_i / 365 %> years old</p> -->
-            <p>Lives in <%= user.current_country %>, from <%= user.origin_country %></p>
+            <% if user.full_name != nil %>
+              <h3><%= user.full_name %></h3>
+            <% end %>
+            <% if user.birthday != nil %>
+              <p><%= (Date.today - user.birthday).to_i / 365 %> years old</p>
+            <% end  %>
+            <% if user.current_country != nil && user.origin_country != nil %>
+              <p>Lives in <%= user.current_country %>, from <%= user.origin_country %></p>
+            <% end %>
           </div>
         </div>
         <% end %>
