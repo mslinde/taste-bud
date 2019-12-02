@@ -6,7 +6,9 @@
       <i class="fas fa-pencil-alt"> Edit Profile</i>
     <% end %>
     </br>
-    <%= link_to "Review Your Recent Event", new_event_review_path(@to_review.event), class:"review-notice btn" %>
+    <%= if @to_review %>
+      <%= link_to "Review Your Recent Event", new_event_review_path(@to_review.event), class:"review-notice btn" %>
+    <% end %>
     </br>
     </br>
     <div class="row">
