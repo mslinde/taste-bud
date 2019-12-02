@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :events, dependent: :destroy
   has_many :spots, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 end
