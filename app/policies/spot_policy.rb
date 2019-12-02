@@ -1,4 +1,4 @@
-class EventPolicy < ApplicationPolicy
+class SpotPolicy < ApplicationPolicy
   class Scope < PunditScope
     def resolve
       scope.all
@@ -19,5 +19,9 @@ class EventPolicy < ApplicationPolicy
 
   def new?
     create?
+  end
+
+  def destroy?
+    true
   end
 end
