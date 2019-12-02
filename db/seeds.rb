@@ -157,7 +157,7 @@ events = []
   )
   e7.save!
 
-  events == [e1, e2, e3, e4, e5, e6, e7]
+  events = [e1, e2, e3, e4, e5, e6, e7]
 
 # 20.times do
 #   event = Event.new(
@@ -182,6 +182,7 @@ events.each do |event|
       user: possible_attendants.shuffle.pop,
       event: event
     )
+
     # possible_attendants = possible_attendants.reject {|u| u == spot.user }
     spot.save!
   end
