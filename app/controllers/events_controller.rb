@@ -5,7 +5,6 @@ class EventsController < ApplicationController
     @events = policy_scope(Event).order(created_at: :asc).geocoded
     @vibes = Vibe.all
 
-
     @location = params[:search]
     @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
     @current_vibe = Vibe.find(params[:vibe_id]).name
@@ -26,6 +25,7 @@ class EventsController < ApplicationController
         # image_url: helpers.asset_url('/assets/images/random.png')
       }
     end
+
     # if params[:search].present? && params[:vibe_id].present?
     #   @location = params[:search]
     #   @events = Vibe.find(params[:vibe_id]).events.near(params[:search])

@@ -65,3 +65,22 @@ a.nav-link.btn {
   border-radius: 10px;
   border: none !important;
 }
+
+.btn-cancel {
+  color: white;
+  text-align: center;
+  display: table-cell;
+  height: 35px;
+  vertical-align: middle;
+  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #EE4540;
+  margin-right: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background: #801336;
+  color: white;
+}
