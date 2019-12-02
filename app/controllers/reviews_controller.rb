@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.event_id = @event.id
     if @review.save!
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: "Thanks for leaving a review of #{@event.title}!"
     else
       render :new
     end
@@ -27,7 +27,6 @@ class ReviewsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:event_id])
-
   end
 
   def review_params

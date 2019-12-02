@@ -4,6 +4,12 @@
     <%= link_to edit_user_registration_path(current_user[:id]) do %>
       <i class="fas fa-pencil-alt"> Edit Profile</i>
     <% end %>
+    </br>
+    <% if @to_review != nil %>
+        <%= link_to "Review Your Recent Event", new_event_review_path(@to_review.event), class:"review-notice btn", style:"font-size: 15px"%>
+    <% end %>
+    </br>
+    </br>
     <div class="row">
       <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
         <div class="dashboard-card">
