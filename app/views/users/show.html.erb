@@ -6,8 +6,8 @@
       <i class="fas fa-pencil-alt"> Edit Profile</i>
     <% end %>
     </br>
-    <%= if @to_review %>
-      <%= link_to "Review Your Recent Event", new_event_review_path(@to_review.event), class:"review-notice btn" %>
+    <% if @to_review != nil %>
+        <%= link_to "Review Your Recent Event", new_event_review_path(@to_review.event), class:"review-notice btn", style:"font-size: 15px"%>
     <% end %>
     </br>
     </br>
