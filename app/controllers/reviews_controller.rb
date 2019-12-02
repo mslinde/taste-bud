@@ -27,7 +27,6 @@ class ReviewsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:event_id])
-
   end
 
   def review_params

@@ -5,14 +5,6 @@ class EventsController < ApplicationController
     @events = policy_scope(Event).order(created_at: :asc).geocoded
     @vibes = Vibe.all
 
-    @markers = @events.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
-        # image_url: helpers.asset_url('/assets/images/random.png')
-      }
-    end
 
     @location = params[:search]
     @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
@@ -26,7 +18,14 @@ class EventsController < ApplicationController
       end
     end
 
-
+    @markers = @events.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
+        # image_url: helpers.asset_url('/assets/images/random.png')
+      }
+    end
     # if params[:search].present? && params[:vibe_id].present?
     #   @location = params[:search]
     #   @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
