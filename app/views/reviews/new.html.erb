@@ -11,8 +11,8 @@
         <h3 style="padding:0; text-align: center;">Event Details</h3>
         <% @event.attendants.each do |user| %>
           <%= cl_image_tag @event.user.profile_photo, class: "avatar-bordered" %>
-          <% end %>
-          <% @event.attendants.each do |user| %>
+        <% end %>
+        <% @event.attendants.each do |user| %>
           <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
         <% end %>
         <%= render "event_details" %>
