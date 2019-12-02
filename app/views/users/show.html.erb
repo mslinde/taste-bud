@@ -15,7 +15,7 @@
                 <p><%= link_to spot.event.title, event_path(spot.event.id) %></br>
                 <%= spot.event.start_time.strftime("%B %d, %Y") %> at <%= spot.event.start_time.strftime("%k:%M") %></p>
                 <div class="event-list-options">
-                  <%= link_to "Cancel", spot_path(spot.id), method: :delete, class: "btn btn-danger" %>
+                  <%= link_to "Cancel", spot_path(spot.id), method: :delete, class: "btn btn-cancel" %>
                   <%# end %>
                 </div>
               </div>
@@ -45,16 +45,18 @@
           </div>
         </div>
       </div>
-      <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
-        <div class="dashboard-card">
-          <h2>Past Attended Events</h2>
-          <div class="dashboard-card-background">
-            <% current_user.spots.each do |spot| %>
-              <div class="event-list">
-                <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
-                <p><%= link_to spot.event.title, event_path(spot.event.id) %>, <%= spot.event.start_time.strftime("%B %d, %Y") %></p>
-              </div>
-            <% end %>
+      <div class="row">
+        <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
+          <div class="dashboard-card">
+            <h2>Past Attended Events</h2>
+            <div class="dashboard-card-background">
+              <% current_user.spots.each do |spot| %>
+                <div class="event-list">
+                  <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                  <p><%= link_to spot.event.title, event_path(spot.event.id) %>, <%= spot.event.start_time.strftime("%B %d, %Y") %></p>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
