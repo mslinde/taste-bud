@@ -1,6 +1,9 @@
 <div class="container">
   <div class="dashboard-container">
     <h1 class="">Hello <%= current_user.full_name %></h1>
+    <p><%= @review %></p>
+    <%= link_to "Review Your Recent Event", new_event_review_path(@to_review.event), class:"btn review-notice" %>
+    <%#= link_to "Review recent event", new_event_review(:event_id), class:"btn review-notice" %>
     <%= link_to edit_user_registration_path(current_user[:id]) do %>
       <i class="fas fa-pencil-alt"> Edit Profile</i>
     <% end %>
