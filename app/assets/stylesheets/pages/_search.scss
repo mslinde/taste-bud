@@ -13,9 +13,6 @@
 }
 
 
-
-
-
 .card-map-info-window > a img {
     height: 60px;
     width: 100%;
@@ -35,6 +32,11 @@
     left: 16px;
     -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
+
+    a:hover {
+      color: $white;
+      text-decoration: none;
+    }
 }
 
 .card-map-info-window p.time {
