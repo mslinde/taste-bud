@@ -1,22 +1,24 @@
 class ReviewsController < ApplicationController
 
   def new
-    set_event
+    set_spot
+    @event = @spot.event
     @review = Review.new
     authorize @review
   end
 
   def create
-    set_event
+    set_spot
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    @review.event_id = @event.id
+    @review.spot = @spot
     if @review.save!
-      redirect_to user_path(current_user), notice: "Thanks for leaving a review of #{@event.title}!"
+      redirect_to user_path(current_user), notice: "Thanks for leaving a review of #{@spot.event.title}!"
     else
       render :new
     end
-    authorize @event
+
+    skip_authorization
   end
 
   def blank_stars
@@ -25,12 +27,13 @@ class ReviewsController < ApplicationController
 
   private
 
-  def set_event
-    @event = Event.find(params[:event_id])
+  def set_spot
+    @spot = Spot.find(params[:spot_id])
   end
 
   def review_params
     params.require(:review).permit(:venue, :vibe, :neighborhood, :comment)
   end
+
 end
 
