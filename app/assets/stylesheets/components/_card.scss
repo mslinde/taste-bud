@@ -7,7 +7,7 @@
   overflow: hidden;
   background: white;
   background-color: $green;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px $gray-shadow;
   margin-top: 20px;
   padding-bottom: 10px;
   position: relative;
@@ -34,14 +34,14 @@
   font-family: 'Sofia', cursive;
   padding-bottom: 5px;
   padding-top: 20px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 3px $text-shadow;
   position: absolute;
   bottom: 220px;
   left: 16px;
   transition: opacity 0.3s ease;
 
   a:hover {
-    color: #fff;
+    color: $white;
     text-decoration: none;
   }
 
@@ -84,7 +84,7 @@
 }
 
 .card-trip-infos h2, a {
-  color: #FDFFC4;
+  color: $link;
 
 }
 
@@ -101,7 +101,7 @@
 .card-trip-user .avatar-bordered img {
   width: 60px;
   border-radius: 50%;
-  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 3px $gray-shadow;
   margin-left: 5px;
 }
 
