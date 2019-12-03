@@ -18,7 +18,7 @@ Language.destroy_all
 Spot.destroy_all
 Review.destroy_all
 
-puts "Creating 20 fake users..."
+puts "Creating 20 users..."
 
 # photos = ["https://4.bp.blogspot.com/__UQSIjH59iA/TEmFazXpwXI/AAAAAAAAFgM/78haTrhcX3s/s1600/Look-At-Demi-Moore-Beautiful-Face-1280x1280-Pixels.jpg", "https://media.istockphoto.com/photos/handsome-and-happy-picture-id516065432?k=6&m=516065432&s=612x612&w=0&h=0On1LTM9MSRBK7DlQPd71uakgMR74moV4LSgv-ZLQmk=", "https://static6.depositphotos.com/1051698/612/i/950/depositphotos_6124126-stock-photo-african-woman-beautiful-face.jpg", "https://media.istockphoto.com/photos/mature-businessman-smiling-over-white-background-picture-id685132245?k=6&m=685132245&s=612x612&w=0&h=KO9YNXHtaYV4NGqoGQcTd5Aq8zD0Dl06knQQGP0BrwM=", "https://st.depositphotos.com/2022413/4820/i/950/depositphotos_48203351-stock-photo-japanese-asian-man-face.jpg", "https://st.depositphotos.com/1773655/1376/i/950/depositphotos_13764564-stock-photo-young-mans-face-serious-expression.jpg", "https://www.goodfreephotos.com/albums/people/young-man-in-a-corporate-suit-face-portrait.jpg", "https://wallpaperstock.net/wallpapers/thumbs1/1555.jpg", "https://media.istockphoto.com/photos/beauty-woman-portrait-girl-with-beautiful-face-smiling-picture-id936967024?k=6&m=936967024&s=612x612&w=0&h=OIOTru5Ll93_504da-cg9IsTf87b2zAve-n9fRL07A4=", "https://st2.depositphotos.com/6775664/9561/i/950/depositphotos_95613926-stock-photo-female-model-face-with-stylish.jpg", "https://media.beliefnet.com/~/media/photos-with-attribution/entertainment/celebrities/mark_zuckerberg.jpg", "https://www.designbolts.com/wp-content/uploads/2019/02/beautiful-girl-face-free-stock-photo-1.jpg"]
 users = []
@@ -291,8 +291,7 @@ users = []
 #   gender: Faker::Gender.type,
 #   profile_photo: photos.shuffle.pop
 # )
-specific_users = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10, u11, u12, u13, u14, u15, u16, u17, u18, u19, u20]
-users << specific_users
+users = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10, u11, u12, u13, u14, u15, u16, u17, u18, u19, u20]
 
 puts "Creating 5 vibes..."
 
@@ -318,7 +317,7 @@ puts 'Creating 10 languages'
 end
 
 
-puts 'Creating 7 Events'
+puts 'Creating 20 Events'
 
 events = []
 
@@ -570,6 +569,7 @@ events = []
     photo: "https://travelaway.me/wp-content/uploads/2016/05/kamari-cinema.jpg",
   )
   e20.save!
+
 
   events = [e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20]
 
