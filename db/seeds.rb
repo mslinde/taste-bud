@@ -22,18 +22,128 @@ puts "Creating 20 fake users..."
 
 photos = ["https://4.bp.blogspot.com/__UQSIjH59iA/TEmFazXpwXI/AAAAAAAAFgM/78haTrhcX3s/s1600/Look-At-Demi-Moore-Beautiful-Face-1280x1280-Pixels.jpg", "https://media.istockphoto.com/photos/handsome-and-happy-picture-id516065432?k=6&m=516065432&s=612x612&w=0&h=0On1LTM9MSRBK7DlQPd71uakgMR74moV4LSgv-ZLQmk=", "https://static6.depositphotos.com/1051698/612/i/950/depositphotos_6124126-stock-photo-african-woman-beautiful-face.jpg", "https://media.istockphoto.com/photos/mature-businessman-smiling-over-white-background-picture-id685132245?k=6&m=685132245&s=612x612&w=0&h=KO9YNXHtaYV4NGqoGQcTd5Aq8zD0Dl06knQQGP0BrwM=", "https://st.depositphotos.com/2022413/4820/i/950/depositphotos_48203351-stock-photo-japanese-asian-man-face.jpg", "https://st.depositphotos.com/1773655/1376/i/950/depositphotos_13764564-stock-photo-young-mans-face-serious-expression.jpg", "https://www.goodfreephotos.com/albums/people/young-man-in-a-corporate-suit-face-portrait.jpg", "https://wallpaperstock.net/wallpapers/thumbs1/1555.jpg", "https://media.istockphoto.com/photos/beauty-woman-portrait-girl-with-beautiful-face-smiling-picture-id936967024?k=6&m=936967024&s=612x612&w=0&h=OIOTru5Ll93_504da-cg9IsTf87b2zAve-n9fRL07A4=", "https://st2.depositphotos.com/6775664/9561/i/950/depositphotos_95613926-stock-photo-female-model-face-with-stylish.jpg", "https://media.beliefnet.com/~/media/photos-with-attribution/entertainment/celebrities/mark_zuckerberg.jpg", "https://www.designbolts.com/wp-content/uploads/2019/02/beautiful-girl-face-free-stock-photo-1.jpg"]
 users = []
-20.times do
-  new_user = User.new(
-  full_name: Faker::Name.name,
-  email: Faker::Internet.email,
+  u1 = User.new(
+  full_name: "Dana Aziz",
+  email: "audie@example.com",
   encrypted_password: Faker::Internet.password,
   password: "123456",
-  current_country: Faker::Address.country,
-  origin_country: Faker::Address.country,
-  birthday: Faker::Date.birthday(min_age: 18, max_age: 90),
-  gender: Faker::Gender.type,
-  profile_photo: photos.shuffle.pop
+  current_country: "Germany",
+  origin_country: "Kuwait",
+  birthday: "1990-03-25",
+  gender: "female",
+  profile_photo:
 )
+  u2 = User.new(
+  full_name: "Terisa Laskerm"
+  email: "terisae@example.com",
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "Poland",
+  origin_country: "Sweden",
+  birthday: "1993-05-08",
+  gender: "female",
+  profile_photo:
+)
+  u3 = User.new(
+  full_name: "Greg Luker",
+  email: "Greg@example.com",
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "Germany",
+  origin_country: "Switzerland",
+  birthday: "1987-09-07",
+  gender: "male",
+  profile_photo:
+)
+  u4 = User.new(
+  full_name: "Deon Wiley",
+  email: "Deon@example.com",
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "Thailand",
+  origin_country: "United States",
+  birthday: "1994-11-20",
+  gender: "male",
+  profile_photo:
+)
+  u5 = User.new(
+  full_name: "Santos Gondek",
+  email: "Santos@example.com",
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "France",
+  origin_country: "Chile",
+  birthday: "1992-01-02",
+  gender: "male",
+  profile_photo:
+)
+  u6 = User.new(
+  full_name: "Costanzo Allione",
+  email: "costanzo@example.com",
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "Ireland",
+  origin_country: "Italy",
+  birthday: "1990-03-25",
+  gender: "female",
+  profile_photo:
+)
+  u7 = User.new(
+  full_name: "Sebastian Alden",
+  email: "Sebastian@example.com",
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "France",
+  origin_country: "France",
+  birthday: "1989-3-15",
+  gender: "male",
+  profile_photo:
+)
+  u8 = User.new(
+  full_name: "Sebrina Whipps",
+  email: Sebrina@example.com,
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "Germany",
+  origin_country: "United Kingdom",
+  birthday: "1988-08-17",
+  gender: "female",
+  profile_photo:
+)
+  u9 = User.new(
+  full_name: "Mathilde Mcnaught",
+  email: "Mathilde@example.com",
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "Scotland",
+  origin_country: "Ireland",
+  birthday: "1990-05-12",
+  gender: "female",
+  profile_photo:
+)
+  u10 = User.new(
+  full_name: "Cody Naylor",
+  email: "Cody@example.com",
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "Brazil",
+  origin_country: "Canada",
+  birthday: "1990-02-10",
+  gender: "male",
+  profile_photo:
+)
+# # 20.times do
+#   u1 = User.new(
+#   full_name: Faker::Name.name,
+#   email: Faker::Internet.email,
+#   encrypted_password: Faker::Internet.password,
+#   password: "123456",
+#   current_country: Faker::Address.country,
+#   origin_country: Faker::Address.country,
+#   birthday: Faker::Date.birthday(min_age: 18, max_age: 90),
+#   gender: Faker::Gender.type,
+#   profile_photo: photos.shuffle.pop
+# )
 new_user.save!
 users << new_user
 end
