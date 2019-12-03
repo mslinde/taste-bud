@@ -72,6 +72,13 @@ class EventsController < ApplicationController
     authorize @event
   end
 
+   def destroy
+    set_event
+    @event.destroy
+    redirect_to user_path, notice: "Event was successfully removed"
+    authorize @event
+  end
+
   # def cancel
   #   @spot = Spot.find(params[:id])
   #   Spot.destroy(event: @event, user: current_user)

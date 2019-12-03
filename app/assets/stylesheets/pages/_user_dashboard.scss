@@ -1,3 +1,6 @@
+.dashboard-container {
+  margin-top: 15px;
+}
 
   a .fas {
     color:$green;
@@ -44,14 +47,19 @@
 
 .event-list-options {
   display:flex;
-  padding: 5px 0px 0px 15px;
+  align-items: center;
+}
+
+.dashboard-card {
+  height: 330px;
+  width: 100%;
 }
 
 .dashboard-card-background {
+  height: 250px;
   background: rgba(129,129,129,.3);
-  padding: 10px 5px 5px 10px;
   border-radius: 5px;
-  margin:0px 20px 20px 0px;
+  padding-top: 20px;
 }
 
 .review-notice .btn {
