@@ -26,18 +26,18 @@
           <div class="dashboard-card-background">
             <% if current_user.spots != []  %>
               <% current_user.spots.each do |spot| %>
-                  <div class="event-list">
-                    <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
-                    <p><%= link_to spot.event.title, event_path(spot.event.id) %></br>
-                    <%= spot.event.start_time.strftime("%B %d, %Y") %> at <%= spot.event.start_time.strftime("%k:%M") %></p>
-                    <div class="event-list-options">
-                      <%= link_to "Cancel", spot_path(spot.id), method: :delete, class: "btn btn-cancel" %>
-                    </div>
+                <div class="event-list">
+                  <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                  <p><%= link_to spot.event.title, event_path(spot.event.id) %></br>
+                  <%= spot.event.start_time.strftime("%B %d, %Y") %> at <%= spot.event.start_time.strftime("%k:%M") %></p>
+                  <div class="event-list-options">
+                    <%= link_to "Cancel", spot_path(spot.id), method: :delete, class: "btn btn-cancel" %>
                   </div>
-                <% end %>
+                </div>
+              <% end %>
             <% else %>
-                <div class="event-list-options justify-content-center"><h5>You have no events!</h5></div>
-                <div class="event-list-options justify-content-center"><%= link_to "Click to Find One!", root_path, method: :get, class: "btn btn-join header-3" %></div>
+              <div class="event-list-options justify-content-center"><h5>You have no events!</h5></div>
+              <div class="event-list-options justify-content-center"><%= link_to "Click to Find One!", root_path, method: :get, class: "btn btn-join header-3" %></div>
             <% end  %>
           </div>
         </div>
@@ -59,10 +59,10 @@
                     <%# end %>
                   </div>
                 <% end %>
-                <% else %>
-                  <div class="event-list-options justify-content-center"><h5>Host an event!</h5></div>
-                  <div class="event-list-options justify-content-center"><%= link_to "Create Event", new_event_path, method: :get, class: "btn btn-join header-3" %></div>
-              <% end %>
+            <% else %>
+              <div class="event-list-options justify-content-center"><h5>Host an event!</h5></div>
+              <div class="event-list-options justify-content-center"><%= link_to "Create Event", new_event_path, method: :get, class: "btn btn-join header-3" %></div>
+            <% end %>
             </div>
           </div>
         </div>
