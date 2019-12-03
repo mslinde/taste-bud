@@ -7,8 +7,8 @@
           <div class="row justify-content-between px-4">
                 <% @vibes.each do |vibe| %>
                   <div class="d-flex justify-content-center pt-4 col-1 mx-3 p-2">
-                    <div class="vibes clickable">
-                      <%= image_tag(vibe.icon) %>
+                    <div class="vibes clickable" data-vibe-id="<%= vibe.id %>">
+                      <%= image_tag(vibe.icon, class:"img-clickable") %>
                       <%= radio_button_tag :vibe_id, vibe.id, (vibe.id), class:"radio_item" %>
                       <%= label_tag(vibe.id, vibe.name, class:"label_item")  %>
                     </div>
@@ -20,3 +20,7 @@
             <%= submit_tag 'Find Events!', name: nil, class: "btn btn-info btn-search" %>
           </div>
         <% end %>
+
+
+
+

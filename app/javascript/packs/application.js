@@ -12,3 +12,15 @@ initMapbox();
 
 window.initAutocomplete = initAutocomplete
 initAutocomplete()
+
+
+const items = document.querySelectorAll('.clickable');
+items.forEach(i => i.addEventListener("click", (event) => {
+  i.querySelector('input').checked = false;
+  i.querySelector('img').classList.remove('active');
+
+  if (i.querySelector('input').value === i.dataset.vibeId) {
+    i.querySelector('input').checked = true;
+    i.querySelector('img').classList.add('active');
+  }
+}));
