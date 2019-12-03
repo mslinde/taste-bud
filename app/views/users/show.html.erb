@@ -5,9 +5,16 @@
       <i class="fas fa-pencil-alt"> Edit Profile</i>
     <% end %>
     </br>
-    <% if @to_review != nil %>
-        <%= link_to "Review Your Recent Event", new_event_review_path(@to_review.event), class:"review-notice btn", style:"font-size: 15px"%>
+
+    <% if @unreviewed_spots != nil %>
+      <div id="review-notice" class="alert-secondary">
+        <p>Review your recent events</p>
+        <% @unreviewed_spots.each do |spot| %>
+          <p><%= link_to  spot.event.title , new_event_review_path(spot.event) %></p>
+        <% end %>
+      </div>
     <% end %>
+
     </br>
     </br>
     <div class="row">
