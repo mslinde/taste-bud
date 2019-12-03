@@ -51,7 +51,7 @@
        <div class="buttoncontainer-right">
         <p><%= @event.capacity - @event.attendants.count - 1 %> <%= "Spot".pluralize(@event.capacity - @event.attendants.count) %> Left!</p>
           <% if @spot_occupied %>
-            <%= link_to "Cancel", spot_path(@spot_occupied), method: :delete %>
+            <%= link_to "Cancel", spot_path(@spot_occupied), method: :delete, class: "btn btn-join" %>
           <% else %>
             <%= link_to "Join Event!", join_event_path(@event), method: :post, class: "btn btn-join" %>
           <% end %>
