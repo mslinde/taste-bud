@@ -6,62 +6,61 @@
     <% end %>
     </br>
 
-    <% if @unreviewed_spots != nil %>
-      <div class="alert-secondary review-notice">
-        <p>Review your recent events</p>
-        <ul>
-          <% @unreviewed_spots.each do |spot| %>
-            <li><%= link_to  spot.event.title , new_spot_review_path(spot) %></li>
-          <% end %>
-         </ul>
-      </div>
-    <% end %>
 
-    </br>
-    </br>
     <div class="row">
+
       <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
-        <div class="dashboard-card">
-          <h2>Upcoming Events</h2>
+        <div class="dashboard-card mt-10">
+          <h3>Upcoming Events</h3>
           <div class="dashboard-card-background">
-            <% current_user.spots.each do |spot| %>
-              <div class="event-list">
-                <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
-                <p><%= link_to spot.event.title, event_path(spot.event.id) %></br>
-                <%= spot.event.start_time.strftime("%B %d, %Y") %> at <%= spot.event.start_time.strftime("%k:%M") %></p>
-                <div class="event-list-options">
-                  <%= link_to "Cancel", spot_path(spot.id), method: :delete, class: "btn btn-cancel" %>
-                  <%# end %>
-                </div>
-              </div>
-            <% end %>
+            <% if current_user.spots != []  %>
+              <% current_user.spots.each do |spot| %>
+                  <div class="event-list">
+                    <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                    <p><%= link_to spot.event.title, event_path(spot.event.id) %></br>
+                    <%= spot.event.start_time.strftime("%B %d, %Y") %> at <%= spot.event.start_time.strftime("%k:%M") %></p>
+                    <div class="event-list-options">
+                      <%= link_to "Cancel", spot_path(spot.id), method: :delete, class: "btn btn-cancel" %>
+                    </div>
+                  </div>
+                <% end %>
+            <% else %>
+                <div class="event-list-options justify-content-center"><h5>You have no events!</h5></div>
+                <div class="event-list-options justify-content-center"><%= link_to "Click to Find One!", root_path, method: :get, class: "btn btn-join header-3" %></div>
+            <% end  %>
           </div>
         </div>
       </div>
       <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
         <div class="dashboard-card">
-          <h2>Events I'm Hosting</h2>
+          <h3>Events I'm Hosting</h3>
           <div class="dashboard-card-background">
-            <% @events.each do |event| %>
-            <div class="event-list">
-              <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
-                <p><%= link_to event.title, event_path(event.id) %></br>
-                  <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %></p>
-                <div class="event-list-options">
-                  <%#= link_to "Cancel", spot_path(@spot), method: :delete, class: "btn btn-cancel" %>
-                  <%= link_to do%>
-                    <i class="fas fa-pencil-alt"></i>
-                  <% end %>
-                </div>
+            <% if current_user.events != []  %>
+              <% @events.each do |event| %>
+              <div class="event-list">
+                <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                  <p><%= link_to event.title, event_path(event.id) %></br>
+                    <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %></p>
+                  <div class="event-list-options">
+                    <%= link_to "Cancel", '#', class: "btn btn-cancel" %>
+                    <%#= link_to do%>
+                      <!-- <i class="fas fa-pencil-alt"></i> -->
+                    <%# end %>
+                  </div>
+                <% end %>
+                <% else %>
+                  <div class="event-list-options justify-content-center"><h5>Host an event!</h5></div>
+                  <div class="event-list-options justify-content-center"><%= link_to "Create Event", new_event_path, method: :get, class: "btn btn-join header-3" %></div>
               <% end %>
             </div>
           </div>
         </div>
       </div>
 
+      <div class="row">
         <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
           <div class="dashboard-card">
-            <h2>Past Attended Events</h2>
+            <h3>Past Attended Events</h3>
             <div class="dashboard-card-background">
               <% current_user.spots.each do |spot| %>
                 <div class="event-list">
@@ -74,7 +73,7 @@
         </div>
         <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
         <div class="dashboard-card">
-          <h2>Events I Have Hosted</h2>
+          <h3>Events I Have Hosted</h3>
           <div class="dashboard-card-background">
             <% @events.each do |event| %>
             <div class="event-list">
@@ -82,16 +81,15 @@
                 <p><%= link_to event.title, event_path(event.id) %></br>
                   <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %></p>
                 <div class="event-list-options">
-                  <%#= link_to "Cancel", spot_path(@spot), method: :delete, class: "btn btn-cancel" %>
-                  <%= link_to do%>
-                    <i class="fas fa-pencil-alt"></i>
-                  <% end %>
+                  <%#= link_to do%>
+                    <!-- <i class="fas fa-pencil-alt"></i> -->
+                  <%# end %>
                 </div>
               <% end %>
             </div>
           </div>
         </div>
-
+      </div>
     </div>
   </div>
 </div>

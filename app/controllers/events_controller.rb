@@ -41,10 +41,14 @@ class EventsController < ApplicationController
 
   def show
     set_event
-    @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user.id}.first
-    @event_user = @event.user
-    authorize @event
-    @markers = [{ lat: @event.latitude, lng: @event.longitude }]
+    if current_user
+      @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user.id}.first
+      @event_user = @event.user
+    else
+      @event_user = @event.user
+    end
+      authorize @event
+      @markers = [{ lat: @event.latitude, lng: @event.longitude }]
   end
 
 
@@ -57,7 +61,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
-      redirect_to root_path
+      redirect_to event_path(@event)
     else
       render :new
     end
@@ -68,6 +72,13 @@ class EventsController < ApplicationController
     set_event
     Spot.create(event: @event, user: current_user)
     redirect_to event_path(@event), notice: "You're going to this event!"
+    authorize @event
+  end
+
+   def destroy
+    set_event
+    @event.destroy
+    redirect_to user_path, notice: "Event was successfully removed"
     authorize @event
   end
 
