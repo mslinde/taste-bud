@@ -39,7 +39,7 @@ class EventsController < ApplicationController
 
   def show
     set_event
-    @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user.id}.first
+    @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user}.first
     @event_user = @event.user
     authorize @event
     @markers = [{ lat: @event.latitude, lng: @event.longitude }]
@@ -55,7 +55,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
-      redirect_to root_path
+      redirect_to event_path(@event)
     else
       render :new
     end
