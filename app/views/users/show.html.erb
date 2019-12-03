@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
         <div class="dashboard-card mt-10">
-          <h2>Upcoming Events</h2>
+          <h3>Upcoming Events</h3>
           <div class="dashboard-card-background">
             <% if current_user.spots != []  %>
               <% current_user.spots.each do |spot| %>
@@ -26,15 +26,15 @@
                   </div>
                 <% end %>
             <% else %>
-                <div class="event-list-options justify-content-center"><h2>You have no events!</h2></div>
-                <div class="event-list-options justify-content-center"><%= link_to "Click to Find One!", root_path, method: :get, class: "btn btn-join" %></div>
+                <div class="event-list-options justify-content-center"><h5>You have no events!</h5></div>
+                <div class="event-list-options justify-content-center"><%= link_to "Click to Find One!", root_path, method: :get, class: "btn btn-join header-3" %></div>
             <% end  %>
           </div>
         </div>
       </div>
       <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
         <div class="dashboard-card">
-          <h2>Events I'm Hosting</h2>
+          <h3>Events I'm Hosting</h3>
           <div class="dashboard-card-background">
             <% if current_user.events != []  %>
               <% @events.each do |event| %>
@@ -50,18 +50,18 @@
                   </div>
                 <% end %>
                 <% else %>
-                  <div class="event-list-options justify-content-center"><h2>Host an event!</h2></div>
-                  <div class="event-list-options justify-content-center"><%= link_to "Create Event", new_event_path, method: :get, class: "btn btn-join" %></div>
+                  <div class="event-list-options justify-content-center"><h5>Host an event!</h5></div>
+                  <div class="event-list-options justify-content-center"><%= link_to "Create Event", new_event_path, method: :get, class: "btn btn-join header-3" %></div>
               <% end %>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
       <div class="row">
         <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
           <div class="dashboard-card">
-            <h2>Past Attended Events</h2>
+            <h3>Past Attended Events</h3>
             <div class="dashboard-card-background">
               <% current_user.spots.each do |spot| %>
                 <div class="event-list">
@@ -74,7 +74,7 @@
         </div>
         <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
         <div class="dashboard-card">
-          <h2>Events I Have Hosted</h2>
+          <h3>Events I Have Hosted</h3>
           <div class="dashboard-card-background">
             <% @events.each do |event| %>
             <div class="event-list">
