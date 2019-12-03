@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :events, except: [:update, :destroy] do
+  resources :events, except: [:update] do
     member do
       post :join
       delete :cancel
