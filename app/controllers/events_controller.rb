@@ -39,7 +39,7 @@ class EventsController < ApplicationController
 
   def show
     set_event
-    @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user}.first
+    @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user.id}.first
     @event_user = @event.user
     authorize @event
     @markers = [{ lat: @event.latitude, lng: @event.longitude }]
