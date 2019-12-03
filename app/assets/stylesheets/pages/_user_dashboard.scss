@@ -54,11 +54,23 @@
   margin:0px 20px 20px 0px;
 }
 
-.review-notice .btn {
+.review-notice {
   font-size:15px;
+  position: relative;
+  padding: 20px;
+
+  p {
+    margin: 0px;
+    font-weight: bold;
+  }
+
+  li a {
+    font-weight: normal;
+    color: $green;
+  }
+
+  li a:hover {
+    color: $gray;
+  }
 }
 
-#review-notice .alert {
-  font-size: 15px;
-  position: relative;
-}

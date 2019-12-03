@@ -7,10 +7,12 @@ Rails.application.routes.draw do
       post :join
       delete :cancel
     end
-    resources :reviews, only: [:new, :create]
+
   end
   resources :users, only: [:show]
 
-  resources :spots, only: [:destroy]
+  resources :spots, only: [:destroy] do
+    resources :reviews, only: [:new, :create]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

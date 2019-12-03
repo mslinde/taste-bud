@@ -7,11 +7,13 @@
     </br>
 
     <% if @unreviewed_spots != nil %>
-      <div id="review-notice" class="alert-secondary">
+      <div class="alert-secondary review-notice">
         <p>Review your recent events</p>
-        <% @unreviewed_spots.each do |spot| %>
-          <p><%= link_to  spot.event.title , new_event_review_path(spot.event) %></p>
-        <% end %>
+        <ul>
+          <% @unreviewed_spots.each do |spot| %>
+            <li><%= link_to  spot.event.title , new_spot_review_path(spot) %></li>
+          <% end %>
+         </ul>
       </div>
     <% end %>
 

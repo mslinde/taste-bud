@@ -18,7 +18,7 @@ class UsersController < ApplicationController
         @unreviewed_spots << spot
       end
     end
-    raise
+
     # @past_spots_reviews = current_user.spots.select do |spot|
     #   p spot.event.reviews
     # end

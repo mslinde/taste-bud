@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
   belongs_to :user
-  belongs_to :review
+  has_one :review
   belongs_to :event
 end
