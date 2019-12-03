@@ -43,7 +43,7 @@
 
 .btn-submit {
   border: 2px solid grey;
-  padding: 10px 25px;
+  // padding: 10px 25px;
   color: grey;
   border-radius: 5px;
   transition: all 0.4s;
@@ -51,4 +51,10 @@
 
 .button-div {
   text-align:center;
+}
+
+.signin-signup-btn {
+    justify-content: center;
+    text-align: center;
+    width: 25%;
 }
