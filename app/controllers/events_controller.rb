@@ -34,7 +34,6 @@ class EventsController < ApplicationController
     #   @events
     #   @vibes
     # end
-
   end
 
   def show
