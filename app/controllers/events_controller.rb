@@ -6,8 +6,8 @@ class EventsController < ApplicationController
     @vibes = Vibe.all
 
     @location = params[:search]
-    @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
-    @current_vibe = Vibe.find(params[:vibe_id]).name
+    @events = Vibe.find(params[:vibe_id]).events.near(params[:search]) if params[:vibe_id]
+    @current_vibe = Vibe.find(params[:vibe_id]).name if params[:vibe_id]
 
     if !@events.present?
       @events = Event.geocoded
