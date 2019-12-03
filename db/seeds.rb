@@ -15,6 +15,8 @@ Event.destroy_all
 User.destroy_all
 Vibe.destroy_all
 Language.destroy_all
+Spot.destroy_all
+Review.destroy_all
 
 puts "Creating 20 fake users..."
 
