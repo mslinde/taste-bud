@@ -30,14 +30,14 @@
 
 .label_item {
 opacity: 1;
-color: #000;
+color: $black;
 }
 
 .cickable:checked {
   font-weight: bold;
 }
 
-input[type="radio"]:checked+label { font-weight: bold; }
+// input[type="radio"]:checked+label { font-weight: bold; }
 
 .clickable img {
   background-color: #fff;
