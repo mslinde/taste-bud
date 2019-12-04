@@ -1,3 +1,83 @@
+.btn-fun {
+  color: $fun-dark;
+  border: 2px solid $fun-dark;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+  border-radius: 3px;
+  padding: 5px 20px;
+}
+
+
+//dark button transparent
+.btn-fun-dark-transparent {
+  @include btn-fun;
+    color: $fun-dark;
+    border: 2px solid $fun-dark;
+
+}
+
+.btn-fun-dark-transparent:hover {
+  background-color: $fun-dark;
+  color: $fun-light;
+}
+
+//dark button solid
+.btn-fun-dark-solid {
+  .btn-fun {
+    color: $fun-light;
+    background-color: $fun-dark;
+    border: 2px solid $fun-dark;
+  }
+}
+
+.btn-fun-dark-solid:hover {
+  background-color: transparent;
+  color: $fun-dark;
+}
+
+//light button transparent
+.btn-fun-light-transparent {
+  .btn-fun {
+    color: $fun-light;
+    border: 2px solid $fun-light;
+  }
+}
+
+.btn-fun-light-transparent:hover {
+  background-color: $fun-light;
+  color: $fun-dark;
+}
+
+.btn-fun-light-solid {
+  color: $fun-dark;
+  background-color: $fun-light;
+  border: 2px solid $fun-light;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+  border-radius: 3px;
+  padding: 5px 20px;
+
+}
+
+.btn-fun-light-solid:hover {
+  background-color: transparent;
+  color: $fun-light;
+}
+
+
+
+
+
+
+
+
+///////old buttons
+
+
+
+
 .btn .btn-ghost {
     color: #0E0000;
     text-align: center;
