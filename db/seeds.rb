@@ -420,7 +420,7 @@ events = []
     user: u8,
     vibe: v1,
     capacity: 6,
-    photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
+    photo: "http://www.istanbulfood.com/wp-content/uploads/2010/04/doner-2.jpg",
   )
   e8.save!
 
@@ -437,14 +437,14 @@ events = []
   e9.save!
 
   e10 = Event.new(
-    title:  "Opera Opportunity!",
+    title:  "Operatunity!",
     address: "Unter den Linden 7, 10117 Berlin",
     description: "I have two extra tickets to La Traviata! Happy to give them to you as I don't have any way to sell them.",
     start_time: "#{Date.today}- 22:00",
     user: u10,
     vibe: v3,
     capacity: 6,
-    photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
+    photo: "https://www.kevmrc.com/wp-content/uploads/2016/12/opera-garnier-paris-015.jpg",
   )
   e10.save!
 
@@ -480,7 +480,7 @@ events = []
     user: u13,
     vibe: v1,
     capacity: 6,
-    photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
+    photo: "https://www.ebookers.com/travel-blog/wp-content/uploads/2016/11/Berlin.jpg",
   )
   e13.save!
 
