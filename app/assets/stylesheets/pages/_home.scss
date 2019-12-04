@@ -108,10 +108,6 @@ opacity: 1;
 color: #000;
 }
 
-.cickable:checked {
- font-weight: bold;
-}
-
 // input[type="radio"]:checked+label { font-weight: bold; }
 
 
@@ -125,6 +121,18 @@ color: #000;
   width: 90% !important;
 }
 
+.clickable.active {
+  label {
+    font-weight: bold;
+  }
+  img {
+    background-color: $black;
+  }
+}
 
+.clickable:hover img {
+  background-color: $black;
+
+}
 
 
