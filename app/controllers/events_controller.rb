@@ -14,7 +14,6 @@ class EventsController < ApplicationController
 
     if @events.present?
       @events
-      @response = "#{@current_vibe} Events Nearby"
     # elsif !@events.present?
     #   @events = Event.geocoded
     #   @events.near(params[:search])
