@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
     @past_events = current_user.events.select do |event|
     p event.start_time < Date.today
+    end
 
     @unreviewed_spots = []
 
