@@ -93,6 +93,11 @@ body {
     }
 }
 
+img.img-clickable.active {
+  border: 3px solid $green;
+}
+
+
 .radio_item {
  // display: none !important;
  margin: 5px 20px;
@@ -103,11 +108,11 @@ opacity: 1;
 color: #000;
 }
 
-.cickable:checked {
-  font-weight: bold;
-}
+// .cickable:checked {
+//   font-weight: bold;
+// }
 
-input[type="radio"]:checked+label { font-weight: bold; }
+// input[type="radio"]:checked+label { font-weight: bold; }
 
 
 
