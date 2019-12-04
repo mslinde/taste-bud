@@ -585,6 +585,7 @@ events = []
 #   events << event
 # end
 
+<<<<<<< HEAD
 puts "Creating spots..."
 
   Spot.new(user: u2, event: e1).save!
@@ -639,6 +640,17 @@ puts "Creating spots..."
 #       user: possible_attendants.shuffle.pop,
 #       event: event
 #     )
+
+# puts "Creating random number of spots..."
+
+# events.each do |event|
+#   possible_attendants = users.reject! { |u| u == event.user }
+#   rand(1..5).times do
+#     spot = Spot.new(
+#       user: possible_attendants.shuffle.pop,
+#       event: event
+#     )
+
 
     # possible_attendants = possible_attendants.reject {|u| u == spot.user }
 #     spot.save!
