@@ -8,5 +8,5 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :reviews, through: :spots
 
-  # validates :start_time, inclusion: { in: (Date.today..Date.tomorrow) }
+  validates :start_time, inclusion: { in: (Date.today..Date.tomorrow) }
 end

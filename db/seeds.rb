@@ -16,6 +16,7 @@ User.destroy_all
 Vibe.destroy_all
 Language.destroy_all
 Spot.destroy_all
+Review.destroy_all
 
 puts "Creating 20 users..."
 
@@ -334,7 +335,7 @@ events = []
     address: "Skalitzer Str. 97",
     description: "Let's go explore a German a market. Get some good food and drinks while we do it.",
     start_time: "#{Date.today}- 16:00",
-    user: users.sample,
+    user: u1,
     vibe: v1,
     capacity: 6,
     photo: "https://twoandahalfbloggers.files.wordpress.com/2014/12/dscf2096.jpg",
@@ -346,7 +347,7 @@ events = []
     address: "Oderberger Str. 21, 10435 Berlin",
     description: "An authentic German restaurant that I've always wanted to check out.",
     start_time: "#{Date.today}- 19:00",
-    user: users.sample,
+    user: u2,
     vibe: v1,
     capacity: 6,
     photo: "https://clovereats.files.wordpress.com/2014/08/metzger-4.jpg",
@@ -358,7 +359,7 @@ events = []
     address: "Winterfeldtstraße 50, Berlin",
     description: "See where the night takes us after a few cocktiails.",
     start_time: "#{Date.today}- 20:00",
-    user: users.sample,
+    user: u3,
     vibe: v4,
     capacity: 6,
     photo: "https://makemeacocktail.com/blog/wp-content/uploads/2019/02/a1.jpg",
@@ -370,7 +371,7 @@ events = []
     address: "Nollendorfstraße 27, 10777 Berlin",
     description: "Let's pretend to be venture capitalists.",
     start_time: "#{Date.today}- 20:00",
-    user: users.sample,
+    user: u4,
     vibe: v2,
     capacity: 6,
     photo: "https://pea-7f65.kxcdn.com/img/image_db/michelin_restaurants_in_rome-942.jpg",
@@ -382,7 +383,7 @@ events = []
     address: "Köpenicker Str. 76, 10179 Berlin",
     description: "You only live once. Let's go take on Kit Kat.",
     start_time: "#{Date.today}- 23:00",
-    user: users.sample,
+    user: u5,
     vibe: v5,
     capacity: 6,
     photo: "https://i.pinimg.com/736x/74/12/d3/7412d387ecb00da630ca9026eabbd2e0.jpg",
@@ -394,7 +395,7 @@ events = []
     address: "Kastanienallee 7-910435 Berlin",
     description: "We have to go to at least one German Bier Garten. Come join me for a few biers.",
     start_time: "#{Date.today}- 16:00",
-    user: users.sample,
+    user: u6,
     vibe: v5,
     capacity: 6,
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Hofbraeukeller_5906.JPG/1200px-Hofbraeukeller_5906.JPG",
@@ -406,7 +407,7 @@ events = []
     address: "Am Flutgraben 2, 12435 Berlin, Germany",
     description: "Queer Roller disco at Festaal Kreuzberg. Let's Boogie!",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u7,
     vibe: v4,
     capacity: 6,
     photo: "http://sk8s.biz/wp-content/uploads/2016/03/roller-disco.png",
@@ -418,7 +419,7 @@ events = []
     address: "Adalbertstraße 12, 10999 Berlin",
     description: "Found some really great doner yesterday. Want to get some tonight as well. Come eat and hang.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u8,
     vibe: v1,
     capacity: 6,
     photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
@@ -430,7 +431,7 @@ events = []
     address: "Köpenicker Str. 70",
     description: "Let's go explore some clubs in Berlin.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u9,
     vibe: v3,
     capacity: 6,
     photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
@@ -442,7 +443,7 @@ events = []
     address: "Unter den Linden 7, 10117 Berlin",
     description: "I have two extra tickets to La Traviata! Happy to give them to you as I don't have any way to sell them.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u10,
     vibe: v3,
     capacity: 6,
     photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
@@ -454,7 +455,7 @@ events = []
     address: "An der Schillingbrücke 3, 10243 Berlin",
     description: "YAAM is a super famous music venue for African Artists. Tonight a great jazz band is on.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u11,
     vibe: v3,
     capacity: 6,
     photo: "http://awesomeberlin.net/wp-content/uploads/2016/06/yaam3.jpg",
@@ -466,7 +467,7 @@ events = []
     address: "Behrenstraße 47, 10117 Berlin",
     description: "Let's be the sophisticated wine tasters we were born to be.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u12,
     vibe: v2,
     capacity: 6,
     photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
@@ -478,7 +479,7 @@ events = []
     address: "Voltairestraße 2A, 10179 Berlin",
     description: "I'd like to walk through some German christmas markets. Eat local foods. And just mosey around. Join me if you like.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u13,
     vibe: v1,
     capacity: 6,
     photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
@@ -490,7 +491,7 @@ events = []
     address: "Teufelsberg, 14055 Berlin",
     description: "The inner towers used to be open to the public. Let's jump the fence and climb up them.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u14,
     vibe: v5,
     capacity: 6,
     photo: "http://4.bp.blogspot.com/-VN6B54ZJsZo/VfCrb7_fwbI/AAAAAAAC0yI/cFYcU6p_TBI/s1600/Teufelsberg%2BAbandoned%2BBerlin%2BStreet%2BArt-9658.jpg",
@@ -502,7 +503,7 @@ events = []
     address: "Warschauer Str. 34, 10243 Berlin",
     description: "I haven't sung kareoke in ages, and I've got an itch I need to scratch. Come scratch your keroeke itch tonight!",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u15,
     vibe: v4,
     capacity: 6,
     photo: "https://edge.alluremedia.com.au/m/l/2016/11/Karaoke.jpg",
@@ -514,7 +515,7 @@ events = []
     address: "Chausseestraße 8, 10115 Berlin",
     description: "I really want to try some good schnitzel. This place is supposed to be the best. Let's feed our souls some schnitzel.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u16,
     vibe: v2,
     capacity: 6,
     photo: "http://graphics8.nytimes.com/images/2014/10/10/multimedia/clark-schnitzel/clark-schnitzel-superJumbo.jpg",
@@ -526,7 +527,7 @@ events = []
     address: "Behrenstraße 55, 10117 Berlin",
     description: "Let's drink and make good conversation",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u17,
     vibe: v1,
     capacity: 6,
     photo: "http://wayfaringrachel.com/wp-content/uploads/2015/08/szimpla.jpg",
@@ -538,7 +539,7 @@ events = []
     address: "Alt-Stralau 70, 10245 Berlin",
     description: "I've heard the door at Renate is easy and the music is great.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u18,
     vibe: v3,
     capacity: 6,
     photo: "http://s3-media2.fl.yelpcdn.com/bphoto/rOH_IOeUp6e_5GJApiAayg/o.jpg",
@@ -550,7 +551,7 @@ events = []
     address: "Falckensteinstraße 49, 10997 Berlin",
     description: "Let's go explore some clubs in Berlin.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u19,
     vibe: v3,
     capacity: 6,
     photo: "http://www.deephouseamsterdam.com/wp-content/uploads/2014/11/watergate-1.jpg",
@@ -562,15 +563,16 @@ events = []
     address: "Köpenicker Str. 70",
     description: "B-Movie playing. Don't want to miss it. Come along and we'll go out for drinks after.",
     start_time: "#{Date.today}- 22:00",
-    user: users.sample,
+    user: u20,
     vibe: v5,
     capacity: 6,
     photo: "https://travelaway.me/wp-content/uploads/2016/05/kamari-cinema.jpg",
   )
   e20.save!
 
-
   events = [e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20]
+
+
 
 # 20.times do
 #   event = Event.new(
@@ -588,35 +590,22 @@ events = []
 
 puts "Creating random number of spots..."
 
+Spot.new
+
 events.each do |event|
-  possible_attendants = users.reject { |u| u == event.user }
+  possible_attendants = users.reject! { |u| u == event.user }
   rand(1..5).times do
     spot = Spot.new(
       user: possible_attendants.shuffle.pop,
       event: event
     )
 
-    # possible_attendants = possible_attendants.reject {|u| u == spot.user }
-    spot.save!
+#     # possible_attendants = possible_attendants.reject {|u| u == spot.user }
+#     spot.save!
   end
 end
 
 puts "Created #{Spot.count} spots"
-
-
-puts "Creating demo user..."
-demo_user = User.new(
-  full_name: "Jim",
-  email: "jim@gmail.com",
-  encrypted_password: Faker::Internet.password,
-  password: "123456",
-  current_country: "Germany",
-  origin_country: "United Sates",
-  birthday: "1992-03-25",
-  gender: "Male",
-  profile_photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/uyobqcjxteitwb314gea.jpg"
-)
-demo_user.save!
 
 # review_user = User.new(
 #   full_name: "Samantha Jones",
@@ -632,72 +621,6 @@ demo_user.save!
 # review_user.save!
 
 
-puts "Created demo user 'jim@gmail.com' "
-puts "Creating past events..."
-
-
-to_review1 = Event.new(
-    title:  "Cafe in Amsterdam?",
-    address: "Ten Katestraat 117, 1053 CC Amsterdam, Netherlands",
-    description: "This could be fun. I've never been. Let's check out a Cafe in Amsterdam and maybe get some food after.",
-    start_time: "#{Date.yesterday - 6}- 18:00",
-    user: users.sample,
-    vibe: v5,
-    capacity: 6,
-    photo: "https://mymodernmet.com/wp/wp-content/uploads/archive/4li2cFU3uEzpmBe39XJB_jimmychin4.jpg",
-  )
-  to_review1.save!
-
-  to_review2 = Event.new(
-    title:  "Budapest Beers",
-    address: "Budapest, Dob u. 3, 1072 Hungary",
-    description: "I always love a good beer, Budapest is known for its wines but let's check out some of it's up and coming craft beer scene.",
-    start_time: "#{Date.yesterday - 4 }- 23:00",
-    user: users.sample,
-    vibe: v1,
-    capacity: 6,
-    photo: "https://www.techexplorist.com/wp-content/uploads/2017/01/Drinking-In-Pub-With-Friends-Is-Good-For-You.jpg",
-  )
-  to_review2.save!
-
-    to_review3 = Event.new(
-    title:  "Wine tasting",
-    address: "Budapest, Dob u. 20, 1072 Hungary",
-    description: "Let's class is up a bit and try out some fine Budapest wines.",
-    start_time: "#{Date.yesterday - 2 }- 20:00",
-    user: users.sample,
-    vibe: v2,
-    capacity: 6,
-    photo: "https://blog.koelntourismus.de/wp-content/uploads/2018/02/Shepheards_Cocktail-Bars-in-Koeln-1030x685.jpg",
-  )
-  to_review3.save!
-
-puts 'Created past events'
-
-puts "Creating spots for demo user ..."
-  Spot.new(user: demo_user, event: to_review1).save!
-  Spot.new(user: demo_user, event: to_review2).save!
-  Spot.new(user: demo_user, event: to_review3).save!
-
-puts "Created spots"
-
-puts 'Creating hosted past event for user.'
-
-    to_host = Event.new(
-    title:  "Dublin Pub!",
-    address: "8 Poolbeg St, Dublin, DO2TK71, Ireland",
-    description: "Let's do what the locals do. In Dublin for a few days and would love to get a taste of the local pubs.",
-    start_time: "#{Date.yesterday - 10 }- 20:00",
-    user: demo_user,
-    vibe: v1,
-    capacity: 6,
-    photo: "https://media.2oceansvibe.com/wp-content/uploads/2018/08/fitfhleedescompetition.jpg",
-  )
-    to_host.save!
-
-puts 'Created past hosted event'
-
-
 # puts "Creating nil reviews"
 
 # 5.times do
@@ -709,7 +632,6 @@ puts 'Created past hosted event'
 # end
 
 # puts 'Creating review seeds'
-
 
 # 20.times do
 #   review = Review.new(
