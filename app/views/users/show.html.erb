@@ -24,7 +24,7 @@
         <div class="dashboard-card mt-10">
           <h3>Upcoming Events</h3>
           <div class="dashboard-card-background">
-            <% if current_user.spots != []  %>
+            <% if current_user.spots != [] %>
               <% current_user.spots.each do |spot| %>
                 <div class="event-list">
                   <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
