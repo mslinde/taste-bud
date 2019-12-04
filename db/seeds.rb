@@ -603,6 +603,7 @@ end
 
 puts "Created #{Spot.count} spots"
 
+
 puts "Creating demo user..."
 demo_user = User.new(
   full_name: "Jim",
@@ -616,6 +617,20 @@ demo_user = User.new(
   profile_photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/uyobqcjxteitwb314gea.jpg"
 )
 demo_user.save!
+
+# review_user = User.new(
+#   full_name: "Samantha Jones",
+#   email: "sam@example.com",
+#   encrypted_password: Faker::Internet.password,
+#   password: "123456",
+#   current_country: "Germany",
+#   origin_country: "United Kingdom",
+#   birthday: "1992-03-25",
+#   gender: "Female",
+#   profile_photo: "https://i.imgur.com/cDqspyH.png"
+# )
+# review_user.save!
+
 
 puts "Created demo user 'jim@gmail.com' "
 puts "Creating past events..."
@@ -681,6 +696,20 @@ puts 'Creating hosted past event for user.'
     to_host.save!
 
 puts 'Created past hosted event'
+
+
+# puts "Creating nil reviews"
+
+# 5.times do
+#   nil_review = Review.new(
+#     user: review_user,
+#     event: [e1, e2, e3, e4, e5, e6, e7].sample,
+#     )
+#   nil_review.save!
+# end
+
+# puts 'Creating review seeds'
+
 
 # 20.times do
 #   review = Review.new(
