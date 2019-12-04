@@ -2,14 +2,19 @@
   margin-top: 15px;
 }
 
+  a .fa-pencil-alt {
+    font-size: 30px;
+    vertical-align: 5px;
+  }
+
   a .fas {
-    color:$green;
+    color:#e5dfdf;
     transition: .05s ease;
     margin: 0px 10px;
   }
 
   a:hover .fas {
-    color: $gray;
+    color: $green;
   }
 
 .event-list {
