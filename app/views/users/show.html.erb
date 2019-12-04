@@ -4,7 +4,8 @@
     <%= link_to edit_user_registration_path(current_user[:id]) do %>
       <i class="fas fa-pencil-alt"> Edit Profile</i>
     <% end %>
-    </br>
+    <br>
+
     <div class="row">
       <% if @unreviewed_spots != [] %>
         <div class="col-sx-12 col-sm-12 col-md-10 col-lg-10">
@@ -18,6 +19,7 @@
           </div>
         </div>
       <% end %>
+
       <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
         <div class="dashboard-card mt-10">
           <h3>Upcoming Events</h3>
@@ -40,23 +42,27 @@
           </div>
         </div>
       </div>
+
       <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
         <div class="dashboard-card">
           <h3>Events I'm Hosting</h3>
           <div class="dashboard-card-background">
             <% if current_user.events != []  %>
-            <% @events.each do |event| %>
-            <div class="event-list">
-              <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
-                <p><%= link_to event.title, event_path(event.id) %></br>
-                  <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %></p>
-                <div class="event-list-options">
-                  <%= link_to "Cancel", '#', class: "btn btn-cancel" %>
-                  <%#= link_to do%>
-                    <!-- <i class="fas fa-pencil-alt"></i> -->
-                  <%# end %>
-                </div>
-              <% end %>
+              <div class="event-list">
+                <% @events.each do |event| %>
+                  <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                  <p>
+                    <%= link_to event.title, event_path(event.id) %>
+                    <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %>
+                  </p>
+                  <div class="event-list-options">
+                    <%= link_to "Cancel", '#', class: "btn btn-cancel" %>
+                    <%#= link_to do%>
+                      <!-- <i class="fas fa-pencil-alt"></i> -->
+                    <%# end %>
+                  </div>
+                <% end %>
+              </div>
             <% else %>
               <div class="event-list-options justify-content-center"><h5>Host an event!</h5></div>
               <div class="event-list-options justify-content-center"><%= link_to "Create Event", new_event_path, method: :get, class: "btn btn-join header-3" %></div>
@@ -65,7 +71,6 @@
         </div>
       </div>
     </div>
-  </div>
 
     <div class="row">
       <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
@@ -81,22 +86,22 @@
           </div>
         </div>
       </div>
+
       <div class="col-sx-12 col-sm-12 col-md-5 col-lg-5">
         <div class="dashboard-card">
           <h3>Events I Have Hosted</h3>
           <div class="dashboard-card-background">
             <% @events.each do |event| %>
-            <div class="event-list">
-              <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
-                <p><%= link_to event.title, event_path(event.id) %></br>
-                  <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %></p>
-              <% end %>
-            </div>
+              <div class="event-list">
+                <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                  <p><%= link_to event.title, event_path(event.id) %><br>
+                    <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %></p>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
