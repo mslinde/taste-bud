@@ -16,7 +16,6 @@ User.destroy_all
 Vibe.destroy_all
 Language.destroy_all
 Spot.destroy_all
-Review.destroy_all
 
 puts "Creating 20 users..."
 
@@ -604,44 +603,97 @@ end
 
 puts "Created #{Spot.count} spots"
 
-review_user = User.new(
-  full_name: "Samantha Jones",
-  email: "sam@example.com",
+puts "Creating demo user..."
+demo_user = User.new(
+  full_name: "Jim",
+  email: "jim@gmail.com",
   encrypted_password: Faker::Internet.password,
   password: "123456",
   current_country: "Germany",
-  origin_country: "United Kingdom",
+  origin_country: "United Sates",
   birthday: "1992-03-25",
-  gender: "Female",
-  profile_photo: "https://i.imgur.com/cDqspyH.png"
+  gender: "Male",
+  profile_photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/uyobqcjxteitwb314gea.jpg"
 )
-review_user.save!
+demo_user.save!
+
+puts "Created demo user 'jim@gmail.com' "
+puts "Creating past events..."
 
 
-puts "Creating nil reviews"
-
-5.times do
-  nil_review = Review.new(
-    user: review_user,
-    event: [e1, e2, e3, e4, e5, e6, e7].sample,
-    )
-  nil_review.save!
-end
-
-puts 'Creating review seeds'
-
-20.times do
-  review = Review.new(
+to_review1 = Event.new(
+    title:  "Cafe in Amsterdam?",
+    address: "Ten Katestraat 117, 1053 CC Amsterdam, Netherlands",
+    description: "This could be fun. I've never been. Let's check out a Cafe in Amsterdam and maybe get some food after.",
+    start_time: "#{Date.yesterday - 6}- 18:00",
     user: users.sample,
-    event: [e1, e2, e3, e4, e5, e6, e7].sample,
-    vibe: rand(1..5),
-    venue: rand(1..5),
-    neighborhood: rand(1..5),
-    attended: [true, false].sample,
-    comment: Faker::Restaurant.review,
-    )
-  review.save!
-end
-puts 'Created reviews'
+    vibe: v5,
+    capacity: 6,
+    photo: "https://mymodernmet.com/wp/wp-content/uploads/archive/4li2cFU3uEzpmBe39XJB_jimmychin4.jpg",
+  )
+  to_review1.save!
+
+  to_review2 = Event.new(
+    title:  "Budapest Beers",
+    address: "Budapest, Dob u. 3, 1072 Hungary",
+    description: "I always love a good beer, Budapest is known for its wines but let's check out some of it's up and coming craft beer scene.",
+    start_time: "#{Date.yesterday - 4 }- 23:00",
+    user: users.sample,
+    vibe: v1,
+    capacity: 6,
+    photo: "https://www.techexplorist.com/wp-content/uploads/2017/01/Drinking-In-Pub-With-Friends-Is-Good-For-You.jpg",
+  )
+  to_review2.save!
+
+    to_review3 = Event.new(
+    title:  "Wine tasting",
+    address: "Budapest, Dob u. 20, 1072 Hungary",
+    description: "Let's class is up a bit and try out some fine Budapest wines.",
+    start_time: "#{Date.yesterday - 2 }- 20:00",
+    user: users.sample,
+    vibe: v2,
+    capacity: 6,
+    photo: "https://blog.koelntourismus.de/wp-content/uploads/2018/02/Shepheards_Cocktail-Bars-in-Koeln-1030x685.jpg",
+  )
+  to_review3.save!
+
+puts 'Created past events'
+
+puts "Creating spots for demo user ..."
+  Spot.new(user: demo_user, event: to_review1).save!
+  Spot.new(user: demo_user, event: to_review2).save!
+  Spot.new(user: demo_user, event: to_review3).save!
+
+puts "Created spots"
+
+puts 'Creating hosted past event for user.'
+
+    to_host = Event.new(
+    title:  "Dublin Pub!",
+    address: "8 Poolbeg St, Dublin, DO2TK71, Ireland",
+    description: "Let's do what the locals do. In Dublin for a few days and would love to get a taste of the local pubs.",
+    start_time: "#{Date.yesterday - 10 }- 20:00",
+    user: demo_user,
+    vibe: v1,
+    capacity: 6,
+    photo: "https://media.2oceansvibe.com/wp-content/uploads/2018/08/fitfhleedescompetition.jpg",
+  )
+    to_host.save!
+
+puts 'Created past hosted event'
+
+# 20.times do
+#   review = Review.new(
+#     user: users.sample,
+#     event: [e1, e2, e3, e4, e5, e6, e7].sample,
+#     vibe: rand(1..5),
+#     venue: rand(1..5),
+#     neighborhood: rand(1..5),
+#     attended: [true, false].sample,
+#     comment: Faker::Restaurant.review,
+#     )
+#   review.save!
+# end
+# puts 'Created reviews'
 
 puts 'Finished!'
