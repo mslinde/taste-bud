@@ -17,12 +17,12 @@ class UsersController < ApplicationController
     p spot.event.start_time < Date.today
     end
 
-    @future_events = current_user.events.reject do
-    p @event.start_time < Date.today
+    @future_events = current_user.events.select do |event|
+    p event.start_time >= Date.today
     end
 
-    @past_events = current_user.events.select do
-    p @event.start_time < Date.today
+    @past_events = current_user.events.select do |event|
+    p event.start_time < Date.today
     end
 
     @unreviewed_spots = []
