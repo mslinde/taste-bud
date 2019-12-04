@@ -303,10 +303,6 @@ v5 = Vibe.create!(name: "Adventurous",
      :icon => "Icon_Adventure.png")
 v4 = Vibe.create!(name: "Saucy",
      :icon => "Icon_Saucy.png")
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 
 puts 'Creating 10 languages'
 
