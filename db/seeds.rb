@@ -590,7 +590,6 @@ events = []
 
 puts "Creating random number of spots..."
 
-
 events.each do |event|
   possible_attendants = users.reject! { |u| u == event.user }
   rand(1..5).times do
