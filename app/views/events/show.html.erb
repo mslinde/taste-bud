@@ -1,4 +1,4 @@
-<div class="img mainbannercontainer" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
+<div class="img mainbannercontainer" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url(<%= @event.photo %>)">
   <div class="showbannercontainer-left">
     <h1><%= @event.title %></h1>
     <h2><%= @event.start_time.strftime("%d of %B, %Y") %> at <%= @event.start_time.strftime("%k:%M")%></h2>
