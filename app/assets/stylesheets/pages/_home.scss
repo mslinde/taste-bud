@@ -65,7 +65,7 @@ body {
     border-radius: 50%;
     padding: 10px;
     height: 70px;
-    border: 3px solid $black;
+    border: 3px solid $green;
 
       .active {
         border: 3px solid $green!important;
@@ -94,7 +94,7 @@ body {
 }
 
 img.img-clickable.active {
-  border: 3px solid $green;
+  border: 3px solid $black;
 }
 
 
@@ -108,9 +108,9 @@ opacity: 1;
 color: #000;
 }
 
-// .cickable:checked {
-//   font-weight: bold;
-// }
+.cickable:checked {
+ font-weight: bold;
+}
 
 // input[type="radio"]:checked+label { font-weight: bold; }
 
