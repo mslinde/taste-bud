@@ -604,44 +604,44 @@ end
 
 puts "Created #{Spot.count} spots"
 
-review_user = User.new(
-  full_name: "Samantha Jones",
-  email: "sam@example.com",
-  encrypted_password: Faker::Internet.password,
-  password: "123456",
-  current_country: "Germany",
-  origin_country: "United Kingdom",
-  birthday: "1992-03-25",
-  gender: "Female",
-  profile_photo: "https://i.imgur.com/cDqspyH.png"
-)
-review_user.save!
+# review_user = User.new(
+#   full_name: "Samantha Jones",
+#   email: "sam@example.com",
+#   encrypted_password: Faker::Internet.password,
+#   password: "123456",
+#   current_country: "Germany",
+#   origin_country: "United Kingdom",
+#   birthday: "1992-03-25",
+#   gender: "Female",
+#   profile_photo: "https://i.imgur.com/cDqspyH.png"
+# )
+# review_user.save!
 
 
-puts "Creating nil reviews"
+# puts "Creating nil reviews"
 
-5.times do
-  nil_review = Review.new(
-    user: review_user,
-    event: [e1, e2, e3, e4, e5, e6, e7].sample,
-    )
-  nil_review.save!
-end
+# 5.times do
+#   nil_review = Review.new(
+#     user: review_user,
+#     event: [e1, e2, e3, e4, e5, e6, e7].sample,
+#     )
+#   nil_review.save!
+# end
 
-puts 'Creating review seeds'
+# puts 'Creating review seeds'
 
-20.times do
-  review = Review.new(
-    user: users.sample,
-    event: [e1, e2, e3, e4, e5, e6, e7].sample,
-    vibe: rand(1..5),
-    venue: rand(1..5),
-    neighborhood: rand(1..5),
-    attended: [true, false].sample,
-    comment: Faker::Restaurant.review,
-    )
-  review.save!
-end
-puts 'Created reviews'
+# 20.times do
+#   review = Review.new(
+#     user: users.sample,
+#     event: [e1, e2, e3, e4, e5, e6, e7].sample,
+#     vibe: rand(1..5),
+#     venue: rand(1..5),
+#     neighborhood: rand(1..5),
+#     attended: [true, false].sample,
+#     comment: Faker::Restaurant.review,
+#     )
+#   review.save!
+# end
+# puts 'Created reviews'
 
 puts 'Finished!'
