@@ -71,6 +71,7 @@
                 </div>
               </div>
                 <div class="card-trip-user">
+                  <%= cl_image_tag event.user.profile_photo, class: "avatar-bordered" %>
                   <% event.attendants.each do |user| %>
                   <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
                   <% end %>
