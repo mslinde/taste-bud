@@ -26,69 +26,65 @@
       </div>
     </div>
   </div>
-  <!--  <a href="#display-map" class="btn btn-primary">View Event Map</a> -->
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="cards-tab" data-toggle="tab" href="#cards-box" role="tab" aria-controls="cards-box" aria-selected="true">Cards</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="map-tab" data-toggle="tab" href="#map-box" role="tab" aria-controls="map-box" aria-selected="false">Map</a>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade active show" id="cards-box" role="tabpanel" aria-labelledby="cards-tab">
-      <h3 style="text-align: center; margin-top: 15px"><%= @response %></h3>
-      <div class="row">
-        <% @events.each do |event| %>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-            <div class="card-trip">
-              <%= link_to event_path(event) do %>
-              <% if event.photo == nil %>
-              <%= image_tag("https://i1.wp.com/bestlifeonline.com/wp-content/uploads/2018/01/shutterstock_435402349.jpg?resize=500%2C322&ssl=1") %>
-              <% else %>
-              <%= image_tag(event.photo) %>
-              <% end %>
+  <div class="events-parent">
+    <h3><%= @response %></h3>
+    <div class="row">
+      <div id="cards-box" role="tabpanel" aria-labelledby="cards-tab" class="col-xs-12 col-sm-12 col-md-8">
+        <div class="row">
+          <% @events.each do |event| %>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <div class="card-trip">
+                <%= link_to event_path(event) do %>
+                <% if event.photo == nil %>
+                <%= image_tag("https://i1.wp.com/bestlifeonline.com/wp-content/uploads/2018/01/shutterstock_435402349.jpg?resize=500%2C322&ssl=1") %>
+                <% else %>
+                <%= image_tag(event.photo) %>
+                <% end %>
 
-              <% end %>
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= link_to event.title, event_path(event) %></h2>
-                </div>
-                <div class="card-trip-pricing">
-                  <p> Created by <%= event.user.full_name %></p>
-                  <div class="card-info-vibe-distance">
-                    <div class ="card-info-vibe">
-                      <%= image_tag(event.vibe.icon) %>
-                      <p><%= event.vibe.name %></p>
-                    </div>
-                    <div class="card-info-distance">
-                      <p class="time"><strong>Starts at <%= event.start_time.strftime("%k:%M")%></strong></p>
-                      <% if params[:search] != "" %>
-                        <p><%= event.distance_to(params[:search]).truncate(1) %> km away</p>
-                      <% end %>
+                <% end %>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= link_to event.title, event_path(event) %></h2>
+                  </div>
+                  <div class="card-trip-pricing">
+                    <p> Created by <%= event.user.full_name %></p>
+                    <div class="card-info-vibe-distance">
+                      <div class ="card-info-vibe">
+                        <%= image_tag(event.vibe.icon) %>
+                        <p><%= event.vibe.name %></p>
+                      </div>
+                      <div class="card-info-distance">
+                        <p class="time"><strong>Starts at <%= event.start_time.strftime("%k:%M")%></strong></p>
+                        <% if params[:search] != "" %>
+                          <p><%= event.distance_to(params[:search]).truncate(1) %> km away</p>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
+                  <div class="card-trip-user">
+                    <% event.attendants.each do |user| %>
+                    <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
+                    <% end %>
+                  </div>
               </div>
-                <div class="card-trip-user">
-                  <% event.attendants.each do |user| %>
-                  <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
-                  <% end %>
-                </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
+
+      <div id="map-box" role="tabpanel" aria-labelledby="map-tab" class="col-xs-12 col-sm-12 col-md-4" >
+        <div class="mapbox"
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
+
     </div>
-    <!-- fix tiles displaying -->
-    <div class="tab-pane fade" id="map-box" role="tabpanel" aria-labelledby="map-tab">
-      <div class="mapbox"
-      id="map"
-      style="width: 100%;
-      height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
-    </div>
+
   </div>
+
 </div>
