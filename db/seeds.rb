@@ -1,4 +1,3 @@
-
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -16,7 +15,6 @@ User.destroy_all
 Vibe.destroy_all
 Language.destroy_all
 Spot.destroy_all
-Review.destroy_all
 
 puts "Creating 20 users..."
 
@@ -301,10 +299,10 @@ v2 = Vibe.create!(name: "Sophisticated",
      :icon => "Icon_Sophisticated.png")
 v3 = Vibe.create!(name: "Party",
      :icon => "Icon_Party.png")
-v4 = Vibe.create!(name: "Saucy",
-     :icon => "Icon_Saucy.png")
 v5 = Vibe.create!(name: "Adventurous",
      :icon => "Icon_Adventure.png")
+v4 = Vibe.create!(name: "Saucy",
+     :icon => "Icon_Saucy.png")
 
 puts 'Creating 10 languages'
 
@@ -570,9 +568,8 @@ events = []
   )
   e20.save!
 
+
   events = [e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, e19, e20]
-
-
 
 # 20.times do
 #   event = Event.new(
@@ -588,24 +585,82 @@ events = []
 #   events << event
 # end
 
-puts "Creating random number of spots..."
+puts "Creating spots..."
 
-Spot.new
+  Spot.new(user: u2, event: e1).save!
+  Spot.new(user: u3, event: e1).save!
+  Spot.new(user: u4, event: e1).save!
+  Spot.new(user: u5, event: e1).save!
+  Spot.new(user: u6, event: e2).save!
+  Spot.new(user: u7, event: e2).save!
+  Spot.new(user: u8, event: e2).save!
+  Spot.new(user: u9, event: e3).save!
+  Spot.new(user: u10, event: e3).save!
+  Spot.new(user: u11, event: e4).save!
+  Spot.new(user: u12, event: e4).save!
+  Spot.new(user: u13, event: e4).save!
+  Spot.new(user: u14, event: e4).save!
+  Spot.new(user: u15, event: e5).save!
+  Spot.new(user: u16, event: e5).save!
+  Spot.new(user: u17, event: e6).save!
+  Spot.new(user: u18, event: e6).save!
+  Spot.new(user: u19, event: e7).save!
+  Spot.new(user: u20, event: e8).save!
+  Spot.new(user: u1, event: e9).save!
+  Spot.new(user: u2, event: e9).save!
+  Spot.new(user: u3, event: e10).save!
+  Spot.new(user: u4, event: e11).save!
+  Spot.new(user: u5, event: e11).save!
+  Spot.new(user: u6, event: e11).save!
+  Spot.new(user: u6, event: e12).save!
+  Spot.new(user: u8, event: e12).save!
+  Spot.new(user: u9, event: e12).save!
+  Spot.new(user: u10, event: e13).save!
+  Spot.new(user: u11, event: e13).save!
+  Spot.new(user: u12, event: e14).save!
+  Spot.new(user: u13, event: e15).save!
+  Spot.new(user: u14, event: e16).save!
+  Spot.new(user: u15, event: e16).save!
+  Spot.new(user: u16, event: e16).save!
+  Spot.new(user: u17, event: e16).save!
+  Spot.new(user: u18, event: e17).save!
+  Spot.new(user: u19, event: e17).save!
+  Spot.new(user: u20, event: e18).save!
+  Spot.new(user: u20, event: e19).save!
+  Spot.new(user: u18, event: e20).save!
+  Spot.new(user: u17, event: e20).save!
 
-events.each do |event|
-  possible_attendants = users.reject! { |u| u == event.user }
-  rand(1..5).times do
-    spot = Spot.new(
-      user: possible_attendants.shuffle.pop,
-      event: event
-    )
 
-#     # possible_attendants = possible_attendants.reject {|u| u == spot.user }
+
+# events.each do |event|
+#   possible_attendants = users.reject { |u| u == event.user }
+#   rand(1..5).times do
+#     spot = Spot.new(
+#       user: possible_attendants.shuffle.pop,
+#       event: event
+#     )
+
+    # possible_attendants = possible_attendants.reject {|u| u == spot.user }
 #     spot.save!
-  end
-end
+# #   end
+# end
 
 puts "Created #{Spot.count} spots"
+
+
+puts "Creating demo user..."
+demo_user = User.new(
+  full_name: "Jim",
+  email: "jim@gmail.com",
+  encrypted_password: Faker::Internet.password,
+  password: "123456",
+  current_country: "Germany",
+  origin_country: "United Sates",
+  birthday: "1992-03-25",
+  gender: "Male",
+  profile_photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/uyobqcjxteitwb314gea.jpg"
+)
+demo_user.save!
 
 # review_user = User.new(
 #   full_name: "Samantha Jones",
@@ -621,6 +676,72 @@ puts "Created #{Spot.count} spots"
 # review_user.save!
 
 
+puts "Created demo user 'jim@gmail.com' "
+puts "Creating past events..."
+
+
+to_review1 = Event.new(
+    title:  "Cafe in Amsterdam?",
+    address: "Ten Katestraat 117, 1053 CC Amsterdam, Netherlands",
+    description: "This could be fun. I've never been. Let's check out a Cafe in Amsterdam and maybe get some food after.",
+    start_time: "#{Date.yesterday - 6}- 18:00",
+    user: users.sample,
+    vibe: v5,
+    capacity: 6,
+    photo: "https://mymodernmet.com/wp/wp-content/uploads/archive/4li2cFU3uEzpmBe39XJB_jimmychin4.jpg",
+  )
+  to_review1.save!
+
+  to_review2 = Event.new(
+    title:  "Budapest Beers",
+    address: "Budapest, Dob u. 3, 1072 Hungary",
+    description: "I always love a good beer, Budapest is known for its wines but let's check out some of it's up and coming craft beer scene.",
+    start_time: "#{Date.yesterday - 4 }- 23:00",
+    user: users.sample,
+    vibe: v1,
+    capacity: 6,
+    photo: "https://www.techexplorist.com/wp-content/uploads/2017/01/Drinking-In-Pub-With-Friends-Is-Good-For-You.jpg",
+  )
+  to_review2.save!
+
+    to_review3 = Event.new(
+    title:  "Wine tasting",
+    address: "Budapest, Dob u. 20, 1072 Hungary",
+    description: "Let's class is up a bit and try out some fine Budapest wines.",
+    start_time: "#{Date.yesterday - 2 }- 20:00",
+    user: users.sample,
+    vibe: v2,
+    capacity: 6,
+    photo: "https://blog.koelntourismus.de/wp-content/uploads/2018/02/Shepheards_Cocktail-Bars-in-Koeln-1030x685.jpg",
+  )
+  to_review3.save!
+
+puts 'Created past events'
+
+puts "Creating spots for demo user ..."
+  Spot.new(user: demo_user, event: to_review1).save!
+  Spot.new(user: demo_user, event: to_review2).save!
+  Spot.new(user: demo_user, event: to_review3).save!
+
+puts "Created spots"
+
+puts 'Creating hosted past event for user.'
+
+    to_host = Event.new(
+    title:  "Dublin Pub!",
+    address: "8 Poolbeg St, Dublin, DO2TK71, Ireland",
+    description: "Let's do what the locals do. In Dublin for a few days and would love to get a taste of the local pubs.",
+    start_time: "#{Date.yesterday - 10 }- 20:00",
+    user: demo_user,
+    vibe: v1,
+    capacity: 6,
+    photo: "https://media.2oceansvibe.com/wp-content/uploads/2018/08/fitfhleedescompetition.jpg",
+  )
+    to_host.save!
+
+puts 'Created past hosted event'
+
+
 # puts "Creating nil reviews"
 
 # 5.times do
@@ -632,6 +753,7 @@ puts "Created #{Spot.count} spots"
 # end
 
 # puts 'Creating review seeds'
+
 
 # 20.times do
 #   review = Review.new(
@@ -648,3 +770,4 @@ puts "Created #{Spot.count} spots"
 # puts 'Created reviews'
 
 puts 'Finished!'
+
