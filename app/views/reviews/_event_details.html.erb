@@ -4,5 +4,5 @@
   <p><strong>When:</strong></br><%= @event.start_time.strftime("%B %d") %> at <%= @event.start_time.strftime("%k:%M")%></p>
   <p><strong>Location:</strong></br><%= @event.address %></p>
 </div>
-<div class="mapbox" id="map" style="width: 400px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
+<div class="mapbox" id="map" style="width: 540px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
 

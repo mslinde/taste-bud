@@ -14,6 +14,20 @@ window.initAutocomplete = initAutocomplete
 initAutocomplete()
 
 
+// const items = document.querySelectorAll('.clickable');
+// items.forEach(i => i.addEventListener("click", (event) => {
+//   i.querySelector('input').checked = true;
+//   i.querySelector('img').classList.toggle('active');
+
+//   if (i.querySelector('input').value === i.dataset.vibeId) {
+//     i.querySelector('input').checked = true;
+//     i.querySelector('img').classList.add('active');
+//   }
+
+// }));
+
+
+// "Cedric's code"
 const items = document.querySelectorAll('.clickable');
 items.forEach(i => i.addEventListener("click", (event) => {
   i.querySelector('input').checked = false;
@@ -23,4 +37,32 @@ items.forEach(i => i.addEventListener("click", (event) => {
     i.querySelector('input').checked = true;
     i.querySelector('img').classList.add('active');
   }
+
 }));
+
+
+
+// // My attempt
+// const clickable = document.querySelectorAll(".clickable");
+// clickable.forEach((element) => {
+//   element.addEventListener("click", (event) => {
+//     i.querySelector('input').checked = false;
+//     element.classList.toggle("active");
+
+//   if (i.querySelector('input').value === i.dataset.vibeId) {
+//   }
+//   });
+// });
+
+const clickable = document.querySelectorAll(".clickable");
+clickable.forEach((element) => {
+  element.addEventListener("click", (event) => {
+    console.log(element)
+    element.classList.toggle("active");
+    element.querySelector('input').checked = false;
+    if (element.querySelector('input').value === element.dataset.vibeId) {
+    element.querySelector('input').checked = true;
+  }
+  });
+});
+
