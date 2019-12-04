@@ -18,6 +18,7 @@
   padding: 10px 5px 5px 10px;
   border-radius: 5px;
   margin:10px 10px 10px 10px;
+  justify-content: space-around;
 
   img {
     height: 40px;
@@ -35,19 +36,27 @@
   }
 
   a .fas {
-    color:$green;
+    color:#E1524A;
     transition: .05s ease;
     margin: 0px 10px;
   }
 
   a:hover .fas {
+    color: $green;
+  }
+  a .edit {
+    color: $green;
+  }
+
+  a:hover .edit {
     color: $gray;
   }
 }
 
 .event-list-options {
   display:flex;
-  align-items: center;
+  //align-items: center;
+  padding: 0 0 0 10px;
 }
 
 .dashboard-card {
