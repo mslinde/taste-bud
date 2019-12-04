@@ -9,18 +9,20 @@ class EventsController < ApplicationController
     # @events = Vibe.find(params[:vibe_id]).events.near(params[:search]) if params[:vibe_id]
     # @current_vibe = Vibe.find(params[:vibe_id]).name if params[:vibe_id]
     #events = Vibe.find(params[:vibe_id]).events.near(params[:search])
-    @current_vibe = Vibe.find(params[:vibe_id]).name
+    @current_vibe = Vibe.find_by(name: params[:vibe_id])
+    # raise
     @events = Event.where(vibe_id: params[:vibe_id]).near(params[:search])
 
-
-    # if !@events.present?
+    if @events.present?
+      @events
+    # elsif !@events.present?
     #   @events = Event.geocoded
     #   @events.near(params[:search])
-    #   if !@events.present?
-    #     @events = Event.geocoded
-    #   end
-    # end
-    # raise
+    #   @response = "No #{@current_vibe} Events Nearby But Check Out Other Events Nearby"
+    else
+        @events = Event.geocoded
+        @response = "TasteBudd Events Around the World"
+    end
 
     @markers = @events.map do |event|
       {

@@ -1,8 +1,9 @@
 .mapbox {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border: black 1px solid;
+
 }
 
 .mapboxgl-popup {
@@ -12,4 +13,10 @@
 .mapboxgl-popup-content {
   text-align: center;
   // font-family: 'Open Sans', sans-serif;
+}
+
+#map {
+  position: sticky;
+  height: calc(100vh + 62px);
+  top: 10px;
 }

@@ -65,7 +65,7 @@ body {
     border-radius: 50%;
     padding: 10px;
     height: 70px;
-    border: 3px solid $black;
+    border: 3px solid $green;
 
       .active {
         border: 3px solid $green!important;
@@ -93,6 +93,11 @@ body {
     }
 }
 
+img.img-clickable.active {
+  border: 3px solid $black;
+}
+
+
 .radio_item {
  // display: none !important;
  margin: 5px 20px;
@@ -103,11 +108,7 @@ opacity: 1;
 color: #000;
 }
 
-.cickable:checked {
-  font-weight: bold;
-}
-
-input[type="radio"]:checked+label { font-weight: bold; }
+// input[type="radio"]:checked+label { font-weight: bold; }
 
 
 
@@ -120,6 +121,18 @@ input[type="radio"]:checked+label { font-weight: bold; }
   width: 90% !important;
 }
 
+.clickable.active {
+  label {
+    font-weight: bold;
+  }
+  img {
+    background-color: $black;
+  }
+}
 
+.clickable:hover img {
+  background-color: $black;
+
+}
 
 
