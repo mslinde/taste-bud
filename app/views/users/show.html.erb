@@ -82,11 +82,14 @@
         <div class="dashboard-card">
           <h3>Past Attended Events</h3>
           <div class="dashboard-card-background">
-            <% current_user.spots.each do |spot| %>
-              <div class="event-list">
-                <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
-                <p><%= link_to spot.event.title, event_path(spot.event.id) %>, <%= spot.event.start_time.strftime("%B %d, %Y") %></p>
-              </div>
+            <% if @event.start_time < Date.today %>
+              <% current_user.spots.each do |spot| %>
+                <div class="event-list">
+                  <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                  <p><%= link_to spot.event.title, event_path(spot.event.id) %>, <%= spot.event.start_time.strftime("%B %d, %Y") %></p>
+                </div>
+              <% end %>
+            <% else %>
             <% end %>
           </div>
         </div>

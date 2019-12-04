@@ -9,7 +9,10 @@ class UsersController < ApplicationController
 
     @past_spots = current_user.spots.select do |spot|
       p spot.event.start_time < Date.today
-    end
+
+    @event = Event.find_by_id(params[:id])
+    # @show_event = Event.where('start_time < ?', Date.today)
+  end
 
     @unreviewed_spots = []
 
