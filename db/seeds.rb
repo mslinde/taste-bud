@@ -585,7 +585,6 @@ events = []
 #   events << event
 # end
 
-<<<<<<< HEAD
 puts "Creating spots..."
 
   Spot.new(user: u2, event: e1).save!
@@ -630,8 +629,6 @@ puts "Creating spots..."
   Spot.new(user: u20, event: e19).save!
   Spot.new(user: u18, event: e20).save!
   Spot.new(user: u17, event: e20).save!
-
-
 
 # events.each do |event|
 #   possible_attendants = users.reject { |u| u == event.user }
