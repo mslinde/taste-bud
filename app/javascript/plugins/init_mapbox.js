@@ -9,7 +9,7 @@ const buildMap = () => {
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10',
     center: [-74.50, 40],
-    zoom: 5
+    zoom: 5,
   });
   map.scrollZoom.disable();
 };
