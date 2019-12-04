@@ -2,17 +2,28 @@ class UsersController < ApplicationController
   def show
     @events = Event.where(user_id: current_user)
     @spot = Spot.find_by_id(params[:id])
-    @review_events = Event.where('start_time < ?', Date.today )
+    @review_events = Event.where('start_time < ?', Date.today)
 
     authorize @events
     @spots_to_review = current_user.spots
 
     @past_spots = current_user.spots.select do |spot|
-      p spot.event.start_time < Date.today
+    p spot.event.start_time < Date.today
+    end
 
     @event = Event.find_by_id(params[:id])
-    # @show_event = Event.where('start_time < ?', Date.today)
-  end
+
+    @future_spots = current_user.spots.reject do |spot|
+    p spot.event.start_time < Date.today
+    end
+
+    @future_events = current_user.events.reject do
+    p @event.start_time < Date.today
+    end
+
+    @past_events = current_user.events.select do
+    p @event.start_time < Date.today
+    end
 
     @unreviewed_spots = []
 
@@ -21,9 +32,9 @@ class UsersController < ApplicationController
         @unreviewed_spots << spot
       end
     end
-
-    # @past_spots_reviews = current_user.spots.select do |spot|
-    #   p spot.event.reviews
-    # end
   end
 end
+
+# @spot = Spot.find_by_id(params[:id])
+# @past_event = Event.where('start_time < ?', Date.today)
+# @show_event = Event.where('start_time < ?', Date.today)
