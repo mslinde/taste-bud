@@ -27,7 +27,10 @@
           <h3>Upcoming Events</h3>
           <div class="dashboard-card-background">
             <%# if @spot.event.start_time == Date.today %>
-              <% if current_user.spots != [] %>
+              <% if @future_spots == [] %>
+                <div class="event-list-options justify-content-center"><h5>You have no events!</h5></div>
+                <div class="event-list-options justify-content-center"><%= link_to "Find an Event", root_path, method: :get, class:"btn-fun btn-dark-transparent" %></div>
+              <% else %>
                 <% @future_spots.each do |spot| %>
                   <div class="event-list">
                     <%= image_tag(spot.event.photo, class:"user-dashboard", height:"50px")%>
@@ -40,10 +43,7 @@
                     </div>
                   </div>
                 <% end %>
-              <% else %>
-                <div class="event-list-options justify-content-center"><h5>You have no events!</h5></div>
-                <div class="event-list-options justify-content-center"><%= link_to "Click to Find One!", root_path, method: :get, class: "btn btn-join header-3" %></div>
-              <% end  %>
+              <% end %>
             <%# end %>
           </div>
         </div>
@@ -54,7 +54,7 @@
           <h3>Events I'm Hosting</h3>
           <div class="dashboard-card-background">
             <%# if @event.start_time <= Date.today %>
-              <% if current_user.events != []  %>
+              <% if @future_events != []  %>
                 <div class="event-list">
                   <% @future_events.each do |event| %>
                     <%= image_tag(event.photo, class:"user-dashboard", height:"50px")%>
@@ -76,7 +76,7 @@
               </div>
             <% else %>
               <div class="event-list-options justify-content-center"><h5>Host an event!</h5></div>
-              <div class="event-list-options justify-content-center"><%= link_to "Create Event", new_event_path, method: :get, class: "btn btn-join header-3" %></div>
+              <div class="event-list-options justify-content-center"><%= link_to "Create an Event", new_event_path, method: :get, class:"btn-fun btn-dark-transparent"  %></div>
             <% end %>
           </div>
         </div>

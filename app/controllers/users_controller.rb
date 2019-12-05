@@ -32,6 +32,7 @@ class UsersController < ApplicationController
         @unreviewed_spots << spot
       end
     end
+
   end
 end
 
