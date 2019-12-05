@@ -7,14 +7,18 @@
     <div class="row">
       <% if @unreviewed_spots != [] %>
         <div class="col-sx-12 col-sm-12 col-md-10 col-lg-10">
-          <div class="alert-secondary review-notice">
-            <p>Review your recent events</p>
-            <ul>
-              <% @unreviewed_spots.each do |spot| %>
-                <li><%= link_to  spot.event.title , new_spot_review_path(spot) %></li>
-              <% end %>
-             </ul>
-          </div>
+
+          <% @unreviewed_spots.each do |spot| %>
+            <div class="card-product review-notice">
+              <%= image_tag(spot.event.photo) %>
+              <div class="card-product-infos review-notice-infos">
+                <h3><%= spot.user.full_name %>, you went to <%= link_to  spot.event.title , new_spot_review_path(spot) %> <%= (Date.today - Date.parse(spot.event.start_time.to_s)).to_i %> days ago.</h3>
+                <p class="pl-0">Tell us how it went!</p>
+                <%= link_to "Review Now", new_spot_review_path(spot), class:"btn-fun btn-dark-solid" %>
+              </div>
+            </div>
+          <% end %>
+
         </div>
       <% end %>
 
