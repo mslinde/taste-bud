@@ -17,7 +17,7 @@
         </div>
 
         <div class="card-product">
-          <%= cl_image_tag @event.user.profile_photo, class: "avatar-bordered" %>
+          <%= cl_image_tag @event.user.profile_photo, class: "avatar-bordered card-attend-img" %>
           <div class="card-product-infos">
             <% if @event.user.full_name != nil %>
               <h3><%= @event.user.full_name %> (creator)</h3>
@@ -33,7 +33,7 @@
 
         <% @event.attendants.each do |user| %>
           <div class="card-product">
-            <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
+            <%= cl_image_tag user.profile_photo, class: "avatar-bordered card-attend-img" %>
             <div class="card-product-infos">
               <% if user.full_name != nil %>
                 <h3><%= user.full_name %></h3>
