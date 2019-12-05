@@ -1,0 +1,6 @@
+meta_product_name: "TasteBudd"
+meta_title: "TasteBudd - Never Dine Along"
+meta_description: "Never stress about going to a restaurant in an unfamiliar location alone.
+TasteBudd brings travelers together with the ability to find and create day of events."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@tastebudd_twitter_account"   # required for Twitter Cards

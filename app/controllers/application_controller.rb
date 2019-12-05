@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  def default_url_options
+    { host: ENV["www.taste-budd.com"] || "localhost:3000" }
+  end
 
   before_action :store_user_location!, if: :storable_location?
   before_action :authenticate_user!
