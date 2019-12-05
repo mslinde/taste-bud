@@ -382,7 +382,7 @@ events = []
     description: "You only live once. Let's go take on Kit Kat.",
     start_time: "#{Date.today}- 23:30",
     user: u5,
-    vibe: v5,
+    vibe: v3,
     capacity: 6,
     photo: "https://i.pinimg.com/736x/74/12/d3/7412d387ecb00da630ca9026eabbd2e0.jpg",
   )
@@ -406,7 +406,7 @@ events = []
     description: "Queer Roller disco at Festaal Kreuzberg. Let's Boogie!",
     start_time: "#{Date.today}- 22:00",
     user: u7,
-    vibe: v4,
+    vibe: v3,
     capacity: 6,
     photo: "http://sk8s.biz/wp-content/uploads/2016/03/roller-disco.png",
   )
@@ -415,10 +415,10 @@ events = []
   e8 = Event.new(
     title:  "The Doner Party",
     address: "Adalbertstraße 12, 10999 Berlin",
-    description: "Found some really great doner yesterday. Want to get some tonight as well. Come eat and hang.",
+    description: "Found some really great doner yesterday. Want to get some tonight and have it at with me at the club when I get hungry. Come pick up some doner with me and let's pick a club.",
     start_time: "#{Date.today}- 18:30",
     user: u8,
-    vibe: v1,
+    vibe: v3,
     capacity: 6,
     photo: "http://www.istanbulfood.com/wp-content/uploads/2010/04/doner-2.jpg",
   )
@@ -502,7 +502,7 @@ events = []
     description: "I haven't sung kareoke in ages, and I've got an itch I need to scratch. Come scratch your keroeke itch tonight!",
     start_time: "#{Date.today}- 21:00",
     user: u15,
-    vibe: v4,
+    vibe: v3,
     capacity: 6,
     photo: "https://edge.alluremedia.com.au/m/l/2016/11/Karaoke.jpg",
   )
@@ -523,10 +523,10 @@ events = []
   e17 = Event.new(
     title:  "Mazel Tov !",
     address: "Behrenstraße 55, 10117 Berlin",
-    description: "Let's drink and make good conversation",
+    description: "Let's drink!",
     start_time: "#{Date.today}- 18:00",
     user: u17,
-    vibe: v1,
+    vibe: v3,
     capacity: 6,
     photo: "http://wayfaringrachel.com/wp-content/uploads/2015/08/szimpla.jpg",
   )
@@ -621,7 +621,7 @@ puts "Creating spots..."
   Spot.new(user: u13, event: e15).save!
   Spot.new(user: u14, event: e16).save!
   Spot.new(user: u15, event: e16).save!
-  Spot.new(user: u16, event: e16).save!
+  Spot.new(user: u1, event: e16).save!
   Spot.new(user: u17, event: e16).save!
   Spot.new(user: u18, event: e17).save!
   Spot.new(user: u19, event: e17).save!
