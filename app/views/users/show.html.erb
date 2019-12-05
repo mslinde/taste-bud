@@ -30,7 +30,7 @@
               <% if current_user.spots != [] %>
                 <% @future_spots.each do |spot| %>
                   <div class="event-list">
-                    <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                    <%= image_tag(spot.event.photo, class:"user-dashboard", height:"50px")%>
                     <p><%= link_to spot.event.title, event_path(spot.event.id) %></br>
                     <%= spot.event.start_time.strftime("%B %d, %Y") %> at <%= spot.event.start_time.strftime("%k:%M") %></p>
                     <div class="event-list-options">
@@ -57,7 +57,7 @@
               <% if current_user.events != []  %>
                 <div class="event-list">
                   <% @future_events.each do |event| %>
-                    <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                    <%= image_tag(event.photo, class:"user-dashboard", height:"50px")%>
                     <p>
                       <%= link_to event.title, event_path(event.id) %>
                       <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %>
@@ -91,8 +91,8 @@
             <%# if @event.start_time < Date.today %>
               <% @past_spots.each do |spot| %>
                 <div class="event-list">
-                  <%= image_tag(spot.event.vibe.icon, class:"user-dashboard", height:"50px")%>
-                  <p><%= link_to spot.event.title, event_path(spot.event.id) %>, <%= spot.event.start_time.strftime("%B %d, %Y") %></p>
+                  <%= image_tag(spot.event.photo, class:"user-dashboard", height:"50px")%>
+                  <p><%= link_to spot.event.title, event_path(spot.event.id) %></br><%= spot.event.start_time.strftime("%B %d, %Y") %></p>
                 </div>
               <% end %>
             <%# end %>
@@ -106,7 +106,7 @@
           <div class="dashboard-card-background">
             <% @past_events.each do |event| %>
               <div class="event-list">
-                <%= image_tag(event.vibe.icon, class:"user-dashboard", height:"50px")%>
+                <%= image_tag(event.photo, class:"user-dashboard", height:"50px")%>
                   <p><%= link_to event.title, event_path(event.id) %><br>
                     <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %></p>
               </div>

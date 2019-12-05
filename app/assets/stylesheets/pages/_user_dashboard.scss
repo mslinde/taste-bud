@@ -8,7 +8,7 @@
   }
 
   a .fas {
-    color:#e5dfdf;
+    color: $light-gray;
     transition: .05s ease;
     margin: 0px 10px;
   }
@@ -19,25 +19,29 @@
 
 .event-list {
   display: flex;
-  background: rgba(255,255,255,.5);
+  background: rgba(255, 255, 255, 0.5);
   padding: 10px 5px 5px 10px;
   border-radius: 5px;
   margin:10px 10px 10px 10px;
-  justify-content: space-around;
+  justify-content: left;
+  //box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  //border: 1px solid;
 
   img {
-    height: 40px;
     margin: 0 10px 0 0;
+    width: 50px;
+    object-fit: cover;
   }
+
   p a {
-    color: $gray;
+    color: $fun-pink;
     margin: 0px;
     font-weight: bold;
     text-decoration: none;
   }
 
   p a:hover {
-    color: $green;
+    color: $light-gray;
   }
 
   a .fas {
@@ -71,16 +75,18 @@
 
 .dashboard-card-background {
   height: 250px;
-  background: rgba(129,129,129,.3);
+  background: $white;
   border-radius: 5px;
   padding-top: 20px;
+  border: 1px solid;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .review-notice {
   font-size:15px;
   position: relative;
   border-radius: 5px;
-  margin: 15px 0px;
+  margin: 15px 0px 25px 0px;
 
   li a {
     font-weight: normal;
