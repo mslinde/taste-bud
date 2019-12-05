@@ -10,6 +10,8 @@ class EventsController < ApplicationController
     # @current_vibe = Vibe.find(params[:vibe_id]).name if params[:vibe_id]
     #events = Vibe.find(params[:vibe_id]).events.near(params[:search])
     @current_vibe = Vibe.find_by(name: params[:vibe_id])
+    @vibes_array = Vibe.all.map { |vibe| [vibe.name, vibe.id] }
+    @vibes_array.unshift(["Select Vibe", 0])
     # raise
     @events = Event.where(vibe_id: params[:vibe_id]).near(params[:search])
 
