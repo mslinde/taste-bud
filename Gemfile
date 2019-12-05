@@ -22,6 +22,7 @@ gem 'webpacker'
 gem 'dotenv'
 gem 'geocoder'
 gem "algoliasearch-rails"
+gem "carrierwave"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
