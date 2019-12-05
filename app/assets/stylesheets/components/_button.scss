@@ -66,8 +66,6 @@
   text-decoration: none;
 }
 
-
-
 .btn-light-transparent-link {
   color: $fun-white;
   background-color: transparent;
@@ -80,6 +78,15 @@
   color: $fun-white;
   opacity: 1;
   text-decoration: none;
+}
+
+.form-btn-light-transparent {
+  color: #FFC65A;
+  margin-top: 10px;
+  color: $fun-light;
+  background-color: transparent;
+  border: 2px solid $fun-light;
+  padding: 8px;
 }
 
 
