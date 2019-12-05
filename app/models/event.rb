@@ -7,6 +7,8 @@ class Event < ApplicationRecord
   has_many :attendants, through: :spots, source: :user
   belongs_to :user
   has_many :reviews, through: :spots
+  mount_uploader :photo, PhotoUploader
+
 
   #validates :start_time, inclusion: { in: (Date.today..Date.tomorrow) }
 end
