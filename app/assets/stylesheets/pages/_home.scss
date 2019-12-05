@@ -27,9 +27,11 @@ body {
   }
 
   .form-control {
-    background-color: #0e0000;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
     border-radius: 32px;
-    border: 1px solid #FDFFC4;
+    border: 3px solid #F088A4;
+    margin-top: 8px;
   }
 
   .btn {
