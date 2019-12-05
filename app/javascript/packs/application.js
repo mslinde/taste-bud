@@ -13,6 +13,10 @@ initMapbox();
 window.initAutocomplete = initAutocomplete
 initAutocomplete()
 
+//Below is for star rating on create review page
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
 
 // const items = document.querySelectorAll('.clickable');
 // items.forEach(i => i.addEventListener("click", (event) => {
