@@ -2,9 +2,9 @@
   <%= simple_form_for([@spot, @review]) do |f| %>
     <div class="form-box">
       <div class="left">
-        <%= f.input :venue, collection: 1..5 %>
-        <%= f.input :vibe, collection: 1..5%>
-        <%= f.input :neighborhood, collection: 1..5 %>
+        <%= f.input :venue, collection: (1..5).to_a %>
+        <%= f.input :vibe, collection: (1..5).to_a %>
+        <%= f.input :neighborhood, collection: (1..5).to_a %>
         <%= f.input :comment, as: :text %>
 
     <div class="button-div">
