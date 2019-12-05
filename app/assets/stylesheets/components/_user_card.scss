@@ -13,9 +13,15 @@
 }
 
 .card-product img {
-  height: 100%;
-  width: 120px;
+  height: 110px;
+  width: 110px;
   object-fit: cover;
+}
+
+.card-attend-img {
+  margin-left: 1px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .card-product h2 {
