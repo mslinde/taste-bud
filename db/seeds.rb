@@ -358,7 +358,7 @@ events = []
     description: "See where the night takes us after a few cocktiails.",
     start_time: "#{Date.today}- 20:30",
     user: u3,
-    vibe: v4,
+    vibe: v1,
     capacity: 6,
     photo: "https://makemeacocktail.com/blog/wp-content/uploads/2019/02/a1.jpg",
   )
@@ -394,7 +394,7 @@ events = []
     description: "We have to go to at least one German Bier Garten. Come join me for a few biers.",
     start_time: "#{Date.today}- 16:30",
     user: u6,
-    vibe: v5,
+    vibe: v1,
     capacity: 6,
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Hofbraeukeller_5906.JPG/1200px-Hofbraeukeller_5906.JPG",
   )
@@ -427,12 +427,12 @@ events = []
   e9 = Event.new(
     title:  "Drink Outside the Box",
     address: "Köpenicker Str. 70",
-    description: "Let's go explore some clubs in Berlin.",
+    description: "Let's grab some beers from a spati and drink on a stoop.",
     start_time: "#{Date.today}- 19:00",
     user: u9,
-    vibe: v3,
+    vibe: v1,
     capacity: 6,
-    photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
+    photo: "https://zru9o3ijb9-flywheel.netdna-ssl.com/wp-content/uploads/2017/01/spati-berlin-600x400.jpg",
   )
   e9.save!
 
@@ -454,7 +454,7 @@ events = []
     description: "YAAM is a super famous music venue for African Artists. Tonight a great jazz band is on.",
     start_time: "#{Date.today}- 20:30",
     user: u11,
-    vibe: v3,
+    vibe: v1,
     capacity: 6,
     photo: "http://awesomeberlin.net/wp-content/uploads/2016/06/yaam3.jpg",
   )
@@ -502,7 +502,7 @@ events = []
     description: "I haven't sung kareoke in ages, and I've got an itch I need to scratch. Come scratch your keroeke itch tonight!",
     start_time: "#{Date.today}- 21:00",
     user: u15,
-    vibe: v4,
+    vibe: v1,
     capacity: 6,
     photo: "https://edge.alluremedia.com.au/m/l/2016/11/Karaoke.jpg",
   )
@@ -514,7 +514,7 @@ events = []
     description: "I really want to try some good schnitzel. This place is supposed to be the best. Let's feed our souls some schnitzel.",
     start_time: "#{Date.today}- 18:30",
     user: u16,
-    vibe: v2,
+    vibe: v1,
     capacity: 6,
     photo: "http://graphics8.nytimes.com/images/2014/10/10/multimedia/clark-schnitzel/clark-schnitzel-superJumbo.jpg",
   )
@@ -562,7 +562,7 @@ events = []
     description: "B-Movie playing. Don't want to miss it. Come along and we'll go out for drinks after.",
     start_time: "#{Date.today}- 22:00",
     user: u20,
-    vibe: v5,
+    vibe: v1,
     capacity: 6,
     photo: "https://travelaway.me/wp-content/uploads/2016/05/kamari-cinema.jpg",
   )
@@ -621,7 +621,7 @@ puts "Creating spots..."
   Spot.new(user: u13, event: e15).save!
   Spot.new(user: u14, event: e16).save!
   Spot.new(user: u15, event: e16).save!
-  Spot.new(user: u16, event: e16).save!
+  Spot.new(user: u11, event: e16).save!
   Spot.new(user: u17, event: e16).save!
   Spot.new(user: u18, event: e17).save!
   Spot.new(user: u19, event: e17).save!
