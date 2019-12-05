@@ -10,7 +10,8 @@
 .banner h1 {
   margin: 0;
   color: $fun-dark;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
   font-size: 60px;
   font-weight: bold;
   font-family: 'Lily Script One', cursive;
@@ -22,8 +23,9 @@
   color: white;
   opacity: .8;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  letter-spacing: .25em;
+  letter-spacing: 0.1em;
   margin: 0px 0 0 0;
+
 }
 
 .banner p span {
