@@ -3,20 +3,19 @@
   <div class="review-container">
     <div class="row d-flex">
       <div class="form-left  col-xm-12 col-md-6">
-        <h1 style="padding:0; text-align: center;">Leave a review for <%= @spot.event.title %></h1>
-        <h3 style="padding:0; text-align: center;">On a scale of 1-5, how was the...</h3>
+        <h1 style="padding-top: 47px; text-align: left;">Leave a review for <%= @spot.event.title %></h1>
+          <%= cl_image_tag @event.user.profile_photo, class: "avatar-bordered" %>
+          <% @event.attendants.each do |user| %>
+            <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
+          <% end %>
+        <h3 style="padding-top: 35px; text-align: left;">On a scale of 1-5, how was the...</h3>
           <%= render "form" %>
       </div>
       <div class="detail-right col-xs-12 col-md-6">
-<!--         <h3 style="padding:0; text-align: center;">Event Details</h3> -->
-        <p>Budds Who Went:</p>
-          <%= cl_image_tag @event.user.profile_photo, class: "avatar-bordered" %>
-        <% @event.attendants.each do |user| %>
-          <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
-        <% end %>
-        <div class="mapbox" id="map" style="width: 540px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
-
-        <%#= render "event_details" %>
+        <div class="show-img-container">
+          <%= cl_image_tag @event.photo, class: "show-img"  %>
+          <%= render "event_details" %>
+        </div>
       </div>
     </div>
   </div>
