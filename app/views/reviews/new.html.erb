@@ -8,7 +8,6 @@
           <% @event.attendants.each do |user| %>
             <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
           <% end %>
-        <h3 style="padding-top: 35px; text-align: left;">On a scale of 1-5, how was the...</h3>
           <%= render "form" %>
       </div>
       <div class="detail-right col-xs-12 col-md-6">
