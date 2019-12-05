@@ -689,17 +689,17 @@ puts "Created demo user 'jim@gmail.com' "
 puts "Creating past events..."
 
 
-to_review1 = Event.new(
-    title:  "Cafe in Amsterdam?",
-    address: "Ten Katestraat 117, 1053 CC Amsterdam, Netherlands",
-    description: "This could be fun. I've never been. Let's check out a Cafe in Amsterdam and maybe get some food after.",
-    start_time: "#{Date.yesterday - 6}- 18:00",
-    user: users.sample,
-    vibe: v5,
-    capacity: 6,
-    photo: "https://mymodernmet.com/wp/wp-content/uploads/archive/4li2cFU3uEzpmBe39XJB_jimmychin4.jpg",
-  )
-  to_review1.save!
+# to_review1 = Event.new(
+#     title:  "Cafe in Amsterdam?",
+#     address: "Ten Katestraat 117, 1053 CC Amsterdam, Netherlands",
+#     description: "This could be fun. I've never been. Let's check out a Cafe in Amsterdam and maybe get some food after.",
+#     start_time: "#{Date.yesterday - 6}- 18:00",
+#     user: users.sample,
+#     vibe: v5,
+#     capacity: 6,
+#     photo: "https://mymodernmet.com/wp/wp-content/uploads/archive/4li2cFU3uEzpmBe39XJB_jimmychin4.jpg",
+#   )
+#   to_review1.save!
 
   to_review2 = Event.new(
     title:  "Budapest Beers",
@@ -728,7 +728,7 @@ to_review1 = Event.new(
 puts 'Created past events'
 
 puts "Creating spots for demo user ..."
-  Spot.new(user: demo_user, event: to_review1).save!
+  # Spot.new(user: demo_user, event: to_review1).save!
   Spot.new(user: demo_user, event: to_review2).save!
   Spot.new(user: demo_user, event: to_review3).save!
 

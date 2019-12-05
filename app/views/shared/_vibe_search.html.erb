@@ -1,8 +1,10 @@
         <%= form_tag(events_path, method: :get, class:"banner-search") do %>
           <div class="row justify-content-center form-group">
+            <p>1. Enter your location</p>
             <%= text_field_tag :search, params[:search], class: 'form-control banner-searchbar', placeholder: 'Enter Your Location' %>
           </div>
           <div class="row justify-content-between px-4">
+            <p>2. Select the vibe you're looking for tonight</p>
                 <% @vibes.each do |vibe| %>
                   <div class="d-flex justify-content-center pt-4 col-1 mx-3 p-2">
                     <div class="vibes clickable" data-vibe-id="<%= vibe.id %>">
@@ -15,7 +17,8 @@
           </div>
 
           <div class="row justify-content-center my-2">
-            <%= submit_tag 'Find Events!', name: nil, class: "btn-fun btn-dark-solid" %>
+            <p>3. Search for events</p>
+              <%= submit_tag 'Find Events!', name: nil, class: "btn-fun btn-dark-solid" %>
           </div>
         <% end %>
 

@@ -15,6 +15,16 @@
   text-decoration: none;
 }
 
+
+.btn-dark-no-border {
+  color: $fun-dark;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  margin-top: 5px;
+  padding-left: 0px;
+}
+
 //dark button transparent
 .btn-dark-transparent  {
   color: $fun-dark;
@@ -35,11 +45,19 @@
   border: 2px solid $fun-dark;
 }
 
+.btn-dark-solid-normal  {
+  color: $fun-white;
+  background-color: $fun-dark;
+  border: 2px solid $fun-dark;
+  font-weight: normal;
+}
+
 .btn-dark-solid:hover {
   background-color: transparent;
   color: $fun-dark;
   text-decoration: none;
 }
+
 
 //light button transparent
 .btn-light-transparent {
