@@ -79,14 +79,8 @@
 .review-notice {
   font-size:15px;
   position: relative;
-  padding: 20px 20px;
   border-radius: 5px;
   margin: 15px 0px;
-
-  p {
-    margin: 0px;
-    font-weight: bold;
-  }
 
   li a {
     font-weight: normal;
@@ -99,5 +93,13 @@
   ul {
     margin: 0;
   }
+  p {
+    margin: 0 0 10px 0;
+  }
 }
 
+.card-product .review-notice-infos p {
+    p {
+    margin: 0px;
+  }
+}

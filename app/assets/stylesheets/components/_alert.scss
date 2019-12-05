@@ -1,6 +1,43 @@
 .alert {
   position: fixed;
-  bottom: 16px;
+  padding-top: 23px;
+  padding-right: 50px;
   right: 16px;
   z-index: 1000;
+  font-weight: bold;
+  height: 75px;
+  background-color: #00957B;
+  border-radius: 4px;
+  box-shadow: 0 0 15px $gray-shadow;
+  color: #FFC65A;
+  border: 1px solid #454d66;
+  align-items: center;
+}
+
+.alert-warning {
+  position: fixed;
+  right: 16px;
+  z-index: 1000;
+  font-weight: bold;
+  height: 75px;
+  background-color: #f67280;
+  border-radius: 4px;
+  box-shadow: 0 0 15px $gray-shadow;
+  color: #801336;
+  border: 1px solid;
+  vertical-align: middle;
+}
+
+.alert-danger {
+  position: fixed;
+  right: 16px;
+  z-index: 1000;
+  font-weight: bold;
+  height: 75px;
+  background-color: #f67280;
+  border-radius: 4px;
+  box-shadow: 0 0 15px $gray-shadow;
+  color: #801336;
+  border: 1px solid;
+  vertical-align: middle;
 }

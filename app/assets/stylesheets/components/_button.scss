@@ -15,6 +15,16 @@
   text-decoration: none;
 }
 
+
+.btn-dark-no-border {
+  color: $fun-dark;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  margin-top: 5px;
+  padding-left: 0px;
+}
+
 //dark button transparent
 .btn-dark-transparent  {
   color: $fun-dark;
@@ -24,15 +34,22 @@
 
 .btn-dark-transparent:hover {
   background-color: $fun-dark;
-  color: $fun-light;
+  color: $fun-white;
   text-decoration: none;
 }
 
 //dark button solid
 .btn-dark-solid {
-  color: $fun-light;
+  color: $fun-white;
   background-color: $fun-dark;
   border: 2px solid $fun-dark;
+}
+
+.btn-dark-solid-normal  {
+  color: $fun-white;
+  background-color: $fun-dark;
+  border: 2px solid $fun-dark;
+  font-weight: normal;
 }
 
 .btn-dark-solid:hover {
@@ -41,35 +58,34 @@
   text-decoration: none;
 }
 
+
 //light button transparent
 .btn-light-transparent {
-  color: $fun-light;
+  color: $fun-white;
   background-color: transparent;
-  border: 2px solid $fun-light;
+  border: 2px solid $fun-white;
 }
 
 .btn-light-transparent:hover {
-  background-color: $fun-light;
+  background-color: $fun-white;
   color: $fun-dark;
   text-decoration: none;
 }
 
 .btn-light-solid {
   color: $fun-dark;
-  background-color: $fun-light;
-  border: 2px solid $fun-light;
+  background-color: $fun-white;
+  border: 2px solid $fun-white;
 }
 
 .btn-light-solid:hover {
   background-color: transparent;
-  color: $fun-light;
+  color: $fun-white;
   text-decoration: none;
 }
 
-
-
 .btn-light-transparent-link {
-  color: $fun-light;
+  color: $fun-white;
   background-color: transparent;
   border: none;
   opacity: 0.8;
@@ -77,9 +93,18 @@
 }
 
 .btn-light-transparent-link:hover {
-  color: $fun-light;
+  color: $fun-white;
   opacity: 1;
   text-decoration: none;
+}
+
+.form-btn-light-transparent {
+  color: #FFC65A;
+  margin-top: 10px;
+  color: $fun-light;
+  background-color: transparent;
+  border: 2px solid $fun-light;
+  padding: 8px;
 }
 
 

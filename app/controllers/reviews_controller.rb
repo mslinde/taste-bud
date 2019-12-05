@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
     @event = @spot.event
     @review = Review.new
     authorize @review
+      @markers = [{ lat: @event.latitude, lng: @event.longitude }]
   end
 
   def create
