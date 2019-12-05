@@ -15,6 +15,14 @@
   text-decoration: none;
 }
 
+.btn-dark-no-border {
+  color: $fun-dark;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  margin-top: 5px;
+}
+
 //dark button transparent
 .btn-dark-transparent  {
   color: $fun-dark;
