@@ -9,16 +9,10 @@
           <!-- search bar -->
           <div class="search-bar">
             <div class="row justify-content-center border-0 m-0">
-              <!-- <div class="hey"> -->
                 <%= form_tag(events_path, method: :get) do %>
                   <%= text_field_tag :search, params[:search], class: 'banner-searchbar', id: 'algolia-big', placeholder: 'Enter Your Location' %>
-              <!-- </div> -->
-                  <% vibes_array = Vibe.all.map { |vibe| [vibe.name, vibe.id] } %>
-
-                    <%= select_tag(:vibe_id, options_for_select(vibes_array), class:'vibe-selection') %>
-
+                  <%= select_tag(:vibe_id, options_for_select(@vibes_array, disabled: [["Select Vibe", 0]]), class:'vibe-selection') %>
                   <%= submit_tag 'Find Events', name: nil, class: "btn-fun btn-dark-solid" %>
-
                 <% end %>
             </div>
             <!-- If no Events are found in the area -->
