@@ -1,6 +1,7 @@
 .avatar {
   width: 40px;
   border-radius: 50%;
+
 }
 
 .avatar-large {
@@ -12,7 +13,12 @@
   border-radius: 50%;
   box-shadow: 0 5px 17px rgba(0, 0, 0, 0.2);
   object-fit: cover;
-  height: 51px;
+  height: 60px;
+  position: relative;
+  left: 10px;
+  margin-left: -13px;
+  z-index: 1;
+  border: 2px solid #41957b;
 }
 
 .avatar-square {
