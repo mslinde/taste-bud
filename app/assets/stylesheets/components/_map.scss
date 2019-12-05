@@ -16,6 +16,7 @@
 
 #map {
   position: sticky;
-  top: calc(100vh - 62px);
-  top: 1px;
+  height: calc(100vh - 72px);
+  margin-top: 10px;
+  top: 0;
 }
