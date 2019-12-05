@@ -3,7 +3,6 @@
             <p>1. Enter your location</p>
             <%= text_field_tag :search, params[:search], class: 'form-control banner-searchbar', placeholder: 'Enter Your Location' %>
           </div>
-
           <div class="row justify-content-between px-4">
             <p>2. Select the vibe you're looking for tonight</p>
                 <% @vibes.each do |vibe| %>
