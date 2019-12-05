@@ -53,7 +53,7 @@
                 <% if current_user == @event.user %>
                   <a href="">Edit Details</a>
                 <% elsif @spot_occupied %>
-                  <%= link_to "Cancel", event_path(@event), method: :delete, class: "btn-fun btn-dark-solid" %>
+                  <%= link_to "Cancel", join_event_path(@event), method: :delete, class: "btn-fun btn-dark-solid" %>
                 <% else %>
                   <%= link_to "Join Event!", join_event_path(@event), method: :post, class: "btn-fun btn-dark-solid" %>
                 <% end %>
