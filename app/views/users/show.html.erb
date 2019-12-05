@@ -7,8 +7,8 @@
     <div class="row">
       <% if @unreviewed_spots != [] %>
         <div class="col-sx-12 col-sm-12 col-md-10 col-lg-10">
-          <% @unreviewed_spots.each do |spot| %>
 
+          <% @unreviewed_spots.each do |spot| %>
             <div class="card-product review-notice">
               <%= image_tag(spot.event.photo) %>
               <div class="card-product-infos review-notice-infos">
@@ -16,9 +16,9 @@
                 <p class="pl-0">Tell us how it went!</p>
                 <%= link_to "Review Now", new_spot_review_path(spot), class:"btn-fun btn-dark-solid" %>
               </div>
-
             </div>
           <% end %>
+
         </div>
       <% end %>
 
