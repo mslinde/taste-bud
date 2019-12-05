@@ -156,3 +156,17 @@
   }
 }
 
+
+.card-product .review-notice {
+  h3, a {
+    color: $green;
+  }
+}
+
+.card-trip-infos .review-notice h3, a {
+  color: $green;
+}
+
+.card-product-infos .review-notice p {
+    margin: 0 0 10px 0;
+}

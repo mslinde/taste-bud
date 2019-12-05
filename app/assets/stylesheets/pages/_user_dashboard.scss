@@ -76,28 +76,5 @@
   padding-top: 20px;
 }
 
-.review-notice {
-  font-size:15px;
-  position: relative;
-  padding: 20px 20px;
-  border-radius: 5px;
-  margin: 15px 0px;
 
-  p {
-    margin: 0px;
-    font-weight: bold;
-  }
-
-  li a {
-    font-weight: normal;
-    color: $green;
-  }
-
-  li a:hover {
-    color: $gray;
-  }
-  ul {
-    margin: 0;
-  }
-}
 

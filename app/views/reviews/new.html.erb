@@ -14,7 +14,9 @@
         <% @event.attendants.each do |user| %>
           <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
         <% end %>
-        <%= render "event_details" %>
+        <div class="mapbox" id="map" style="width: 540px; height: 350px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" ></div>
+
+        <%#= render "event_details" %>
       </div>
     </div>
   </div>
