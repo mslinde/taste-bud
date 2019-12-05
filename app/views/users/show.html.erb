@@ -11,9 +11,9 @@
 
             <div class="card-product review-notice">
               <%= image_tag(spot.event.photo) %>
-              <div class="card-product-infos">
-                <h3>You Went to <%= link_to  spot.event.title , new_spot_review_path(spot) %> <%= (Date.today - Date.parse(spot.event.start_time.to_s)).to_i %> days ago</h3>
-                <p>Let us know how it went!</p>
+              <div class="card-product-infos review-notice-infos">
+                <h3><%= spot.user.full_name %>, you went to <%= link_to  spot.event.title , new_spot_review_path(spot) %> <%= (Date.today - Date.parse(spot.event.start_time.to_s)).to_i %> days ago.</h3>
+                <p class="pl-0">Tell us how it went!</p>
                 <%= link_to "Review Now", new_spot_review_path(spot), class:"btn-fun btn-dark-solid" %>
               </div>
 

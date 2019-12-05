@@ -76,5 +76,30 @@
   padding-top: 20px;
 }
 
+.review-notice {
+  font-size:15px;
+  position: relative;
+  border-radius: 5px;
+  margin: 15px 0px;
 
+  li a {
+    font-weight: normal;
+    color: $green;
+  }
 
+  li a:hover {
+    color: $gray;
+  }
+  ul {
+    margin: 0;
+  }
+  p {
+    margin: 0 0 10px 0;
+  }
+}
+
+.card-product .review-notice-infos p {
+    p {
+    margin: 0px;
+  }
+}
