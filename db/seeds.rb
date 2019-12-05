@@ -358,7 +358,7 @@ events = []
     description: "See where the night takes us after a few cocktiails.",
     start_time: "#{Date.today}- 20:30",
     user: u3,
-    vibe: v4,
+    vibe: v1,
     capacity: 6,
     photo: "https://makemeacocktail.com/blog/wp-content/uploads/2019/02/a1.jpg",
   )
@@ -382,7 +382,7 @@ events = []
     description: "You only live once. Let's go take on Kit Kat.",
     start_time: "#{Date.today}- 23:30",
     user: u5,
-    vibe: v3,
+    vibe: v5,
     capacity: 6,
     photo: "https://i.pinimg.com/736x/74/12/d3/7412d387ecb00da630ca9026eabbd2e0.jpg",
   )
@@ -394,7 +394,7 @@ events = []
     description: "We have to go to at least one German Bier Garten. Come join me for a few biers.",
     start_time: "#{Date.today}- 16:30",
     user: u6,
-    vibe: v5,
+    vibe: v1,
     capacity: 6,
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Hofbraeukeller_5906.JPG/1200px-Hofbraeukeller_5906.JPG",
   )
@@ -406,7 +406,7 @@ events = []
     description: "Queer Roller disco at Festaal Kreuzberg. Let's Boogie!",
     start_time: "#{Date.today}- 22:00",
     user: u7,
-    vibe: v3,
+    vibe: v4,
     capacity: 6,
     photo: "http://sk8s.biz/wp-content/uploads/2016/03/roller-disco.png",
   )
@@ -415,10 +415,10 @@ events = []
   e8 = Event.new(
     title:  "The Doner Party",
     address: "Adalbertstraße 12, 10999 Berlin",
-    description: "Found some really great doner yesterday. Want to get some tonight and have it at with me at the club when I get hungry. Come pick up some doner with me and let's pick a club.",
+    description: "Found some really great doner yesterday. Want to get some tonight as well. Come eat and hang.",
     start_time: "#{Date.today}- 18:30",
     user: u8,
-    vibe: v3,
+    vibe: v1,
     capacity: 6,
     photo: "http://www.istanbulfood.com/wp-content/uploads/2010/04/doner-2.jpg",
   )
@@ -427,12 +427,12 @@ events = []
   e9 = Event.new(
     title:  "Drink Outside the Box",
     address: "Köpenicker Str. 70",
-    description: "Let's go explore some clubs in Berlin.",
+    description: "Let's grab some beers from a spati and drink on a stoop.",
     start_time: "#{Date.today}- 19:00",
     user: u9,
-    vibe: v3,
+    vibe: v1,
     capacity: 6,
-    photo: "http://club54.ca/wp-content/uploads/2014/02/1ClubMay244.jpg",
+    photo: "https://zru9o3ijb9-flywheel.netdna-ssl.com/wp-content/uploads/2017/01/spati-berlin-600x400.jpg",
   )
   e9.save!
 
@@ -454,7 +454,7 @@ events = []
     description: "YAAM is a super famous music venue for African Artists. Tonight a great jazz band is on.",
     start_time: "#{Date.today}- 20:30",
     user: u11,
-    vibe: v3,
+    vibe: v1,
     capacity: 6,
     photo: "http://awesomeberlin.net/wp-content/uploads/2016/06/yaam3.jpg",
   )
@@ -502,7 +502,7 @@ events = []
     description: "I haven't sung kareoke in ages, and I've got an itch I need to scratch. Come scratch your keroeke itch tonight!",
     start_time: "#{Date.today}- 21:00",
     user: u15,
-    vibe: v3,
+    vibe: v1,
     capacity: 6,
     photo: "https://edge.alluremedia.com.au/m/l/2016/11/Karaoke.jpg",
   )
@@ -514,7 +514,7 @@ events = []
     description: "I really want to try some good schnitzel. This place is supposed to be the best. Let's feed our souls some schnitzel.",
     start_time: "#{Date.today}- 18:30",
     user: u16,
-    vibe: v2,
+    vibe: v1,
     capacity: 6,
     photo: "http://graphics8.nytimes.com/images/2014/10/10/multimedia/clark-schnitzel/clark-schnitzel-superJumbo.jpg",
   )
@@ -523,10 +523,10 @@ events = []
   e17 = Event.new(
     title:  "Mazel Tov !",
     address: "Behrenstraße 55, 10117 Berlin",
-    description: "Let's drink!",
+    description: "Let's drink and make good conversation",
     start_time: "#{Date.today}- 18:00",
     user: u17,
-    vibe: v3,
+    vibe: v1,
     capacity: 6,
     photo: "http://wayfaringrachel.com/wp-content/uploads/2015/08/szimpla.jpg",
   )
@@ -562,7 +562,7 @@ events = []
     description: "B-Movie playing. Don't want to miss it. Come along and we'll go out for drinks after.",
     start_time: "#{Date.today}- 22:00",
     user: u20,
-    vibe: v5,
+    vibe: v1,
     capacity: 6,
     photo: "https://travelaway.me/wp-content/uploads/2016/05/kamari-cinema.jpg",
   )
@@ -621,7 +621,7 @@ puts "Creating spots..."
   Spot.new(user: u13, event: e15).save!
   Spot.new(user: u14, event: e16).save!
   Spot.new(user: u15, event: e16).save!
-  Spot.new(user: u1, event: e16).save!
+  Spot.new(user: u11, event: e16).save!
   Spot.new(user: u17, event: e16).save!
   Spot.new(user: u18, event: e17).save!
   Spot.new(user: u19, event: e17).save!
