@@ -1,3 +1,89 @@
+.btn-fun {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+  border-radius: 3px;
+  padding: 5px 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-dark-transparent  {
+  color: $fun-dark;
+  background-color: transparent;
+  border: 2px solid $fun-dark;
+  text-decoration: none;
+}
+
+//dark button transparent
+.btn-dark-transparent  {
+  color: $fun-dark;
+  background-color: transparent;
+  border: 2px solid $fun-dark;
+}
+
+.btn-dark-transparent:hover {
+  background-color: $fun-dark;
+  color: $fun-light;
+  text-decoration: none;
+}
+
+//dark button solid
+.btn-dark-solid {
+  color: $fun-light;
+  background-color: $fun-dark;
+  border: 2px solid $fun-dark;
+}
+
+.btn-dark-solid:hover {
+  background-color: transparent;
+  color: $fun-dark;
+  text-decoration: none;
+}
+
+//light button transparent
+.btn-light-transparent {
+  color: $fun-light;
+  background-color: transparent;
+  border: 2px solid $fun-light;
+}
+
+.btn-light-transparent:hover {
+  background-color: $fun-light;
+  color: $fun-dark;
+  text-decoration: none;
+}
+
+.btn-light-solid {
+  color: $fun-dark;
+  background-color: $fun-light;
+  border: 2px solid $fun-light;
+}
+
+.btn-light-solid:hover {
+  background-color: transparent;
+  color: $fun-light;
+  text-decoration: none;
+}
+
+
+
+.btn-light-transparent-link {
+  color: $fun-light;
+  background-color: transparent;
+  border: none;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.btn-light-transparent-link:hover {
+  color: $fun-light;
+  opacity: 1;
+  text-decoration: none;
+}
+
+
+////////////old buttons
 .btn .btn-ghost {
   color: white;
   text-align: center;

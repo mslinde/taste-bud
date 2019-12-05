@@ -11,12 +11,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-   <!--      <li class="nav-item active">
-          <#%= link_to "Home", "#", class: "nav-link" %>
-        </li> -->
-        <li class="nav-item">
-          <%= link_to "Add an Event", new_event_path,  class: "nav-link btn" %>
+
+        <li class="nav-item" style="margin-right: 5px;margin-top: 6px;">
+          <%= link_to "Add an Event", new_event_path,  class: "btn-fun btn-light-solid" %>
         </li>
+        <li class="nav-item" style="margin-right: 10px;margin-top: 6px;">
+          <%= link_to "Dashboard", user_path(current_user),  class: "btn-fun btn-light-transparent-link" %>
+        </li>
+
 
         <li class="nav-item dropdown">
           <% if current_user.profile_photo? %>
@@ -31,11 +33,11 @@
         </li>
 
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Sign In", new_user_session_path, class: "nav-link " %>
+        <li class="nav-item" style="margin-right: 10px;">
+          <%= link_to "Sign In", new_user_session_path, class: "btn-fun btn-light-transparent"%>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn-fun btn-light-transparent" %>
         </li>
       <% end %>
     </ul>

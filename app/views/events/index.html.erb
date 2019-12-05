@@ -17,7 +17,7 @@
 
                     <%= select_tag(:vibe_id, options_for_select(vibes_array), class:'vibe-selection') %>
 
-                  <%= submit_tag 'Find Events', name: nil, class: "btn btn-primary btn-search" %>
+                  <%= submit_tag 'Find Events', name: nil, class: "btn-fun btn-dark-solid" %>
 
                 <% end %>
             </div>
@@ -43,16 +43,16 @@
                   </div>
 
                   <div class="card-trip-pricing">
-                    <p> Created by <%= event.user.full_name %></p>
+                    <p> <span>Created by</span> <%= event.user.full_name %></p>
                     <div class="card-info-vibe-distance">
                       <div class ="card-info-vibe">
                         <%= image_tag(event.vibe.icon) %>
                         <p><%= event.vibe.name %></p>
                       </div>
                       <div class="card-info-distance">
-                        <p class="time"><strong>Starts at <%= event.start_time.strftime("%k:%M")%></strong></p>
+                        <p class="time">Starts at <strong><%= event.start_time.strftime("%k:%M")%></strong></p>
                         <% if params[:search] != "" %>
-                          <p><%= event.distance_to(params[:search]).truncate(1) %> km away</p>
+                          <p class="distance"><%= event.distance_to(params[:search]).truncate(1) %> km away</p>
                         <% end %>
                       </div>
                     </div>
