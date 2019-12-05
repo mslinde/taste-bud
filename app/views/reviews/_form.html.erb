@@ -6,7 +6,7 @@
         <%= f.input :venue, collection: (1..5).to_a %>
         <%= f.input :vibe, collection: (1..5).to_a %>
         <%= f.input :neighborhood, collection: (1..5).to_a %>
-        <%= f.input :comment, as: :text %>
+        <%= f.input :comment, label: "Any comments on your experience?", as: :text %>
 
     <div class="button-div">
       <%= f.submit class: "btn-fun btn-dark-solid" %>
