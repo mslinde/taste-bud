@@ -3,7 +3,7 @@
     <div class="form-box">
       <div class="left">
         <h3>How was the:</h3>
-        <%= f.input :venue, label: "Group", collection: (1..5).to_a %>
+        <%= f.input :venue, label: "Group", collection: (1..5).to_a, class:"margin-bottom:0px;" %>
         <%= f.input :vibe, collection: (1..5).to_a %>
         <%= f.input :neighborhood, collection: (1..5).to_a %>
         <%= f.input :comment, label: "Any comments on your experience?", as: :text %>
