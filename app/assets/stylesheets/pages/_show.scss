@@ -40,7 +40,11 @@ h2 {
   justify-content: center;
 
   p {
+    font-weight: normal;
+  }
+  p strong {
     font-weight: bold;
+    color: $light-gray;
   }
 
   .btn {
