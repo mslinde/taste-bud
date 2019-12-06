@@ -703,7 +703,7 @@ puts "Creating past events..."
 
   to_review2 = Event.new(
     title:  "Budapest Beers",
-    address: "Budapest, Dob u. 3, 1072 Hungary",
+    address: "Dob u. 3, 1072 Hungary",
     description: "I always love a good beer, Budapest is known for its wines but let's check out some of it's up and coming craft beer scene.",
     start_time: "#{Date.yesterday - 4 }- 23:00",
     user: users.sample,
@@ -715,7 +715,7 @@ puts "Creating past events..."
 
     to_review3 = Event.new(
     title:  "Wine tasting",
-    address: "Budapest, Dob u. 20, 1072 Hungary",
+    address: "Dob u. 20, 1072 Hungary",
     description: "Let's class is up a bit and try out some fine Budapest wines.",
     start_time: "#{Date.yesterday - 2 }- 20:00",
     user: users.sample,
