@@ -32,28 +32,32 @@ body {
     border-radius: 32px;
     border: 1.5px solid #F088A4;
     margin-top: 8px;
+    height: 50px;
   }
 
   .btn {
-  color: #FDFFC4;
-  background-color: #00957B;
-  padding: 10px 20px;
-  font-size: 20px;
-  line-height: 1.5;
-  border-radius: 10px;
-  box-shadow: 0px 0px 0px;
-  border: none !important;
-
+    color: #FDFFC4;
+    background-color: #00957B;
+    padding: 10px 20px;
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px;
+    border: none !important;
   }
 
-.img-clickable {
-  background-color: #0e129659;
-  border-radius: 50%;
-  padding: 10px;
-  height: 70px;
-  border: 1.5px solid #F088A4;
+  .img-clickable {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    height: 70px;
+    border: 1.5px solid #F088A4;
 
-}
+    &:hover {
+      cursor: pointer;
+      background-color: $fun-pink !important;
+    }
+  }
 }
 
 
@@ -75,11 +79,11 @@ body {
   color: #000;
 
     img {
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 10px;
-    height: 70px;
-    border: 3px solid $fun-pink;
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 10px;
+      height: 70px;
+      border: 3px solid $fun-pink;
 
       .active {
         border: 3px solid $fun-pink!important;
@@ -90,13 +94,13 @@ body {
       }
 
       :hover {
-      font-weight: bold;
+        font-weight: bold;
       }
     }
 
     &.active {
-    color: white;
-    opacity: 1;
+      color: white;
+      opacity: 1;
     }
 
     p {
@@ -105,6 +109,11 @@ body {
     label {
       margin: 0;
     }
+  &:hover {
+    img {
+      background-color: $fun-pink !important;
+    }
+  }
 }
 
 img.img-clickable.active {
@@ -149,4 +158,45 @@ color: #000;
 
 }
 
+
+.homepage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 62px);
+
+  .banner {
+    height: 100% !important;
+    border-right: 1px solid #ff084c;
+  }
+
+  .home-form {
+    margin: 0 auto;
+    max-width: 530px;
+
+
+    .banner-text {
+      padding: 60px 20px 0;
+
+      h1 {
+        text-align: center;
+        color: $fun-dark;
+        text-shadow: 3px 1px 3px rgba(0, 0, 0, 0.2);
+        font-size: 60px;
+        font-weight: bold;
+        font-family: 'Lily Script One', cursive;
+      }
+
+      p {
+        font-size: 21px;
+        font-weight: 100;
+        text-align: center;
+        opacity: 0.6;
+      }
+    }
+
+    .banner-search {
+      padding: 20px 20px 0;
+    }
+  }
+}
 

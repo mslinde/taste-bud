@@ -174,7 +174,9 @@
     color: $green;
   }
 }
-
+.card-product.review-notice h3 {
+  margin: 0px!important;
+}
 .card-product.review-notice  img {
   height: 100%!important;
   width: 120px!important;

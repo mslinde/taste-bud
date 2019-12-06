@@ -2,26 +2,32 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   display: flex;
   box-align: center;
   align-items: center;
   border-radius: 6px;
   margin-bottom: 20px;
-  border: 1px solid grey;
-  // font-family: 'Alice', serif;
+  border: 1px solid $fun-pink;
+
+  h3, p {
+    margin: 0 0 0 20px;
+  }
+
+  p:first-of-type {
+    margin-bottom: 12px;
+  }
 }
 
 .card-product img {
-  height: 110px;
-  width: 110px;
+  height: 120px;
+  width: 120px;
   object-fit: cover;
 }
 
 .card-attend-img {
-  margin-left: 1px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+ box-shadow: none;
+ border-radius: 0;
+ border: none;
 }
 
 .card-product h2 {
@@ -35,9 +41,7 @@
   font-size: 15px;
   line-height: 1.4;
   opacity: .7;
-  padding-left: 10px;
   color: black;
-  margin: 0px;
 }
 
 .card-product .card-product-infos {

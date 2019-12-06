@@ -21,7 +21,11 @@ h2 {
 }
 
 .details {
-  // width: 400px;
+  strong {
+    text-transform: uppercase;
+    opacity: 0.6;
+    font-size: 14px;
+  }
 }
 
 .details h2 {
