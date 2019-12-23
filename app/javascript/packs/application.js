@@ -18,6 +18,9 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
 
+// New Time Picker for creating an event
+import { NJTimePicker } from '../plugins/nj-timepicker';
+
 // const items = document.querySelectorAll('.clickable');
 // items.forEach(i => i.addEventListener("click", (event) => {
 //   i.querySelector('input').checked = true;

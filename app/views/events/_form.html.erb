@@ -9,7 +9,13 @@
               <%= Date.today.strftime("%b %-d, %Y") %>
             </div>
             <div class="date-box-right">
-              <%= f.input :start_time, as: :string, input_html: {class: "datepicker"} %>
+              <div class="wrapper">
+                  <label for="format_24">Start Time</label>
+                  <div class="container" id="format_24">
+                      --:--
+                  </div>
+              </div>
+              <%#= f.input :start_time, as: :string, input_html: {class: "datepicker"} %>
             </div>
           </div>
           <%= f.input :address %>
@@ -25,4 +31,9 @@
         <%= f.submit class: "btn-fun btn-dark-transparent" %>
       </div>
   <% end %>
+
+
+
+
+
 </div>
