@@ -3,18 +3,25 @@
     <%= simple_form_for(@event) do |f| %>
       <div class="form-box">
         <div class="left">
-          <%= f.input :title %>
+          <%= f.input :title, placeholder: "What is your event called?" %>
           <div class ="date-box">
             <div class = "date-box-left">
               <%= Date.today.strftime("%b %-d, %Y") %>
             </div>
             <div class="date-box-right">
-              <%= f.input :start_time, as: :string, input_html: {class: "datepicker"} %>
+              <div class="wrapper">
+                  <!--<label for="start_time">Start Time</label>-->
+                  <div class="container" >
+                      <!--  --:--  -->
+                    <%= f.input :start_time, as: :string, input_html: { id: "start_time"}, placeholder: "Time of your event today" %>
+                  </div>
+              </div>
+              <%#= f.input :start_time, as: :string, input_html: {class: "datepicker"} %>
             </div>
           </div>
-          <%= f.input :address %>
-          <%= f.input :description %>
-          <%= f.input :capacity %>
+          <%= f.input :address, placeholder: "Where is it going to be?" %>
+          <%= f.input :description, placeholder: "Tell us about your event" %>
+          <%= f.input :capacity, collection: 3..6 %>
 
         </div>
         <div class="right">
@@ -25,4 +32,9 @@
         <%= f.submit class: "btn-fun btn-dark-transparent" %>
       </div>
   <% end %>
+
+
+
+
+
 </div>
