@@ -1,7 +1,7 @@
 import NJTimePicker from 'nj-timepicker';
 
 (function() {
-  let format_24 = document.querySelector('#format_24');
+  let format_24 = document.querySelector('#start_time');
   var format_24_picker = new NJTimePicker({
     targetEl: format_24,
     texts: {
