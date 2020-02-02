@@ -4,7 +4,6 @@ class EventsController < ApplicationController
   def index
     @events = policy_scope(Event).order(created_at: :asc).geocoded
     @vibes = Vibe.all
-
     @location = params[:search]
     # @events = Vibe.find(params[:vibe_id]).events.near(params[:search]) if params[:vibe_id]
     # @current_vibe = Vibe.find(params[:vibe_id]).name if params[:vibe_id]
@@ -57,7 +56,6 @@ class EventsController < ApplicationController
       @markers = [{ lat: @event.latitude, lng: @event.longitude }]
   end
 
-
   def new
     @event = Event.new
     authorize @event
@@ -81,20 +79,12 @@ class EventsController < ApplicationController
     authorize @event
   end
 
-   def destroy
+  def destroy
     set_event
     @event.destroy
     redirect_to user_path, notice: "Event was successfully removed"
     authorize @event
   end
-
-  # def cancel
-  #   @spot = Spot.find(params[:id])
-  #   Spot.destroy(event: @event, user: current_user)
-  #   redirect_to event_path(@event), notice: "You are no longer going"
-  #   authorize @spot
-  # end
-
   private
 
   def event_params
