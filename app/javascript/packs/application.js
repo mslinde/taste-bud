@@ -1,5 +1,6 @@
-import "../plugins/flatpickr";
+//= require jquery
 
+import "../plugins/flatpickr";
 import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
@@ -17,7 +18,6 @@ initAutocomplete()
 import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
-
 // const items = document.querySelectorAll('.clickable');
 // items.forEach(i => i.addEventListener("click", (event) => {
 //   i.querySelector('input').checked = true;

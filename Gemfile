@@ -11,6 +11,7 @@ gem 'redis'
 gem 'faker'
 gem 'pundit'
 gem 'cloudinary', '~> 1.9.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'autoprefixer-rails'
