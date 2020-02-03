@@ -47,6 +47,17 @@
             </div>
           </div>
         <% end %>
+
+        <div class="comments-container">
+          <%= simple_form_for([@event]) do |f| %>
+            <div class="form-box">
+              <div class="comments"><%= f.input :comment, label: "Leave a Comment", as: :text %></div>
+            <div class="btn-form">
+              <%= f.submit "Post" %>
+            </div>
+            </div>
+          <% end %>
+        </div>
       </div>
 
       <div class="detail-right col-xs-12 col-md-6">
