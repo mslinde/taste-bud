@@ -7,6 +7,7 @@ class Event < ApplicationRecord
   has_many :attendants, through: :spots, source: :user
   belongs_to :user
   has_many :reviews, through: :spots
+  has_many :comments, through: :spots
 
   #validates :start_time, inclusion: { in: (Date.today..Date.tomorrow) }
 end
