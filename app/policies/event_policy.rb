@@ -21,6 +21,14 @@ class EventPolicy < ApplicationPolicy
     create?
   end
 
+  def update?
+    true
+  end
+
+  def edit?
+    update?
+  end
+
   def join?
     return true
   end
