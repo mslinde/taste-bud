@@ -49,6 +49,13 @@
         <% end %>
       </div>
 
+    <% if current_user %>
+      <%= render 'comments/form' %>
+
+      <%= render 'comments/comments' %>
+    <% end %>
+
+
       <div class="detail-right col-xs-12 col-md-6">
         <div class="show-img-container">
           <%= cl_image_tag @event.photo, class: "show-img"  %>

@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :update, :edit]
 
   def index
     @events = policy_scope(Event).order(created_at: :asc).geocoded
@@ -12,7 +12,6 @@ class EventsController < ApplicationController
     @current_vibe = Vibe.find_by(name: params[:vibe_id])
     @vibes_array = Vibe.all.map { |vibe| [vibe.name, vibe.id] }
     @vibes_array.unshift(["Select Vibe", 0])
-    # raise
     @events = Event.where(vibe_id: params[:vibe_id]).near(params[:search])
 
     if @events.present?
@@ -50,13 +49,13 @@ class EventsController < ApplicationController
     if current_user
       @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user.id}.first
       @event_user = @event.user
+      @comment = Comment.new
     else
       @event_user = @event.user
     end
       authorize @event
       @markers = [{ lat: @event.latitude, lng: @event.longitude }]
   end
-
 
   def new
     @event = Event.new
@@ -71,6 +70,17 @@ class EventsController < ApplicationController
     else
       render :new
     end
+    authorize @event
+  end
+
+  def update
+    set_event
+    redirect_to event_path(@event)
+    authorize @event
+  end
+
+   def edit
+    set_event
     authorize @event
   end
 

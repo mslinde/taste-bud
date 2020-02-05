@@ -1,0 +1,19 @@
+.comments-container {
+  border: 1px solid black;
+  border-radius: 6px;
+  box-shadow: 1px 1px 3;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+
+.form-control  {
+  width: 100%;
+}
+
+// .optional {
+//   padding: 20px;
+// }
