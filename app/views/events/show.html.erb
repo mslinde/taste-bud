@@ -47,14 +47,14 @@
             </div>
           </div>
         <% end %>
+
+        <div class="comments">
+          <% if current_user && @spot_occupied %>
+            <%= render 'comments/form' %>
+            <%= render 'comments/comments' %>
+          <% end %>
+        </div>
       </div>
-
-    <% if current_user %>
-      <%= render 'comments/form' %>
-
-      <%= render 'comments/comments' %>
-    <% end %>
-
 
       <div class="detail-right col-xs-12 col-md-6">
         <div class="show-img-container">
