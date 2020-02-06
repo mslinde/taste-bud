@@ -2,8 +2,8 @@
   <h3>Comments</h3>
   <div class="comments-container">
     <%= simple_form_for([@spot_occupied, @comment]) do |f| %>
-        <div class="comments"><%= f.input :comment, label: "Leave a comment for tonight's event", as: :text %></div>
-        <%= f.submit "Post" %>
+        <div class="comments"><%= f.input :note, label: "Leave a comment for tonight's event", as: :text %></div>
+       <%= f.submit "Post" %>
     <% end %>
   </div>
 
