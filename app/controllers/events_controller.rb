@@ -50,6 +50,7 @@ class EventsController < ApplicationController
       @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user.id}.first
       @event_user = @event.user
       @comment = Comment.new
+      @comments = @event.comments
     else
       @event_user = @event.user
     end
@@ -97,13 +98,6 @@ class EventsController < ApplicationController
     redirect_to user_path, notice: "Event was successfully removed"
     authorize @event
   end
-
-  # def cancel
-  #   @spot = Spot.find(params[:id])
-  #   Spot.destroy(event: @event, user: current_user)
-  #   redirect_to event_path(@event), notice: "You are no longer going"
-  #   authorize @spot
-  # end
 
   private
 

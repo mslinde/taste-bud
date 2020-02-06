@@ -1,9 +1,12 @@
 class CommentsController < ApplicationController
+  before_action :set_spot
+  before_action :authenticate_user!
 
   def new
     set_spot
     @event = spot.event
     @comment = Comment.new
+    authorize @comment
   end
 
   def create
@@ -11,19 +14,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.spot = @spot
-      if @comment.save!
-        redirect_to event_path(@event)
-      else
-        render :new
-    end
-  end
-
-  def update
-    set_comment
-  end
-
-  def edit
-    set_comment
+    @comment.save!
+    authorize @comment
   end
 
   # def destroy
@@ -33,7 +25,7 @@ class CommentsController < ApplicationController
   private
 
   def set_spot
-    @spot = Spot.find(params[:id])
+    @spot = Spot.find(params[:spot_id])
   end
 
   def set_comment
@@ -41,6 +33,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:comment)
+    params.require(:comment).permit(:note)
   end
 end
