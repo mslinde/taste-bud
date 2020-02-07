@@ -29,7 +29,6 @@ class CommentsController < ApplicationController
    #  @comment.user = current_user
    #  authorize @comment
    # end
-  end
 
    def destroy
     set_spot
