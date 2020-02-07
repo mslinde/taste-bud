@@ -14,17 +14,21 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.spot = @spot
-    @comment.save!
-    redirect_back(fallback_location: root_path)
+    if @comment.blank?
+      render :new
+    else
+      @comment.save!
+      redirect_back(fallback_location: root_path)
+    end
     authorize @comment
   end
 
-   def destroy
-    set_spot
-    set_comment
-    @comment.destroy
-    authorize @comment
-   end
+   # def destroy
+   #  set_comment
+   #  @comment.destroy
+   #  @comment.user = current_user
+   #  authorize @comment
+   # end
 
   private
 
