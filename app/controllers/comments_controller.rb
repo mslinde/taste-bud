@@ -14,11 +14,16 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.spot = @spot
-    if @comment.blank?
-      render :new
+    if @comment.save!
+      respond_to do |format|
+        format.html { redirect_back(fallback_location: root_path) }
+        format.js
+      end
     else
-      @comment.save!
-      redirect_back(fallback_location: root_path)
+      respond_to do |format|
+        format.html { render 'events/show' }
+        format.js
+      end
     end
     authorize @comment
   end
@@ -26,7 +31,6 @@ class CommentsController < ApplicationController
    # def destroy
    #  set_comment
    #  @comment.destroy
-   #  @comment.user = current_user
    #  authorize @comment
    # end
 
