@@ -50,7 +50,7 @@ class EventsController < ApplicationController
       @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user.id}.first
       @event_user = @event.user
       @comment = Comment.new
-      @comments = @event.comments
+      @comments = @event.comments.order(created_at: :asc)
     else
       @event_user = @event.user
     end
