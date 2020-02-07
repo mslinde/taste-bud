@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.spot = @spot
+<<<<<<< Updated upstream
     if @comment.blank?
       render :new
     else
@@ -29,6 +30,19 @@ class CommentsController < ApplicationController
    #  @comment.user = current_user
    #  authorize @comment
    # end
+=======
+    @comment.save!
+    redirect_back(fallback_location: root_path)
+    authorize @comment
+  end
+
+   def destroy
+    set_spot
+    set_comment
+    @comment.destroy
+    authorize @comment
+   end
+>>>>>>> Stashed changes
 
   private
 

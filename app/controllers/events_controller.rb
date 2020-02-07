@@ -50,7 +50,11 @@ class EventsController < ApplicationController
       @spot_occupied = @event.spots.select {|spot| spot.user_id == current_user.id}.first
       @event_user = @event.user
       @comment = Comment.new
+<<<<<<< Updated upstream
       @comments = @event.comments.order(created_at: :desc)
+=======
+      @comments = @event.comments.order(created_at: :asc)
+>>>>>>> Stashed changes
     else
       @event_user = @event.user
     end
