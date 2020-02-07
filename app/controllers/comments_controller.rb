@@ -12,15 +12,19 @@ class CommentsController < ApplicationController
   def create
     set_spot
     @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
+    @comment.user = current_user
     @comment.spot = @spot
     @comment.save!
+    redirect_back(fallback_location: root_path)
     authorize @comment
   end
 
-  # def destroy
-
-  # end
+   def destroy
+    set_spot
+    set_comment
+    @comment.destroy
+    authorize @comment
+   end
 
   private
 
@@ -33,6 +37,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:note)
+    params.require(:comment).permit(:note, :spot_id)
   end
 end
