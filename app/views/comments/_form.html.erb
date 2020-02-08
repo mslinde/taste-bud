@@ -1,6 +1,6 @@
   <h3>Comments</h3>
   <div class="comments-container">
-    <%= simple_form_for([@spot_occupied, @comment]) do |f| %>
+    <%= simple_form_for([@spot_occupied, @comment], remote: true) do |f| %>
         <div class="comments-form"><%= f.input :note, label: "Leave a comment for tonight's event", as: :text %></div>
         <%= f.submit "Post", class: "btn-dark-transparent"%>
     <% end %>
