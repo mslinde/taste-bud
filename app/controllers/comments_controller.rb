@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_spot
+  before_action :set_spot, only: [:new, :create, :destroy]
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
@@ -15,28 +15,21 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.spot = @spot
-    if @comment.save!
+    if @comment.save
       respond_to do |format|
         format.html { redirect_back(fallback_location: root_path) }
         format.js
       end
     else
       respond_to do |format|
-        format.html { render 'events/show' }
+        format.html { render :new }
         format.js
       end
     end
     authorize @comment
   end
 
-   # def destroy
-   #  set_comment
-   #  @comment.destroy
-   #  authorize @comment
-   # end
-
    def destroy
-    set_spot
     set_comment
     @comment.destroy
     authorize @comment
