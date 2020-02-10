@@ -1,81 +1,80 @@
-<div class="container">
+<div class="events-parent">
 
-  <div class="events-parent">
+  <div class="row">
+    <div id="cards-box" role="tabpanel" aria-labelledby="cards-tab" class="col-xs-12 col-sm-12 col-md-8">
+      <div class="row">
 
-    <div class="row">
-      <div id="cards-box" role="tabpanel" aria-labelledby="cards-tab" class="col-xs-12 col-sm-12 col-md-8">
-        <div class="row">
-
-          <!-- search bar -->
-          <div class="search-bar">
-            <div class="row justify-content-center border-0 m-0">
-                <%= form_tag(events_path, method: :get) do %>
-                  <%= text_field_tag :search, params[:search], class: 'banner-searchbar', id: 'algolia-big', placeholder: 'Enter Your Location' %>
-                  <%= select_tag(:vibe_id, options_for_select(@vibes_array, disabled: [["Select Vibe", 0]]), class:'vibe-selection') %>
-                  <%= submit_tag 'Find Events', name: nil, class: "btn-fun btn-dark-solid" %>
-                <% end %>
-            </div>
-            <!-- If no Events are found in the area -->
-            <h3 style="margin-left: 17px;margin-top: 10px;"><%= @response %></h3>
+        <!-- search bar -->
+        <div class="search-bar">
+          <div class="row justify-content-center border-0 m-0">
+              <%= form_tag(events_path, method: :get) do %>
+                <%= text_field_tag :search, params[:search], class: 'banner-searchbar', id: 'algolia-big', placeholder: 'Enter Your Location' %>
+                <%= select_tag(:vibe_id, options_for_select(@vibes_array, disabled: [["Select Vibe", 0]]), class:'vibe-selection') %>
+                <%= submit_tag 'Find Events', name: nil, class: "btn-fun btn-dark-solid" %>
+              <% end %>
           </div>
+          <!-- If no Events are found in the area -->
+          <h3 style="margin-left: 17px;margin-top: 10px;"><%= @response %></h3>
+        </div>
 
-          <!-- cards -->
-          <% @events.each do |event| %>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <div class="card-trip">
-                <%= link_to event_path(event) do %>
-                  <% if event.photo == nil %>
-                    <%= image_tag("https://i1.wp.com/bestlifeonline.com/wp-content/uploads/2018/01/shutterstock_435402349.jpg?resize=500%2C322&ssl=1") %>
-                  <% else %>
-                    <%= image_tag(event.photo) %>
-                  <% end %>
+        <!-- cards -->
+        <% @events.each do |event| %>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="card-trip">
+              <%= link_to event_path(event) do %>
+                <% if event.photo == nil %>
+                  <%= image_tag("https://i1.wp.com/bestlifeonline.com/wp-content/uploads/2018/01/shutterstock_435402349.jpg?resize=500%2C322&ssl=1") %>
+                <% else %>
+                  <%= image_tag(event.photo) %>
                 <% end %>
+              <% end %>
 
-                <div class="card-trip-infos">
-                  <div>
-                    <h2><%= link_to event.title, event_path(event) %></h2>
-                  </div>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= link_to event.title, event_path(event) %></h2>
+                </div>
 
-                  <div class="card-trip-pricing">
-                    <p> <span>Created by</span> <%= event.user.full_name %></p>
-                    <div class="card-info-vibe-distance">
-                      <div class ="card-info-vibe">
-                        <%= image_tag(event.vibe.icon) %>
-                        <p><%= event.vibe.name %></p>
-                      </div>
-                      <div class="card-info-distance">
-                        <p class="time">Starts at <strong><%= event.start_time.strftime("%k:%M")%></strong></p>
-                        <% if params[:search] != "" %>
-                          <p class="distance"><%= event.distance_to(params[:search]).truncate(1) %> km away</p>
-                        <% end %>
-                      </div>
+                <div class="card-trip-pricing">
+                  <p> <span>Created by</span> <%= event.user.full_name %></p>
+                  <div class="card-info-vibe-distance">
+                    <div class ="card-info-vibe">
+                      <%= image_tag(event.vibe.icon) %>
+                      <p><%= event.vibe.name %></p>
+                    </div>
+                    <div class="card-info-distance">
+                      <p class="time">Starts at <strong><%= event.start_time.strftime("%k:%M")%></strong></p>
+                      <% if params[:search] != "" %>
+                        <p class="distance"><%= event.distance_to(params[:search]).truncate(1) %> km away</p>
+                      <% end %>
                     </div>
                   </div>
                 </div>
-                  <div class="card-trip-user">
-                    <%= cl_image_tag event.user.profile_photo, class: "avatar-bordered" %>
-                    <% event.attendants.each do |user| %>
-                    <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
-                    <% end %>
-                  </div>
               </div>
+                <div class="card-trip-user">
+                  <%= cl_image_tag event.user.profile_photo, class: "avatar-bordered" %>
+                  <% event.attendants.each do |user| %>
+                  <%= cl_image_tag user.profile_photo, class: "avatar-bordered" %>
+                  <% end %>
+                </div>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
+    </div>
 
-      <!-- map -->
-      <div id="map-box" role="tabpanel" aria-labelledby="map-tab" class="col-xs-12 col-sm-12 col-md-4" >
-        <div class="mapbox"
-          id="map"
-          style="width: 100%;
-          min-height: 50vh;
-          position: sticky;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-        >
-        </div>
+    <!-- map -->
+    <div id="map-box" role="tabpanel" aria-labelledby="map-tab" class="col-xs-12 col-sm-12 col-md-4" >
+      <div class="mapbox"
+        id="map"
+        style="
+        height: 100vh;
+        position: sticky;
+        top: 0;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      >
       </div>
     </div>
   </div>
 </div>
+
