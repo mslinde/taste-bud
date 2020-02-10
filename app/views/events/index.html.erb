@@ -66,10 +66,6 @@
     <div id="map-box" role="tabpanel" aria-labelledby="map-tab" class="col-xs-12 col-sm-12 col-md-4" >
       <div class="mapbox"
         id="map"
-        style="
-        height: 100vh;
-        position: sticky;
-        margin: 0;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       >
