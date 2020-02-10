@@ -36,7 +36,13 @@
   }
 }
 
-
+.row {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: 0px;
+}
 
 .vibe-selection {
   padding-right: 35px;
