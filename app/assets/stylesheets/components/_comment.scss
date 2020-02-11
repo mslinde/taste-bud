@@ -3,6 +3,7 @@
   background-color: #f088a414;
   border-radius: 6px;
   padding: 15px;
+  margin-bottom: 20px;
 }
 
 .comments-container {
@@ -17,7 +18,19 @@
   padding: 20px;
 }
 
+.comments-display span {
+  color: gray;
+}
+
 .form-control  {
   width: 100%;
+}
+
+.comments-user-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  border-bottom: 1px solid white;
+  margin-bottom: 20px;
 }
 
