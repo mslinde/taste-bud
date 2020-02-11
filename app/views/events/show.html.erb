@@ -49,9 +49,11 @@
         <% end %>
 
         <div class="comments">
-          <% if current_user && @spot_occupied %>
+          <% if @spot_occupied %>
             <%= render 'comments/form' %>
             <%= render 'comments/comments' %>
+            <% else %>
+            <p><em>Comments:</em><br> Sign up for this event to communicate with other Taste Budds!</p>
           <% end %>
         </div>
       </div>
