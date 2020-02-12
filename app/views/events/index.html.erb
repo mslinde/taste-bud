@@ -1,11 +1,8 @@
-<div class="container">
-
-  <div class="events-parent">
-
+<div class="events-parent">
+  <div class="main-container">
     <div class="row">
       <div id="cards-box" role="tabpanel" aria-labelledby="cards-tab" class="col-xs-12 col-sm-12 col-md-8">
         <div class="row">
-
           <!-- search bar -->
           <div class="search-bar">
             <div class="row justify-content-center border-0 m-0">
@@ -68,9 +65,6 @@
       <div id="map-box" role="tabpanel" aria-labelledby="map-tab" class="col-xs-12 col-sm-12 col-md-4" >
         <div class="mapbox"
           id="map"
-          style="width: 100%;
-          min-height: 50vh;
-          position: sticky;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         >
@@ -79,3 +73,4 @@
     </div>
   </div>
 </div>
+

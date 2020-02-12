@@ -4,6 +4,7 @@ ruby '2.6.3'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
+gem 'jquery-rails'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.3'
@@ -11,7 +12,6 @@ gem 'redis'
 gem 'faker'
 gem 'pundit'
 gem 'cloudinary', '~> 1.9.1'
-gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'autoprefixer-rails'
