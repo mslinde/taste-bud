@@ -18,8 +18,8 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
 
-// New Time Picker for creating an event
-import { NJTimePicker } from '../plugins/nj-timepicker';
+
+
 
 // const items = document.querySelectorAll('.clickable');
 // items.forEach(i => i.addEventListener("click", (event) => {
@@ -72,4 +72,16 @@ clickable.forEach((element) => {
   }
   });
 });
+
+
+// New Time Picker for creating an event
+
+const dateCreateEventPage = document.querySelector('.date-selector');
+
+import { NJTimePicker } from '../plugins/nj-timepicker';
+
+NJTimePicker();
+
+
+
 
