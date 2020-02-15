@@ -68,8 +68,8 @@ clickable.forEach((element) => {
     element.classList.toggle("active");
     element.querySelector('input').checked = false;
     if (element.querySelector('input').value === element.dataset.vibeId) {
-    element.querySelector('input').checked = true;
-  }
+      element.querySelector('input').checked = true;
+    }
   });
 });
 
@@ -80,7 +80,13 @@ const dateCreateEventPage = document.querySelector('.date-selector');
 
 import { NJTimePicker } from '../plugins/nj-timepicker';
 
-NJTimePicker();
+
+
+// if (dateCreateEventPage) {
+//   NJTimePicker({
+//     target: '.date-selector'
+//   });
+// }
 
 
 

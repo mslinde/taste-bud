@@ -33,4 +33,9 @@ class ApplicationController < ActionController::Base
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
+
+  def non_footer_action
+  do_stuff
+  @skip_footer = true
+  end
 end

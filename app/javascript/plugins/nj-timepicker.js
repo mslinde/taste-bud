@@ -2,8 +2,9 @@ import NJTimePicker from 'nj-timepicker';
 
 (function() {
   let format_24 = document.querySelector('#start_time');
+  if (format_24) {
   var format_24_picker = new NJTimePicker({
-    targetEl: format_24,
+    targetID: 'start_time',
     texts: {
       header: 'Starting Time'
     },
@@ -13,5 +14,6 @@ import NJTimePicker from 'nj-timepicker';
     if (data.fullResult)
       format_24.textContent = data.fullResult;
   });
+}
 })();
 

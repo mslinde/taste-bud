@@ -21,7 +21,6 @@
           <%= f.input :address, placeholder: "Where is it going to be?" %>
           <%= f.input :description, placeholder: "Tell us about your event" %>
           <%= f.input :capacity, collection: 3..6 %>
-
         </div>
         <div class="right">
           <%= f.association :vibe, as: :radio_buttons %>
