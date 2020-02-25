@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { render :new }
+        format.html { redirect_back(fallback_location: root_path, alert: "Comments cannot be blank. Please enter message into text field.") }
         format.js
       end
     end
@@ -23,9 +23,10 @@ class CommentsController < ApplicationController
   end
 
    def destroy
+    set_spot
     set_comment
+    @comment.destroy
     authorize @comment
-    @comment.destroygit
    end
 
   private
