@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user
-    @comment.spot = @spot
+    @comment.spot = @spot_occupied
+    @event = @comment.spot.event
     authorize @comment
     if @comment.save
       respond_to do |format|
@@ -32,7 +33,7 @@ class CommentsController < ApplicationController
   private
 
   def set_spot
-    @spot = Spot.find(params[:spot_id])
+    @spot_occupied = Spot.find(params[:spot_id])
   end
 
   def set_comment

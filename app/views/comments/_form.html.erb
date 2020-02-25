@@ -1,17 +1,14 @@
-  <h3>Comments</h3>
-  <div class="comments-container">
-
-    <%= simple_form_for([@spot_occupied, @comment], remote: true) do |f| %>
-      <% if @comment.errors.any? %>
-          <div class="errors-container">
-        <ul>
-          <% @comment.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+<%= simple_form_for([spot, comment], remote: true) do |f| %>
+  <% if @comment.errors.any? %>
+      <div class="errors-container">
+    <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-        <div class="comments-form"><%= f.input :note, label: "Leave a comment for tonight's event", as: :text %></div>
-        <%= f.submit "Post", class: "btn-dark-transparent"%>
-    <% end %>
-  </div>
+    </ul>
+  <% end %>
+    <div id="comments-form"><%= f.input :note, label: "Leave a comment for tonight's event", as: :text %></div>
+    <%= f.submit "Post", class: "btn-dark-transparent"%>
+<% end %>
+
 

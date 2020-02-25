@@ -50,8 +50,15 @@
 
         <div class="comments">
           <% if @spot_occupied %>
-            <%= render 'comments/form' %>
-            <%= render 'comments/comments' %>
+            <h3>Comments</h3>
+              <div class="comments-container">
+              <%= render 'comments/form', spot: @spot_occupied, comment: @comment %>
+            </div>
+            <div id="comments-display">
+              <% @event.comments.each do |comment|  %>
+                <%= render 'comments/comments', comment: comment %>
+              <% end %>
+            </div>
             <% else %>
             <p><strong>Comments:</strong><br> Sign up for this event to communicate with other Taste Budds!</p>
           <% end %>

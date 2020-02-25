@@ -1,19 +1,17 @@
-// $('#comments-display').prepend(' <%= j render @comment %>');
-// $('#textarea').val('');
-
 function refreshForm(innerHTML) {
   const newCommentForm = document.getElementById('comments-form');
   newCommentForm.innerHTML = innerHTML;
 }
 
 function addComment(commentHTML) {
+  console.log(commentHTML)
   const comments = document.getElementById('comments-display');
   comments.insertAdjacentHTML('beforeend', commentHTML);
 }
 
 <% if @comment.errors.any? %>
-  refreshForm('<%= j render "comments/form", spot: @spot, comment: @comment %>');
+  refreshForm('<%= j render "comments/form", event: @spot_occupied, comment: @comment %>');
 <% else %>
-  addComment('<%= j render "comments/show", comment: @comment %>');
-  refreshForm('<%= j render "comments/form", spot: @spot, comment: comment.new %>');
+  addComment('<%= j render "comments/comments", comment: @comment %>');
+  refreshForm('<%= j render "comments/form", spot: @spot_occupied, comment: Comment.new %>');
 <% end %>
