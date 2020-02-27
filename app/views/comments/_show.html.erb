@@ -1,8 +1,0 @@
-<div id="comments-display">
-  <% @event.comments.each do |comment|  %>
-    <%= cl_image_tag comment.user.profile_photo, class: "avatar-bordered" %> <%= comment.user.full_name %>:
-    <p><%= comment.created_at.strftime("Today at %I:%M %p")   %></p>
-    <p><%= comment.note %></p>
-    <p><%= link_to "Delete", spot_comment_path(comment), method: :delete, remote: true %></p>
-  <% end %>
-</div>
