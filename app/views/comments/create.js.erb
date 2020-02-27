@@ -8,7 +8,6 @@ function addComment(commentHTML) {
   comments.insertAdjacentHTML('beforeend', commentHTML);
 }
 
-
 <% if @comment.errors.any? %>
   refreshForm('<%= j render "comments/form", spot: @spot_occupied, comment: @comment %>');
 <% else %>

@@ -57,6 +57,7 @@
             <div id="comments-display">
               <% @event.comments.each do |comment|  %>
                 <%= render 'comments/comments', comment: comment %>
+
               <% end %>
             </div>
             <% else %>
