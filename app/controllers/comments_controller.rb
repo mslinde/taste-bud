@@ -23,12 +23,12 @@ class CommentsController < ApplicationController
 
   end
 
-   def destroy
+  def destroy
     set_comment
     @comment.destroy
     authorize @comment
     redirect_back(fallback_location: root_path, alert: "Comment deleted")
-   end
+  end
 
   private
 
