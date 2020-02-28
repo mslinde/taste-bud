@@ -15,11 +15,7 @@ class EventsController < ApplicationController
     @events = Event.where(vibe_id: params[:vibe_id]).near(params[:search])
 
     if @events.present?
-      @events
-    # elsif !@events.present?
-    #   @events = Event.geocoded
-    #   @events.near(params[:search])
-    #   @response = "No #{@current_vibe} Events Nearby But Check Out Other Events Nearby"
+        @events
     else
         @events = Event.geocoded
         @response = "TasteBudd Events Around the World"
@@ -30,18 +26,8 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { event: event })
-        # image_url: helpers.asset_url('/assets/images/random.png')
       }
     end
-
-    # if params[:search].present? && params[:vibe_id].present?
-    #   @location = params[:search]
-    #   @events = Vibe.find(params[:vibe_id]).events.near(params[:search])
-    #   @current_vibe = Vibe.find(params[:vibe_id]).name
-    # elsif params[:search] == []
-    #   @events
-    #   @vibes
-    # end
   end
 
   def show

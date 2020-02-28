@@ -35,7 +35,3 @@ class UsersController < ApplicationController
 
   end
 end
-
-# @spot = Spot.find_by_id(params[:id])
-# @past_event = Event.where('start_time < ?', Date.today)
-# @show_event = Event.where('start_time < ?', Date.today)
