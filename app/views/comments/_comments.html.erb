@@ -1,7 +1,7 @@
 <span><%= comment.created_at.strftime("  today at %I:%M %p") %></span></p>
   <div class="comment-content">
     <em><%= comment.note %>  </em>
-    <% if current_user == @comment.user %>
+    <% if current_user.id == comment.user.id %>
         <%= link_to "delete", spot_comment_path(@spot_occupied, comment), method: :delete %>
     <% end %>
   </div>
