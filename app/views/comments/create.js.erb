@@ -4,13 +4,12 @@ function refreshForm(innerHTML) {
 }
 
 function addComment(commentHTML) {
-  console.log(commentHTML)
   const comments = document.getElementById('comments-display');
   comments.insertAdjacentHTML('beforeend', commentHTML);
 }
 
 <% if @comment.errors.any? %>
-  refreshForm('<%= j render "comments/form", event: @spot_occupied, comment: @comment %>');
+  refreshForm('<%= j render "comments/form", spot: @spot_occupied, comment: @comment %>');
 <% else %>
   addComment('<%= j render "comments/comments", comment: @comment %>');
   refreshForm('<%= j render "comments/form", spot: @spot_occupied, comment: Comment.new %>');

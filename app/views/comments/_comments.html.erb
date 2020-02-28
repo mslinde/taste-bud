@@ -2,8 +2,8 @@
   <div class="comment-content">
     <em><%= comment.note %>  </em>
     <% if current_user %>
-      <%#= link_to "delete", spot_comment_path(comment), method: :delete %>
-    <% end %>
+        <%= link_to "delete", spot_comment_path(@spot_occupied, comment), method: :delete %>
+      <% end %>
   </div>
 <div class="comments-user-info">
     <p>-<%= comment.user.full_name %>

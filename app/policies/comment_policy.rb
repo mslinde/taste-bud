@@ -17,5 +17,9 @@ class CommentPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    true
+  end
+
 end
 

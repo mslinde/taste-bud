@@ -24,10 +24,10 @@ class CommentsController < ApplicationController
   end
 
    def destroy
-    set_spot
     set_comment
     @comment.destroy
     authorize @comment
+    redirect_back(fallback_location: root_path, alert: "Comment deleted")
    end
 
   private
@@ -37,7 +37,7 @@ class CommentsController < ApplicationController
   end
 
   def set_comment
-    @comment = @spot.comments.find(params[:id])
+    @comment = @spot_occupied.comments.find(params[:id])
   end
 
   def comment_params
