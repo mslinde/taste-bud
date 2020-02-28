@@ -4,7 +4,7 @@
   border-radius: 6px;
   padding: 15px;
   margin-bottom: 20px;
-  
+
   strong {
     font-weight: bolder;
     font-size: 25px;
@@ -23,8 +23,15 @@
   padding: 20px;
 }
 
-.comments-display span {
-  color: gray;
+#comments-display
+
+.comment-details {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    color: gray;
+  }
 }
 
 .form-control  {
