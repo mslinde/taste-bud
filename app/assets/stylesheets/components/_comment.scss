@@ -28,20 +28,20 @@
 .comment-details {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
 
-  span {
+  em {
     color: gray;
   }
 
   i {
-    color: #f088a4;
+    color: $fun-pink;
   }
 
   i:hover {
     color: gray;
   }
 }
-
 
 .form-control  {
   width: 100%;
@@ -52,6 +52,7 @@
   align-items: flex-start;
   justify-content: flex-end;
   border-bottom: 1px solid white;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  font-size: 15px;
 }
 
