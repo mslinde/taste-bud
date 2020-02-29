@@ -20,7 +20,6 @@ class CommentsController < ApplicationController
         format.js
       end
     end
-
   end
 
   def destroy

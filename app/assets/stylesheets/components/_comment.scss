@@ -23,22 +23,12 @@
   padding: 20px;
 }
 
-#comments-display
-
 .comment-details {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
 
   em {
-    color: gray;
-  }
-
-  i {
-    color: $fun-pink;
-  }
-
-  i:hover {
     color: gray;
   }
 }
