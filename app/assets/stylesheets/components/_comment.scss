@@ -4,7 +4,7 @@
   border-radius: 6px;
   padding: 15px;
   margin-bottom: 20px;
-  
+
   strong {
     font-weight: bolder;
     font-size: 25px;
@@ -23,8 +23,24 @@
   padding: 20px;
 }
 
-.comments-display span {
-  color: gray;
+#comments-display
+
+.comment-details {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+
+  em {
+    color: gray;
+  }
+
+  i {
+    color: $fun-pink;
+  }
+
+  i:hover {
+    color: gray;
+  }
 }
 
 .form-control  {
@@ -36,6 +52,7 @@
   align-items: flex-start;
   justify-content: flex-end;
   border-bottom: 1px solid white;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  font-size: 15px;
 }
 
