@@ -1,13 +1,11 @@
-<!-- app/views/offers/show.html.erb -->
 <% content_for :meta_title, "#{@event.title} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @event.description %>
 <% content_for :meta_image, cl_image_path(@event.photo) %>
+<%= cl_image_path @event.photo.key, height: 300, width: 400, crop: :fill %>
 
 <div class="img mainbannercontainer">
 
-
 <div class="container">
-  <!-- <div class="main-container"> -->
     <div class="row">
       <div class="buddy-left  col-xm-12 col-md-6">
         <div class="showbannercontainer-left">

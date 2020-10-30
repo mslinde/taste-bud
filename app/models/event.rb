@@ -8,6 +8,8 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :reviews, through: :spots
   has_many :comments, through: :spots
+  has_one_attached :photo
+
 
   #validates :start_time, inclusion: { in: (Date.today..Date.tomorrow) }
 end
