@@ -11,7 +11,10 @@ gem 'rails', '5.2.3'
 gem 'redis'
 gem 'faker'
 gem 'pundit'
+
+#photo uploader gems
 gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 2.0'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'autoprefixer-rails'

@@ -10,6 +10,5 @@ class Event < ApplicationRecord
   has_many :comments, through: :spots
   has_one_attached :photo
 
-
   #validates :start_time, inclusion: { in: (Date.today..Date.tomorrow) }
 end
