@@ -332,7 +332,7 @@ events = []
     title:  "Explore the German Market",
     address: "Skalitzer Str. 97",
     description: "Let's go explore a German a market. Get some good food and drinks while we do it.",
-    start_time: "#{Date.today}- 16:00",
+    start_time: "#{Date.tomorrow}- 16:00",
     user: u1,
     vibe: v1,
     capacity: 6,
@@ -488,7 +488,7 @@ events = []
     title:  "Abandoned American Radio Towers",
     address: "Teufelsberg, 14055 Berlin",
     description: "The inner towers used to be open to the public. Let's jump the fence and climb up them.",
-    start_time: "#{Date.today}- 19:30",
+    start_time: "#{Date.tomorrow}- 19:30",
     user: u14,
     vibe: v5,
     capacity: 6,
@@ -512,7 +512,7 @@ events = []
     title:  "Schnitzel",
     address: "Chausseestraße 8, 10115 Berlin",
     description: "I really want to try some good schnitzel. This place is supposed to be the best. Let's feed our souls some schnitzel.",
-    start_time: "#{Date.today}- 18:30",
+    start_time: "#{Date.tomorrow}- 18:30",
     user: u16,
     vibe: v1,
     capacity: 6,
@@ -649,9 +649,9 @@ puts "Creating spots..."
 #     )
 
 
-    # possible_attendants = possible_attendants.reject {|u| u == spot.user }
+# possible_attendants = possible_attendants.reject {|u| u == spot.user }
 #     spot.save!
-# #   end
+# end
 # end
 
 puts "Created #{Spot.count} spots"
@@ -671,35 +671,8 @@ demo_user = User.new(
 )
 demo_user.save!
 
-# review_user = User.new(
-#   full_name: "Samantha Jones",
-#   email: "sam@example.com",
-#   encrypted_password: Faker::Internet.password,
-#   password: "123456",
-#   current_country: "Germany",
-#   origin_country: "United Kingdom",
-#   birthday: "1992-03-25",
-#   gender: "Female",
-#   profile_photo: "https://i.imgur.com/cDqspyH.png"
-# )
-# review_user.save!
-
-
 puts "Created demo user 'jim@gmail.com' "
 puts "Creating past events..."
-
-
-# to_review1 = Event.new(
-#     title:  "Cafe in Amsterdam?",
-#     address: "Ten Katestraat 117, 1053 CC Amsterdam, Netherlands",
-#     description: "This could be fun. I've never been. Let's check out a Cafe in Amsterdam and maybe get some food after.",
-#     start_time: "#{Date.yesterday - 6}- 18:00",
-#     user: users.sample,
-#     vibe: v5,
-#     capacity: 6,
-#     photo: "https://mymodernmet.com/wp/wp-content/uploads/archive/4li2cFU3uEzpmBe39XJB_jimmychin4.jpg",
-#   )
-#   to_review1.save!
 
   to_review2 = Event.new(
     title:  "Budapest Beers",
@@ -728,7 +701,6 @@ puts "Creating past events..."
 puts 'Created past events'
 
 puts "Creating spots for demo user ..."
-  # Spot.new(user: demo_user, event: to_review1).save!
   Spot.new(user: demo_user, event: to_review2).save!
   Spot.new(user: demo_user, event: to_review3).save!
 
@@ -749,34 +721,6 @@ puts 'Creating hosted past event for user.'
     to_host.save!
 
 puts 'Created past hosted event'
-
-
-# puts "Creating nil reviews"
-
-# 5.times do
-#   nil_review = Review.new(
-#     user: review_user,
-#     event: [e1, e2, e3, e4, e5, e6, e7].sample,
-#     )
-#   nil_review.save!
-# end
-
-# puts 'Creating review seeds'
-
-
-# 20.times do
-#   review = Review.new(
-#     user: users.sample,
-#     event: [e1, e2, e3, e4, e5, e6, e7].sample,
-#     vibe: rand(1..5),
-#     venue: rand(1..5),
-#     neighborhood: rand(1..5),
-#     attended: [true, false].sample,
-#     comment: Faker::Restaurant.review,
-#     )
-#   review.save!
-# end
-# puts 'Created reviews'
 
 puts 'Finished!'
 
