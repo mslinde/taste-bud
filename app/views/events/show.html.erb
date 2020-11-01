@@ -33,7 +33,11 @@
 
         <% @event.attendants.each do |user| %>
           <div class="card-product">
-            <%= cl_image_tag user.profile_photo, class: "avatar-bordered card-attend-img" %>
+            <% if user.full_name != nil %>
+              <%= cl_image_tag user.profile_photo, class: "avatar-bordered card-attend-img" %>
+            <% else %>
+              <%= image_tag "https://image.flaticon.com/icons/svg/42/42877.svg", class: "avatar" %>
+            <% end %>
             <div class="card-product-infos">
               <% if user.full_name != nil %>
                 <h3><%= user.full_name %></h3>
