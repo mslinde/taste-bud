@@ -1,7 +1,7 @@
 .avatar {
   width: 40px;
   border-radius: 50%;
-
+  background-color: #f088a4;
 }
 
 .avatar-large {
@@ -33,24 +33,3 @@
   height: 45px;
   border: 2px solid $green;
 }
-
-// .avatars {
-//   display: inline-flex;
-//   flex-direction: row-reverse;
-//   padding-left:50px;
-// }
-
-// .avatar {
-//   margin-left: -25px;
-//   position: relative;
-//   border:1px solid #fff;
-//   border-radius: 50%;
-//   overflow:hidden;
-//   width:50px;
-//   height:50px;
-// }
-
-// .avatar img {
-//   width:50px;
-//   height:50px;
-// }
