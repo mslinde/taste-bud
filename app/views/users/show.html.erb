@@ -108,7 +108,7 @@
           <div class="dashboard-card-background">
             <% @past_events.each do |event| %>
               <div class="event-list">
-                <% if spot.event.photo %>
+                <% if event.photo %>
                   <%= image_tag(event.photo, class:"user-dashboard", height:"50px")%>
                   <p><%= link_to event.title, event_path(event.id) %><br>
                   <%= event.start_time.strftime("%B %d, %Y") %> at <%= event.start_time.strftime("%k:%M") %></p>
