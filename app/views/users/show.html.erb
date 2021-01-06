@@ -89,8 +89,12 @@
             <%# if @event.start_time < Date.today %>
               <% @past_spots.each do |spot| %>
                 <div class="event-list">
-                  <%= image_tag(spot.event.photo, class:"user-dashboard", height:"50px")%>
-                  <p><%= link_to spot.event.title, event_path(spot.event.id) %></br><%= spot.event.start_time.strftime("%B %d, %Y") %></p>
+                  <% if @event.photo %>
+                    <%= image_tag(spot.event.photo, class:"user-dashboard", height:"50px") %>
+                    <p><%= link_to spot.event.title, event_path(spot.event.id) %></br><%= spot.event.start_time.strftime("%B %d, %Y") %></p>
+                  <% else %>
+                    <p><%= link_to spot.event.title, event_path(spot.event.id) %></br><%= spot.event.start_time.strftime("%B %d, %Y") %></p> %>
+                  <% end %>
                 </div>
               <% end %>
             <%# end %>
